@@ -1,1 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=EB+Garamond&family=Special+Elite&display=swap');
+
+#root{
+    @apply scroll-smooth
+}
+
+.bg-img{
+    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/homepagebg.png');
+}
+
+.prim-color{
+    color: #A04E1F;
+}
+
+.bg-prim-color{
+    background: #A04E1F;
+}
+
+@media only screen and (max-width: 640px) {
+    /* Home - background */
+    .title-sm{
+        @apply text-4xl w-[80%] break-words;
+    }
+
+}
+
+@media only screen and (min-width: 640px) {
+    /* Home - background */
+    .title-lg{
+        @apply text-8xl w-[40%] break-normal
+    }
+
+}
