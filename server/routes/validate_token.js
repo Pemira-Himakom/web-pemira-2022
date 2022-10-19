@@ -13,6 +13,11 @@ router.route("/").get((req, res) => {
       res.json(studentList);
     }
   });
-});
+}).post((req,res) =>{
+  const token = req.body.token;
+  // hash token using bcrypt strategy compare to database.
+  // if (hashedToken exists && not voted yet){ status: true reroute to voting page }
+  // else { status: false }
+})
 
 export default router;
