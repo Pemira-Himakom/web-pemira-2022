@@ -2,22 +2,28 @@
 
 import express from "express";
 import Student from "../models/Student.js";
+import bcrypt from 'bcrypt';
+// const salt = bcrypt.genSalt();
+const salt = 10;
 
 const router = express.Router();
 
-router.route("/").get((req, res) => {
-  Student.find((err, studentList) => {
+router.route("/").post((req,res) =>{
+  const {inputNIM, inputToken} = req.body;  
+
+  Student.findOne({NIM: inputNIM}, (err, studentFound) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(studentList);
+      bcrypt.compare(inputToken, studentFound.token, (err, result) => {
+        if(err) {
+          console.log(err);
+        }else {
+          res.json({status: result})
+        }
+      })
     }
-  });
-}).post((req,res) =>{
-  const token = req.body.token;
-  // hash token using bcrypt strategy compare to database.
-  // if (hashedToken exists && not voted yet){ status: true reroute to voting page }
-  // else { status: false }
+  })
 })
 
 export default router;
