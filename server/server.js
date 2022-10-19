@@ -6,10 +6,14 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 
-import Student from "./models/students.js";
+import validate_token from "./routes/validate_token.js";
+import vote from "./routes/vote.js";
 
 const app = express();
 app.use(express.json());
+
+app.use("/api/validate_token", validate_token);
+app.use("/api/vote", vote);
 
 main().catch((err) => console.log(err));
 async function main() {
@@ -17,12 +21,6 @@ async function main() {
 }
 
 app.get("/", (req, res) => {
-  const newStudent = new Student({
-    NIM: "NIM1",
-    name: "name1",
-    token: "token1",
-  });
-
   res.send("Hello World!");
 });
 
