@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=EB+Garamond&family=Special+Elite&display=swap');
 
+@import url('http://fonts.cdnfonts.com/css/sulangor');
+@import url('http://fonts.cdnfonts.com/css/inter');
+
 #root{
     @apply scroll-smooth
 }
 
+h1 {
+    font-family: 'Sulangor', sans-serif;
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+}
+
 .bg-img{
-    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/homepagebg.png');
+    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/renaissance.jpg');
 }
 
 .prim-color{
@@ -27,6 +38,6 @@
 @media only screen and (min-width: 640px) {
     /* Home - background */
     .title-lg{
-        @apply text-8xl w-[40%] break-normal
+        @apply text-6xl w-[40%] break-normal;
     }
 }
