@@ -1,30 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=EB+Garamond&family=Special+Elite&display=swap');
-@import url('http://fonts.cdnfonts.com/css/sulangor');
 
-h1 {
-    font-family: 'Sulangor';
+#root{
+    @apply scroll-smooth
+}
+
+.bg-img{
+    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/homepagebg.png');
+}
+
+.prim-color{
     color: #A04E1F;
 }
 
-.card {
-    height: 100%;
+.bg-prim-color{
+    background: #A04E1F;
 }
 
-.layout {
-    height: 100%;
-    width: 100%;
-    position: absolute;
+@media only screen and (max-width: 640px) {
+    /* Home - background */
+    .title-sm{
+        @apply text-4xl w-[80%] break-words;
+    }
+
 }
 
-.gradient {
-    height: 100vh;
-    background-size: cover;
-}
-
-.gradient::before {
-    content: " ";
-    height: 100vh;
-    background-image: linear-gradient(#fff, transparent), url('img/renaissance.jpg');
-    opacity: 0.5;
-    position: relative;
+@media only screen and (min-width: 640px) {
+    /* Home - background */
+    .title-lg{
+        @apply text-8xl w-[40%] break-normal
+    }
 }

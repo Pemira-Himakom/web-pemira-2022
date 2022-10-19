@@ -1,16 +1,14 @@
 import React from 'react'
-import homepic from "../img/renaissance.jpg"
 
 export default function Home() {
   return (
-    <div className='h-auto main'>
-      <div className='fixed card'>
-        <div className='gradient'/>
-      </div>
-
-      <div className='layout grid place-items-center text-center'>
-        <h1 className='text-5xl w-1/3 tracking-wider'>Pemilihan Raya HIMAKOM 2022</h1>
-      </div>
+    <div>
+      {/* title */}
+      <header className="flex items-center justify-center h-screen bg-fixed bg-center bg-cover bg-img sm:pb-36">
+        <div className="text-center text-black font-garamond title-sm title-lg prim-color">
+          <h1 className=''>Pemilihan Raya Himakom 2022</h1>
+        </div>
+      </header>
     </div>
   )
 }
