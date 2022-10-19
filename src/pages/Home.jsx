@@ -1,15 +1,15 @@
 import React from 'react'
-import homepic from "../img/homepagebg.png"
+import homepic from "../img/renaissance.jpg"
 
 export default function Home() {
   return (
-    <div className='h-auto'>
-      <div className='h-full w-full'>
-        <img className='object-fill' src={homepic} alt="renaissance"></img>
+    <div className='h-auto main'>
+      <div className='fixed card'>
+        <div className='gradient'/>
       </div>
 
-      <div className='text-black z-10 absolute top-0 left-0'>
-        <h1>hello</h1>
+      <div className='layout grid place-items-center text-center'>
+        <h1 className='text-5xl w-1/3 tracking-wider'>Pemilihan Raya HIMAKOM 2022</h1>
       </div>
     </div>
   )

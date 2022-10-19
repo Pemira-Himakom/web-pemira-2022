@@ -1,1 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&family=EB+Garamond&family=Special+Elite&display=swap');
+@import url('http://fonts.cdnfonts.com/css/sulangor');
+
+h1 {
+    font-family: 'Sulangor';
+    color: #A04E1F;
+}
+
+.card {
+    height: 100%;
+}
+
+.layout {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.gradient {
+    height: 100vh;
+    background-size: cover;
+}
+
+.gradient::before {
+    content: " ";
+    height: 100vh;
+    background-image: linear-gradient(#fff, transparent), url('img/renaissance.jpg');
+    opacity: 0.5;
+    position: relative;
+}
