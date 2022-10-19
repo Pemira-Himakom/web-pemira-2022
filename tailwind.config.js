@@ -7,6 +7,7 @@ module.exports = {
       fontFamily:{
         archivo: ["archivo", "sans-serif"],
         garamond: ["garamond", "sans-serif"],
+        sulangor: ['sulangor', 'sans-serif']
         
       },
       color: {

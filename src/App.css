@@ -3,20 +3,19 @@
 @import url('http://fonts.cdnfonts.com/css/sulangor');
 @import url('http://fonts.cdnfonts.com/css/inter');
 
-#root{
-    @apply scroll-smooth
+
+html {
+    @apply scroll-smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
-h1 {
+/* h1 {
     font-family: 'Sulangor', sans-serif;
-}
+} */
 
 p {
     font-family: 'Inter', sans-serif;
-}
-
-.bg-img{
-    background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/renaissance.jpg');
 }
 
 .prim-color{
@@ -32,6 +31,14 @@ p {
     .title-sm{
         @apply text-4xl w-[80%] break-words;
     }
+    .logo-sm {
+        @apply hidden;
+    }
+    .bg-img-sm{
+        background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.548), rgba(227, 223, 226, 0)),url('./img/renaissance.jpg');
+        background-position: bottom;
+        background-size: contain;
+    }
 
 }
 
@@ -40,4 +47,24 @@ p {
     .title-lg{
         @apply text-6xl w-[40%] break-normal;
     }
+    .logo-lg {
+        @apply flex;
+    }
+    .bg-img-lg{
+        background-image: linear-gradient(to bottom, rgb(245, 246, 252), rgba(227, 223, 226, 0)),url('./img/renaissance.jpg');
+    }
 }
+
+/* .circle {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: solid #D4A976 2px;
+}
+
+.qsContainer {
+    height: 3rem;
+    width: 100%;
+    background-color: #A04E1F;
+    border-radius: 15px;
+} */
