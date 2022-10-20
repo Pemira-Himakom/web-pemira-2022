@@ -83,3 +83,91 @@ p {
     background-color: #A04E1F;
     border-radius: 15px;
 } */
+
+/* Timeline */
+.timeline-bg {
+    background-image: url('./img/flower.png'), url('./img/flower2.png');
+    background-repeat: no-repeat,no-repeat;
+    background-position: bottom 0% left, bottom 0% right;
+    background-size: 25vh, 25vh;
+}
+
+.process-wrapper {
+    margin: auto;
+    max-width: screen;
+}
+
+.progress-bar-container{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    height: 300px;
+    margin-top: 59px;
+    
+}
+
+.progress-bar-container ul{
+    padding: 0;
+    margin: 0;
+    margin-left: 5%;
+    padding-top: 15px;
+    z-index: 9999;
+    width: 100%;
+    margin-top: -40px;
+
+}
+
+.progress-bar-container li{
+    list-style: none;
+    float: left;
+    width: 15%;
+    text-align: center;
+    color: #D4A976;
+    cursor: pointer;
+    transition: all ease 0.2s;
+    vertical-align: bottom;
+    height: 59px;
+    margin-top: -20px;
+    z-index: 10;
+    position: relative;
+}
+
+.progress-bar-container li .step-inner{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    @apply text-xl
+
+}
+
+.progress-bar-container li .circle{
+    contain: "";
+    width: 60px;
+    height: 60px;
+    margin-left: 35%;
+    margin-top: 5%;
+    z-index: 2;
+    @apply shadow-2xl
+    
+}
+
+.progress-bar-container #line{
+    width: 90%;
+    height: 5px;
+    position: absolute;
+    margin: auto;
+    background: #D4A976;
+    left: 5%;
+    top : 130px;
+    z-index: 0;
+
+}
+
+.progress-bar-container li:nth-child(odd){
+    margin-top: 130px;
+
+}
+
+.progress-bar-container li:nth-child(odd) .circle{
+    margin-top: -65%;
+}
