@@ -3,9 +3,11 @@ import React from 'react'
 const About = () => {
   return (
     <div class="bg-white flex content-evenly p-5">
+        
         <div className='bg-prim-color w-[50%] h-[70vh] flex items-center justify-center'>
           <img src='' alt="" />
         </div>
+
         <div className='bg-white w-[50%] max-w-[35rem] m-auto text-justify text-xl px-5'>
 
           <h1 className='text-center mb-10 text-7xl prim-color font-garamond'>About Pemira</h1>
@@ -14,7 +16,7 @@ const About = () => {
           </p>
         </div>
 
-      </div>
+    </div>
   )
 }
 
