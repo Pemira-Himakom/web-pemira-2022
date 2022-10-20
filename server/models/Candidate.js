@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const candidateSchema = new Schema({
   name: String,
   candidateNumber: Number,
-  voteCounter: Number,
+  voteCounter: { type: Number, default: 0 },
   date: Date,
 });
 

@@ -8,12 +8,14 @@ import mongoose from "mongoose";
 
 import validate_token from "./routes/validate_token.js";
 import vote from "./routes/vote.js";
+import admin_api from "./routes/admin-api.js";
 
 const app = express();
 app.use(express.json());
 
 app.use("/api/validate_token", validate_token);
 app.use("/api/vote", vote);
+app.use("/api/admin", admin_api);
 
 main().catch((err) => console.log(err));
 async function main() {
