@@ -3,7 +3,7 @@ import bar from '../img/bar.png'
 
 export default function Home() {
   return (
-    <div>
+    <div className='mb-[-1px]'>
       {/* title */}
       <header className="flex flex-row items-end px-48 h-screen shadow-inner 
                          bg-fixed bg-center bg-cover bg-img-lg bg-img-sm">

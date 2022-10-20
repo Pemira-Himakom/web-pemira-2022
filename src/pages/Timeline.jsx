@@ -1,14 +1,18 @@
 import React from 'react'
+
+// import img and icons
 import Star1 from '../img/star1.png'
 import Star2 from '../img/star2.png'
-import {GoTriangleRight} from 'react-icons/go'
-import {GoTriangleLeft} from 'react-icons/go'
-import Star3 from '../img/star3.png'
+
+
+//import components 
+import Timeline_lg from '../components/timeline_lg'
+
 
 export default function Timeline() {
   return (
-    <div className='bg-[#21201D] h-[60vh] w-screen pt-12 prim-color font-sulangor timeline-bg'>
-        <div className='flex justify-center'>
+    <div className='bg-[#21201D] h-[70vh] w-screen pt-12 prim-color font-sulangor timeline-bg'>
+        <div className='flex w-screen justify-center mb-10'>
             <div className='h-fit flex  gap-x-12'>
                 <img src={Star1} alt='star'/>
                 <h1 className='text-2xl lg:text-5xl grid items-center'>Timeline</h1>
@@ -17,7 +21,7 @@ export default function Timeline() {
         </div>
 
         {/* Start Timeline Item */}
-        <div className='process-wrapper '>
+        {/* <div className='process-wrapper '>
             <div className='progress-bar-container'>
                 
                 <ul>
@@ -79,6 +83,10 @@ export default function Timeline() {
                 </div>
 
             </div>
+        </div> */}
+
+        <div className='pt-2 w-screen'>
+            <Timeline_lg/>
         </div>
     </div>
   )

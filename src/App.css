@@ -99,7 +99,7 @@ p {
 
 .progress-bar-container{
     position: relative;
-    width: 80%;
+    width: 90%;
     margin: auto;
     height: 300px;
     margin-top: 59px;
@@ -109,12 +109,11 @@ p {
 .progress-bar-container ul{
     padding: 0;
     margin: 0;
-    margin-left: 5%;
     padding-top: 15px;
+    margin-left: 30px;
     z-index: 9999;
     width: 100%;
     margin-top: -40px;
-
 }
 
 .progress-bar-container li{
@@ -123,37 +122,44 @@ p {
     width: 15%;
     text-align: center;
     color: #D4A976;
-    cursor: pointer;
     transition: all ease 0.2s;
     vertical-align: bottom;
     height: 59px;
-    margin-top: -20px;
+    margin-top: -35px;
     z-index: 10;
     position: relative;
 }
 
 .progress-bar-container li .step-inner{
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    @apply text-xl
+    position: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100%;
+    margin-top: 35%;
+    font-size: 17px ;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .progress-bar-container li .circle{
     contain: "";
-    width: 60px;
-    height: 60px;
-    margin-left: 35%;
-    margin-top: 5%;
+    width: 40px;
+    height: 40px;
+    left : 36%;
+    top: 235%;
     z-index: 2;
-    @apply shadow-2xl
+    position: absolute;
     
+}
+
+.progress-bar-container li .step-inner .date{
+    font-size: 15px;
 }
 
 .progress-bar-container #line{
     width: 90%;
-    height: 5px;
+    height: 3px;
     position: absolute;
     margin: auto;
     background: #D4A976;
@@ -163,11 +169,46 @@ p {
 
 }
 
-.progress-bar-container li:nth-child(odd){
-    margin-top: 130px;
+.progress-bar-container li:nth-child(odd) .step-inner{
+    margin-top: 190px;
 
 }
 
 .progress-bar-container li:nth-child(odd) .circle{
-    margin-top: -65%;
+    top: 200%;
+}
+
+.progress-bar-container li:nth-child(4) .step-inner{
+    margin-top: 26%;
+
+}
+
+.progress-bar-container li:nth-child(4) {
+    width: 20%;
+
+}
+
+.progress-bar-container li:nth-child(4) .circle {
+   margin-left: 6%;
+
+}
+
+.progress-bar-container li .active{
+    @apply border-[1px] border-[#D4A976] rounded-lg lg:max-w-[50%] px-3 py-2 hover:shadow-2xl transition-all duration-150 lg:ml-[40px];
+}
+
+/* frame */
+
+.title{
+    content: " ";
+    width: 100%;
+    margin: auto;
+    background: #D4A976;
+    @apply flex flex-row p-1 mt-3;
+
+}
+
+.title h1{
+    @apply text-5xl font-sulangor text-[#D4A976] bg-[#21201D] py-5 pb-3 px-4 ;
+    font-weight: 200;
 }
