@@ -29,14 +29,15 @@ router.route("/authenticate").post((req, res) => {
 });
 
 // assign token
-router.route("/assign").post((req, res) => {
+router.route("/:adminID/assign").post((req, res) => {
   // add token to corresponding user
-  const { nim, token, adminID } = req.body;
+  const { nim, token } = req.body;
+  const { adminID } = req.params;
 
   Admin.exists({ _id: adminID }, (err) => {
     if (err) {
       console.log(err);
-      res.json({ status: false });
+      res.json({ status: false, message: "Admin not found" });
     } else {
       // hash token
       bcrypt.hash(token, Number(process.env.SALT), (err, hash) => {
@@ -53,6 +54,33 @@ router.route("/assign").post((req, res) => {
               res.json({ status: true });
             }
           });
+        }
+      });
+    }
+  });
+});
+
+// student list
+router.route("/:adminID/student_list").get((req, res) => {
+  const { adminID } = req.params;
+  const query = req.query;
+  Admin.exists({ _id: adminID }, (err) => {
+    if (err) {
+      console.log(err);
+      res.json({ status: false, message: "Admin not found" });
+    } else {
+      Student.find(query, (err, list) => {
+        if (err) {
+          console.log(err);
+          res.json({ status: false });
+        } else {
+          // filter list to only display {NIM, name, voted}
+          const filteredList = list.reduce((result, student) => {
+            const { nim, name, voted } = student;
+            result.push({ nim, name, voted });
+            return result;
+          }, []);
+          res.json({ status: true, studentList: filteredList });
         }
       });
     }
