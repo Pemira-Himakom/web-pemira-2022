@@ -10,14 +10,6 @@ const router = express.Router();
 router
   .route("/")
   .get((req, res) => {
-    Candidate.find((err, candidateList) => {
-      if (err) {
-        console.log(err);
-      } else {
-        res.json(candidateList);
-      }
-    });
-
     // const date = new Date();
 
     // const tanggal = `${date.getFullYear()}-${
@@ -25,13 +17,21 @@ router
     // }-${date.getDate()}`;
 
     // const newCandidate = new Candidate({
-    //   name: "name1",
-    //   candidateNumber: 1,
+    //   name: "name3",
+    //   candidateNumber: 3,
     //   voteCounter: 0,
     //   date: new Date(tanggal),
     // });
 
     // newCandidate.save();
+
+    Candidate.find((err, candidateList) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(candidateList);
+      }
+    });
   })
   .post((req, res) => {
     const { votedCandidate, nim } = req.body;

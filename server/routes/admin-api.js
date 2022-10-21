@@ -4,6 +4,7 @@ import express from "express";
 import bcrypt from "bcrypt";
 import Admin from "../models/Admin.js";
 import Student from "../models/Student.js";
+import Candidate from "../models/Candidate.js";
 
 const router = express.Router();
 
@@ -82,6 +83,45 @@ router.route("/:adminID/student_list").get((req, res) => {
           }, []);
           res.json({ status: true, studentList: filteredList });
         }
+      });
+    }
+  });
+});
+
+// recap vote
+router.route("/:adminID/recap").get((req, res) => {
+  const { adminID } = req.params.adminID;
+  const { start, end } = req.query;
+  Admin.exists({ _id: adminID }, (err) => {
+    if (err) {
+      console.log(err);
+      res.json({ status: false, message: "Admin not found" });
+    } else {
+      Candidate.aggregate([
+        {
+          $match: { date: { $gte: new Date(start), $lte: new Date(end) } },
+        },
+        {
+          $group: {
+            _id: "$candidateNumber",
+            totalVote: { $sum: "$voteCounter" },
+          },
+        },
+        {
+          $project: {
+            candidateNumber: "$_id",
+            totalVote: 1,
+            _id: 0,
+          },
+        },
+        {
+          $sort: { candidateNumber: 1 },
+        },
+      ]).exec((err, candidates) => {
+        if (err) {
+          console.log(err);
+          res.json({ status: false });
+        } else [res.json({ status: true, candidates: candidates })];
       });
     }
   });
