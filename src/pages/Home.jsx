@@ -9,7 +9,7 @@ export default function Home() {
                          bg-fixed bg-center bg-cover bg-img-lg bg-img-sm">
         <div className="h-fit title-sm title-lg prim-color inline-flex gap-24">
           <img className='' src={bar} alt='bar'/>
-          <h1 className='tracking-wide flex items-end font-sulangor pb-48'>Pemilihan Raya Himakom 2022</h1>
+          <h1 className='tracking-wide flex items-end font-prata pb-48'>Pemilihan Raya Himakom 2022</h1>
         </div>
       </header>
     </div>

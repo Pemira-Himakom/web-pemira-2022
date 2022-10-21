@@ -11,7 +11,7 @@ import Timeline_lg from '../components/timeline_lg'
 
 export default function Timeline() {
   return (
-    <div className='bg-[#21201D] h-[90vh] w-screen pt-24 prim-color font-sulangor timeline-bg'>
+    <div className='bg-[#21201D] h-[90vh] w-screen pt-24 prim-color font-prata timeline-bg'>
         <div className='flex w-screen justify-center mb-10'>
             <div className='h-fit flex  gap-x-12'>
                 <img src={Star1} alt='star'/>
