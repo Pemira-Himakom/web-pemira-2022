@@ -13,7 +13,7 @@ const About = () => {
 
           <div className='flex justify-evenly py-8'>
             <div className='grid items-center'>
-              <img src={Star1} alt='star scale-110'/>
+              <img src={Star1} alt='star'/>
             </div>
             <h1 className='text-center font-sulangor text-2xl lg:text-5xl prim-color grid items-center'>About Pemira</h1>
             <div className='grid items-center'>
