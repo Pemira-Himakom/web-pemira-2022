@@ -1,8 +1,10 @@
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
-import Faq from './pages/FAQ';
+// import Faq from './pages/FAQ';
 import Timeline from './pages/Timeline';
+import Candidates from './pages/Candidates';
+import Faq from './pages/FAQ';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <About/>
       {/* <Faq/> */}
       <Timeline/>
+      <Candidates/>
+      {/* <Faq/> */}
     </div>
   );
 }
