@@ -19,7 +19,6 @@ export default function Timeline() {
                 <img src={Star2} alt='star'/>
             </div>
         </div>
-
         {/* Start Timeline Item */}
         {/* <div className='process-wrapper '>
             <div className='progress-bar-container'>
@@ -87,6 +86,11 @@ export default function Timeline() {
 
         <div className='pt-2 w-screen'>
             <Timeline_lg/>
+        </div>
+
+        <div className='flex justify-center'>
+        <div className='eclipse1'/>
+
         </div>
     </div>
   )

@@ -38,6 +38,13 @@ html {
         top: 0;
         left: 0;
     }
+    .eclipse-sm {
+        height: 150%;
+        width: 75%;
+        border-radius: 50%;
+        border: 1px solid #D4A976;
+        background-color: #21201D;
+    }
 
 }
 
@@ -60,21 +67,14 @@ html {
         /* top: 50%;
         left: 0; */
     }
+    .eclipse {
+        height: 190%;
+        width: 95%;
+        border-radius: 50%;
+        border: 2px solid #D4A976;
+        background-color: #21201D;
+    }
 }
-
-/* .circle {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    border: solid #D4A976 2px;
-}
-
-.qsContainer {
-    height: 3rem;
-    width: 100%;
-    background-color: #A04E1F;
-    border-radius: 15px;
-} */
 
 /* Timeline */
 .timeline-bg {
@@ -189,10 +189,15 @@ html {
     @apply border-[1px] border-[#D4A976] rounded-lg lg:max-w-[50%] px-3 py-2 hover:shadow-2xl transition-all duration-150 lg:ml-[40px];
 }
 
+.candid-bg {
+    background-image: url('./img/candidates/smoke.png');
+}
+
 .candid {
     width: 100%;
     border: 2.5px solid #D4A976;
     place-content: center;
+    overflow: hidden
 }
 
 /* frame */
@@ -202,17 +207,35 @@ html {
     width: 100%;
     margin: auto;
     place-items: center;
-    background: #D4A976;
-    @apply flex flex-row p-4 mt-3
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-size: 300%;
+    background-position: left;
+    transition: background-position .3s ease-in-out;
+    @apply flex flex-row p-4 mt-3;
 
+}
+
+.container:hover > .title {
+    background-position: right;
+    background-color: #fff;
+}
+
+.boxNo {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 50px;
+    background-color: #20201D;
 }
 
 .title h1{
-    @apply text-4xl text-[#D4A976] bg-[#21201D];
+    @apply text-4xl text-[#F1C88C];
+    margin:auto;
     font-weight: 200;
-    height: 75px;
+    text-align: center;
 }
-
 .title h2 {
     @apply text-xl
 }

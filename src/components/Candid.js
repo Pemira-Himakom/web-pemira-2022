@@ -7,10 +7,13 @@ const Candid = (props) => {
     // const nav = useNavigate();
     return (
         <motion.button 
+        className='container'
         whileHover={{scale:1.05}}>
             <img src={Frame}></img>
             <div className='title gap-x-5'>
-                <h1>{props.calon}</h1>
+                <div className='boxNo'>
+                    <h1>{props.calon}</h1>
+                </div>
                 <div className='flex flex-col justify-between text-left'>
                     <h2>{props.name}</h2>
                     <h3>{props.division}</h3>
