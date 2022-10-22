@@ -18,6 +18,14 @@ html {
     background: #D4A976;
 }
 
+.circle-no {
+    height: 2rem;
+    width: 2rem;
+    background-color: #21201D;
+    border-radius: 50%;
+    place-items: center;
+}
+
 @media only screen and (max-width: 640px) {
     /* Home - background */
     .title-sm{
@@ -142,8 +150,44 @@ html {
     top: 235%;
     z-index: 2;
     position: absolute;
+ 
     
 }
+
+.progress-bar-container li .today{
+    animation: heartbeat 2.5s infinite;
+
+}
+
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( 1 ) rotate(0deg);
+  }
+  20%
+  {
+    transform: scale( 1.5 );
+  }
+  40%
+  {
+    transform: scale( 1 ) ;
+  }
+  60%
+  {
+    transform: scale( 1.5 );
+  }
+  80%
+  {
+    transform: scale( 1 ) rotate(180deg);
+  }
+  100%
+  {
+    transform: scale( 1 ) ;
+  }
+}
+
 
 .progress-bar-container li .step-inner .date{
     font-size: 15px;
@@ -206,12 +250,11 @@ html {
     content: " ";
     width: 100%;
     margin: auto;
-    place-items: center;
     background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
-    @apply flex flex-row p-4 mt-3;
+    @apply flex p-4 mt-3 justify-start;
 
 }
 
@@ -220,14 +263,22 @@ html {
     background-color: #fff;
 }
 
+.boxAll{
+    @apply flex flex-row justify-start w-full gap-3
+}
+
 .boxNo {
-    height: 80px;
-    width: 80px;
+    height: 100%;
     margin: auto;
     display: flex;
     justify-content: center;
     width: 50px;
     background-color: #20201D;
+    @apply px-5
+}
+
+.boxName{
+    @apply flex flex-col;
 }
 
 .title h1{
@@ -236,10 +287,10 @@ html {
     font-weight: 200;
     text-align: center;
 }
-.title h2 {
+.title .boxName h2 {
     @apply text-xl
 }
 
-.title h3 {
+.title .boxName h3 {
     @apply text-lg text-[#694A24]
 }

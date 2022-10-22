@@ -8,15 +8,19 @@ const Candid = (props) => {
     return (
         <motion.button 
         className='container'
-        whileHover={{scale:1.05}}>
+        whileHover={{scale:1.1,
+        transition:{duration:0.2},
+        }}>
             <img src={Frame}></img>
             <div className='title gap-x-5'>
-                <div className='boxNo'>
-                    <h1>{props.calon}</h1>
-                </div>
-                <div className='flex flex-col justify-between text-left'>
-                    <h2>{props.name}</h2>
-                    <h3>{props.division}</h3>
+                <div className='boxAll'>
+                    <div className='boxNo'>
+                        <h1>{props.calon}</h1>
+                    </div>
+                    <div className='boxName flex flex-col justify-between text-left'>
+                        <h2>{props.name}</h2>
+                        <h3>{props.division}</h3>
+                    </div>
                 </div>
             </div>
         </motion.button>

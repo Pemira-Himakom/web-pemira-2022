@@ -1,8 +1,8 @@
 import React from 'react'
-import Candid from '../components/Candid'
-import canImage from '../img/candidates/img.png'
-import Star1 from '../img/star1.png'
-import Star2 from '../img/star2.png'
+import Candid from '../../components/Candid'
+import canImage from '../../img/candidates/img.png'
+import Star1 from '../../img/star1.png'
+import Star2 from '../../img/star2.png'
 
 const candidates = [
     {id: 'a', calon: 1, name: 'Konang Tygazayn N', division: 'MIKAT'},
@@ -12,7 +12,7 @@ const candidates = [
 
 const Candidates = () => {
   return (
-    <div className='px-12 bg-[#21201D]'>
+    <div className='bg-[#21201D] px-8 w-screen h-max-screen flex justify-center p-auto m-auto'>
         <div className='candid-bg candid grid place-items-center w-screen h-screen flex flex-col font-prata'>
             <div className='eclipse eclipse-sm grid place-items-center'>
                 <div className='space-y-24'>

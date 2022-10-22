@@ -1,20 +1,16 @@
 import './App.css';
-import Home from './pages/Home';
-import About from './pages/About';
-// import Faq from './pages/FAQ';
-import Timeline from './pages/Timeline';
-import Candidates from './pages/Candidates';
-import Faq from './pages/FAQ';
+import Home from './pages/Homepage/Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Home/>   
-      <About/>
-      {/* <Faq/> */}
-      <Timeline/>
-      <Candidates/>
-      {/* <Faq/> */}
+    <div>
+      <Router>
+        <Routes>
+          <Route exact path='/' element={<Home/>}/>
+
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react'
 
 // import img and icons
-import Star1 from '../img/star1.png'
-import Star2 from '../img/star2.png'
+import Star1 from '../../img/star1.png'
+import Star2 from '../../img/star2.png'
 
 
 //import components 
-import Timeline_lg from '../components/timeline_lg'
+import Timeline_lg from '../../components/timeline_lg'
 
 
 export default function Timeline() {
