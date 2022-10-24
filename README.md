@@ -9,5 +9,4 @@
 ## To Pull :
 1. git pull origin front-end
 
-#web-pemira
 # web-pemira
