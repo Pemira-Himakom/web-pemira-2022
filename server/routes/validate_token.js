@@ -14,18 +14,31 @@ router.route("/").post((req, res) => {
       console.log(err);
     } else {
       // check if studentFound.token exists
-      if (studentFound.token) {
-        bcrypt.compare(inputToken, studentFound.token, (err, result) => {
-          if (err) {
-            console.log(err);
-            res.json({ status: false });
-          } else {
-            res.json({ status: result });
-          }
-        });
+      if (studentFound === null) {
+        res.json({ status: false, message: "Student not found" });
       } else {
-        // token = null
-        res.json({ status: false, message: `Token not found for ${inputNIM}` });
+        if (studentFound.token) {
+          // if student has a token assigned
+          if (studentFound.voted) {
+            // if student has already voted
+            res.json({ status: false, message: "Student already voted!" });
+          } else {
+            bcrypt.compare(inputToken, studentFound.token, (err, result) => {
+              if (err) {
+                console.log(err);
+                res.json({ status: false });
+              } else {
+                res.json({ status: result });
+              }
+            });
+          }
+        } else {
+          // token = null
+          res.json({
+            status: false,
+            message: `Token not found for ${inputNIM}`,
+          });
+        }
       }
     }
   });

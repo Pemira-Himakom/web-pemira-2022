@@ -44,20 +44,32 @@ router
     Candidate.findOneAndUpdate(
       { date: currentDate, candidateNumber: votedCandidate },
       { $inc: { voteCounter: 1 } }, // increment by 1
-      (err) => {
+      (err, foundCandidate) => {
         if (err) {
           console.log(err);
           res.json({ status: false });
         } else {
-          // find student w/ coresponding nim and update => voted: true
-          Student.findOneAndUpdate({ NIM: nim }, { voted: true }, (err) => {
-            if (err) {
-              console.log(err);
-              res.json({ status: false });
-            } else {
-              res.json({ status: true });
-            }
-          });
+          if (foundCandidate === null) {
+            res.json({ status: false, message: "Candidate not found" });
+          } else {
+            // find student w/ coresponding nim and update => voted: true
+            Student.findOneAndUpdate(
+              { NIM: nim },
+              { voted: true },
+              (err, studentFound) => {
+                if (err) {
+                  console.log(err);
+                  res.json({ status: false });
+                } else {
+                  if (studentFound === null) {
+                    res.json({ status: false, message: "Student not found" });
+                  } else {
+                    res.json({ status: true });
+                  }
+                }
+              }
+            );
+          }
         }
       }
     );

@@ -16,14 +16,20 @@ router.route("/authenticate").post((req, res) => {
       console.log(err);
       res.json({ status: false });
     } else {
-      bcrypt.compare(inputPassword, adminFound.password, (err, result) => {
-        if (err) {
-          console.log(err);
+      if (adminFound === null) {
+        {
           res.json({ status: false });
-        } else {
-          res.json({ status: result, adminID: adminFound._id });
         }
-      });
+      } else {
+        bcrypt.compare(inputPassword, adminFound.password, (err, result) => {
+          if (err) {
+            console.log(err);
+            res.json({ status: false });
+          } else {
+            res.json({ status: result, adminID: adminFound._id });
+          }
+        });
+      }
     }
   });
 });
@@ -46,14 +52,25 @@ router.route("/:adminID/assign").post((req, res) => {
           res.json({ status: false });
         } else {
           // find student by nim then update token
-          Student.findOneAndUpdate({ NIM: nim }, { token: hash }, (err) => {
-            if (err) {
-              console.log(err);
-              res.json({ status: false });
-            } else {
-              res.json({ status: true });
+          Student.findOneAndUpdate(
+            { NIM: nim },
+            { token: hash },
+            (err, studentFound) => {
+              if (err) {
+                console.log(err);
+                res.json({ status: false });
+              } else {
+                if (studentFound === null) {
+                  res.json({
+                    status: false,
+                    message: "Student not found in the database!",
+                  });
+                } else {
+                  res.json({ status: true });
+                }
+              }
             }
-          });
+          );
         }
       });
     }
@@ -75,12 +92,16 @@ router.route("/:adminID/student_list").get((req, res) => {
           res.json({ status: false });
         } else {
           // filter list to only display {NIM, name, voted}
-          const filteredList = list.reduce((result, student) => {
-            const { nim, name, voted } = student;
-            result.push({ nim, name, voted });
-            return result;
-          }, []);
-          res.json({ status: true, studentList: filteredList });
+          if (list === null) {
+            res.json({ status: false });
+          } else {
+            const filteredList = list.reduce((result, student) => {
+              const { nim, name, voted } = student;
+              result.push({ nim, name, voted });
+              return result;
+            }, []);
+            res.json({ status: true, studentList: filteredList });
+          }
         }
       });
     }
