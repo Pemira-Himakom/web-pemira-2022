@@ -1,6 +1,5 @@
 import React from 'react'
 import Candid from '../../components/Candid'
-import canImage from '../../img/candidates/img.png'
 import Star1 from '../../img/star1.png'
 import Star2 from '../../img/star2.png'
 
@@ -28,7 +27,7 @@ const Candidates = () => {
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
   )
 }

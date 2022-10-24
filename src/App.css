@@ -10,6 +10,10 @@ html {
     overflow-x: hidden;
 }
 
+img {
+    pointer-events: none;
+}
+
 .prim-color{
     color: #D4A976;
 }
@@ -19,8 +23,8 @@ html {
 }
 
 .circle-no {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
     background-color: #21201D;
     border-radius: 50%;
     place-items: center;
@@ -164,27 +168,23 @@ html {
 {
   0%
   {
-    transform: scale( 1 ) rotate(0deg);
+    transform: scale( 0.5 );
   }
-  20%
+  25%
   {
     transform: scale( 1.5 );
   }
-  40%
+  50%
   {
-    transform: scale( 1 ) ;
+    transform: scale( 0.5 ) ;
   }
-  60%
+  75%
   {
     transform: scale( 1.5 );
-  }
-  80%
-  {
-    transform: scale( 1 ) rotate(180deg);
   }
   100%
   {
-    transform: scale( 1 ) ;
+    transform: scale( 0.5 );
   }
 }
 
@@ -260,7 +260,6 @@ html {
 
 .container:hover > .title {
     background-position: right;
-    background-color: #fff;
 }
 
 .boxAll{
@@ -293,4 +292,19 @@ html {
 
 .title .boxName h3 {
     @apply text-lg text-[#694A24]
+}
+
+.faq {
+    height: 3rem;
+    width: 100%;
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-size: 300%;
+    background-position: left;
+    transition: background-position .3s ease-in-out;
+    /* background-color: #D4A976; */
+    border-radius: 0.2rem;
+}
+
+.faq:hover {
+    background-position: 100%;
 }

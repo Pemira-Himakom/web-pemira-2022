@@ -2,7 +2,7 @@ import React from 'react'
 import bar from '../../img/bar.png'
 import Timeline from './Timeline';
 import Candidates from './Candidates';
-import Faq from './FAQ';
+import Faq from './Faq';
 import About from './About';
 
 export default function Home() {
