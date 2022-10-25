@@ -1,8 +1,8 @@
 import React from 'react'
 
 // import img and icons
-import Star1 from '../../img/star1.png'
-import Star2 from '../../img/star2.png'
+import {ReactComponent as Star1} from '../../img/star1.svg'
+import {ReactComponent as Star2} from '../../img/star2.svg'
 
 
 //import components 
@@ -13,10 +13,10 @@ export default function Timeline() {
   return (
     <div className='bg-[#21201D] h-[90vh] w-screen pt-24 prim-color font-prata timeline-bg'>
         <div className='flex w-screen justify-center mb-10'>
-            <div className='h-fit flex  gap-x-12'>
-                <img src={Star1} alt='star'/>
+            <div className='h-fit flex gap-x-10'>
+                <Star1/>
                 <h1 className='text-2xl lg:text-5xl grid items-center'>Timeline</h1>
-                <img src={Star2} alt='star'/>
+                <Star2/>
             </div>
         </div>
         {/* Start Timeline Item */}

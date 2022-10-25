@@ -1,7 +1,9 @@
 import React from 'react'
 import Hima from '../../img/hima.png'
-import Star1 from '../../img/star1.png'
-import Star2 from '../../img/star2.png'
+import {ReactComponent as Star1} from '../../img/star1.svg'
+import {ReactComponent as Star2} from '../../img/star2.svg'
+// import Star1 from '../../img/star1.png'
+// import Star2 from '../../img/star2.png'
 
 const About = () => {
   return (
@@ -14,13 +16,13 @@ const About = () => {
 
         <div className='w-[80%] max-w-[50rem] h-[60vh] m-auto text-justify text-xl p-5'>
 
-          <div className='flex justify-evenly py-8'>
+          <div className='flex justify-evenly py-8 px-24'>
             <div className='grid items-center'>
-              <img src={Star1} alt='star'/>
+              <Star1/>
             </div>
             <h1 className='text-center font-prata text-2xl lg:text-5xl prim-color grid items-center'>About Pemira</h1>
             <div className='grid items-center'>
-              <img src={Star2} alt='star'/>
+              <Star2/>
             </div>
           </div>
 

@@ -1,17 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {ReactComponent as Plus} from '../img/plus.svg'
+import {ReactComponent as Minus} from '../img/minus.svg'
 
-const question = (props) => {
+
+const Question = (props) => {
+
+  const[showAns, setShowAns] = useState('0');
+  const click = () => setShowAns(!showAns);
+
+  let buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.addEventListener('click', function() {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      buttons.classList.remove('active');
+    });
+  });
+
   return (
-    <div className='w-full flex flex-row justify-start bg-prim-color rounded-lg py-2 px-5 font-sulangor'>
-        <div className='grid items-center'>
-            <h1 className='circle-no grid place-items-center prim-color'>{props.no}</h1>
+    <div onClick={click}>
+      <button className='faq px-4'>
+        <div className='flex justify-between'>
+          <h1 className='circle-no mr-4 grid place-items-center text-[#F1C88C] text-lg'>{props.no}</h1>
+          <div className='flex justify-between w-full'>
+            <h2 className='grid items-center'>{props.ques}</h2>
+            <span className='grid items-center'>
+              {showAns ? <Minus/> : <Plus/>}
+            </span>        
+          </div>
         </div>
-
-        <p className='ml-5 h-10 grid items-center text-xl text-[#21201D]'>{props.children}</p>
-      
+      </button>
+      <div className='font-inter text-[#E6E6E6]'>
+        {showAns ? <div className='ans px-14 py-5'>{props.ans}</div> : null}
+      </div>
     </div>
   )
 }
 
-export default question
+export default Question;
 

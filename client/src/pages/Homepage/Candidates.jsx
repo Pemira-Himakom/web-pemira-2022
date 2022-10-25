@@ -1,8 +1,7 @@
 import React from 'react'
 import Candid from '../../components/Candid'
-import canImage from '../../img/candidates/img.png'
-import Star1 from '../../img/star1.png'
-import Star2 from '../../img/star2.png'
+import {ReactComponent as Star1} from '../../img/star1.svg'
+import {ReactComponent as Star2} from '../../img/star2.svg'
 
 const candidates = [
     {id: 'a', calon: 1, name: 'Konang Tygazayn N', division: 'MIKAT'},
@@ -16,10 +15,10 @@ const Candidates = () => {
         <div className='candid-bg candid grid place-items-center w-screen h-screen flex flex-col font-prata'>
             <div className='eclipse eclipse-sm grid place-items-center'>
                 <div className='space-y-24'>
-                    <div className='flex justify-evenly px-72'>
-                        <img src={Star1} alt='star'/>
+                    <div className='flex justify-evenly px-80'>
+                        <Star1/>
                         <h1 className='text-2xl lg:text-5xl prim-color grid items-center'>Candidates</h1>
-                        <img src={Star2} alt='star'/>
+                        <Star2/>
                     </div>
                     <div className='flex flex-row w-[70%] m-auto gap-14'>
                         {candidates.map(({id, calon, name, division}) => (
@@ -28,7 +27,7 @@ const Candidates = () => {
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
   )
 }

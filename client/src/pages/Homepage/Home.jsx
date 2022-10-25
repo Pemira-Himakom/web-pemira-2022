@@ -2,8 +2,10 @@ import React from 'react'
 import bar from '../../img/bar.png'
 import Timeline from './Timeline';
 import Candidates from './Candidates';
-import Faq from './FAQ';
+import FAQ from './FAQ';
 import About from './About';
+
+import Candid1 from '../CandidateProfile/Candidate1'
 
 export default function Home() {
   return (
@@ -19,7 +21,8 @@ export default function Home() {
       <About/>
       <Timeline/>
       <Candidates/>
-      <Faq/>
+      <FAQ/>
+      <Candid1/>
 
     </div>
   )
