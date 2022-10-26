@@ -336,4 +336,11 @@ img {
     background-image: url('./img/candidates/smoke2.png');
 }
 
+.candidates .circle-no {
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    background-color: white;
+    border-radius: 50%;
+    place-items: center;
+}
 

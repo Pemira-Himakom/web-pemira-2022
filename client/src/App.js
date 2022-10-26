@@ -9,7 +9,7 @@ import TokenAssignment from "./pages/Admin/TokenAssignment";
 function App() {
   return (
     <div>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/admin">
@@ -19,7 +19,8 @@ function App() {
             <Route path="assign" element={<TokenAssignment />} />
           </Route>
         </Routes>
-      </Router>
+      </Router> */}
+      <Home/>
     </div>
   );
 }
