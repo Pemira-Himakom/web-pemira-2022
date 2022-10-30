@@ -20,7 +20,7 @@ const Candidates = () => {
                         <h1 className='text-2xl lg:text-5xl prim-color grid items-center'>Candidates</h1>
                         <Star2/>
                     </div>
-                    <div className='flex flex-row w-[70%] m-auto gap-14'>
+                    <div className='flex flex-row w-[70%] m-auto gap-16'>
                         {candidates.map(({id, calon, name, division}) => (
                             <Candid key={id} calon={calon} name={name} division={division}/>
                         ))}
