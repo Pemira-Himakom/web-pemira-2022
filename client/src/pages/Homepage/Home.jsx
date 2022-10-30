@@ -4,6 +4,7 @@ import Timeline from './Timeline';
 import Candidates from './Candidates';
 import FAQ from './FAQ';
 import About from './About';
+import Footer from './Footer';
 
 import Candid1 from '../CandidateProfile/Candidate1'
 
@@ -22,7 +23,9 @@ export default function Home() {
       <Timeline/>
       <Candidates/>
       <FAQ/>
-      <Candid1/>
+      {/* <Candid1/> */}
+      <Footer/>
+
 
     </div>
   )

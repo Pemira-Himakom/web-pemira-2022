@@ -1,11 +1,16 @@
 import React from 'react'
 import Frame from '../../img/candidates/img.png'
+import {ReactComponent as Star1} from '../../img/star1.svg'
+import {ReactComponent as Star2} from '../../img/star2.svg'
 
 const Candidate1 = () => {
   return (
     <div className='h-fit w-max-scren bg-[#21201D] font-prata candidates'>
 
-        <div className='h-fit flex flex-col lg:flex-row justify-center timeline-bg p-10'>
+
+    
+    {/* Candidates Header */}
+        <div className='h-fit flex flex-col lg:flex-row justify-center timeline-bg p-10 pb-28'>
 
             <div className='relative  m-auto h-[100%] mr-2 justify-center flex lg:pl-28'>
                 <img src={Frame}></img>
@@ -21,6 +26,39 @@ const Candidate1 = () => {
             </div>
         </div>
 
+    {/* cv */}
+        <div className='h-fit w-screen flex flex-col justify-center pb-20'>
+
+            <div className='flex justify-evenly px-32 pt-16 pb-5 '>
+                <div className='grid items-center'><Star1/></div>
+                    <h1 className='text-2xl lg:text-5xl prim-color grid items-center text-center'>Curriculum Vitae</h1>
+                <div className='grid items-center'><Star2/></div>
+            </div>
+
+            <div className='h-fit m-auto flex justify-center'>
+                <iframe className='w-[90vw] h-[75vh]' src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameborder="0"></iframe>
+            </div>
+
+
+        </div>
+
+    {/* Grand Design */}
+        <div className='h-fit w-screen flex flex-col justify-center pb-20'>
+
+            <div className='flex justify-evenly px-32 pt-16 pb-5 '>
+                <div className='grid items-center'><Star1/></div>
+                    <h1 className='text-2xl lg:text-5xl prim-color grid items-center text-center'>Grand Design</h1>
+                <div className='grid items-center'><Star2/></div>
+            </div>
+
+            <div className='h-fit m-auto flex justify-center'>
+                <iframe className='w-[90vw] h-[75vh]' src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameborder="0"></iframe>
+            </div>
+
+
+        </div>
+
+    {/* Visi dan Misi */}
         <div className='h-fit candidates-bg w-screen flex text-white justify-center candidates-bg py-28'>
 
             <div className='w-[90%] h-fit flex lg:flex-row flex-col'>
@@ -45,7 +83,7 @@ const Candidate1 = () => {
                     </div>
 
 
-                    <div className='text-left'>
+                    <div className='text-left '>
                         <ul className='space-y-3.5 w-[90%]'>
                             <li className='flex justify-start w-[100%]'>
                                 <h1 className='circle-no mr-4 grid place-items-center text-[#21201D] text-lg'>1</h1>
