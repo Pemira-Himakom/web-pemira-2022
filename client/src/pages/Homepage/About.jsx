@@ -8,7 +8,7 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 const About = () => {
   return (
     <div className='bg-[#D4A976] p-7 w-screen'>
-      <div class="bg-[#21201D] flex content justify-center rounded-tl-[60px] rounded-br-[60px]">
+      <div className="bg-[#21201D] flex content justify-center rounded-tl-[60px] rounded-br-[60px]">
         <div className='logo-sm logo-lg  w-[20%] h-[60vh] m-auto flex items-center justify-center'>
           <img className='scale-75' src={Hima} alt="himakom" />
         </div>

@@ -5,8 +5,8 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 
 const candidates = [
     {id: 'a', calon: 1, name: 'Konang Tygazayn N', division: 'MIKAT'},
-    {id: 'b', calon: 2, name: 'Kadek Ninda Nandita P', division: 'HUBLU'},
-    {id: 'c', calon: 3, name: 'Billy Fahd Qodama', division: 'PSDMA'}
+    {id: 'b', calon: 2, name: 'Kadek Ninda Nandita P', division: 'PSDMA'},
+    {id: 'c', calon: 3, name: 'Billy Fahd Qodama', division: 'KPM'}
 ];
 
 const Candidates = () => {

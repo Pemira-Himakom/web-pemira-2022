@@ -324,10 +324,21 @@ img {
     content: '';
     height: fit-content;
     display: block;
+    border-radius: 0.2rem;
     position: relative;
+    border: 2px dashed #D4A976;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3 ease;
+}
+
+@keyframes svg {
+    0% { transform: rotate(90deg); }
+    20% { transform: rotate(90deg); }
+    40% { transform: rotate(90deg); }
+    60% { transform: rotate(90deg); }
+    80% { transform: rotate(90deg); }
+    100% { transform: rotate(90deg); }
 }
 
 /* Candidates */
