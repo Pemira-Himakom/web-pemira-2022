@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         'primary' : '#a04e1f',
         'choco' : '#A04E1F',
+        'choco-border': '#D4A976',
         'choco-weak' : 'rgba(160, 78, 31, .4)',
         'whiteWeak' : '#E6E6E6'
       },
