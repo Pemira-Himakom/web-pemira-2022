@@ -5,6 +5,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 import Summary from "./pages/Admin/Summary";
 import Login from "./pages/Admin/Login";
 import TokenAssignment from "./pages/Admin/TokenAssignment";
+import { Vote } from "./pages/Vote";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="assign" element={<TokenAssignment />} />
           </Route>
+          <Route exact path='/vote' element={<Vote/>} />
         </Routes>
       </Router>
     </div>
