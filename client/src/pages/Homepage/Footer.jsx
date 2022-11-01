@@ -52,34 +52,30 @@ const Footer = () => {
         {/* Footer */}
         <div className='h-[30%] max-w-full flex justify-between relative font-poppins text-[#D9D9D9] mx-6 my-4'>
 
-          <div className='h-full max-w-[30%] flex flex-col justify-center relative '>
-              <div>
+           <div className='h-full max-w-[50%] 50%lg:max-w-[30%] flex flex-col justify-center relative'>
+              <div className='lg:mb-0 mb-2'>
                 <img src={hima} alt="" />
               </div>
-              <h1 className='font-bold text-[29px] '>HIMAKOM UGM</h1>
-              <div className='text-[15px] leading-tight'>
+              <h1 className='font-bold text-[18px] lg:text-[29px] leading-none lg:leading-normal'>HIMAKOM UGM</h1>
+              <div className='text-[10px] lg:text-[15px] leading-tight'>
                 <p>Gedung Fakultas MIPA UGM Sekip Utara,</p>
                 <p>Bulaksumur, Sinduadi, Mlati, Sleman, DI Yogyakarta</p>
               </div>
 
-              <div className='max-w-[78%] pt-6 text-[15px] '>
+              <div className='max-w-[78%] pt-6 text-[10px] lg:text-[15px] '>
                 <p>© HIMAKOM UGM - All rights reserved. Built with ♡</p>
               </div>
-            </div>
+           </div>
 
+          <div className='h-full max-w-[30%] flex flex-col justify-center relative'>
 
-          <div className='h-full max-w-[30%] flex justify-center relative bg-white'>
-            <div className='w-[100%] bg-red-200 flex flex-row justify-around'></div>    
-              <div>
-                {/* <img src={twitter} alt="" /> */}
-                halo
-              </div>         
-              <div>
-                {/* <img src={insta} alt="" /> */}
-                iyaw
-              </div>    
+              <div className='lg:mr-12 mt-3 lg:mt-28 flex flex-col lg:flex-row gap-3 lg:gap-8 w-fit '>
+                <a href=""><img src={twitter} alt="" className='scale-75 lg:scale-100 h-[45px] min-w-[55px]' /></a>
+                <a href=""><img src={insta} alt="" className='scale-75 pl-1 lg:pl-0 lg:scale-100 h-[45px] min-w-[45px]'/></a>
+              </div>
 
           </div>
+
         </div>
 
     </div>

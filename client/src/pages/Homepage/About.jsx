@@ -14,7 +14,7 @@ const About = () => {
         </div>
 
 
-        <div className='w-[80%] max-w-[50rem] h-[60vh] m-auto text-justify text-xl p-5'>
+        <div className='w-[80%] max-w-[50rem] h-fit lg:h-[60vh] m-auto text-justify text-xl pb-5 lg:p-5'>
 
           <div className='flex justify-evenly py-8 px-24'>
             <div className='grid items-center'>
@@ -26,7 +26,7 @@ const About = () => {
             </div>
           </div>
 
-          <p className='font-inter font-extralight text-lg text-[#E6E6E6]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+          <p className='font-inter font-extralight text-xs lg:text-lg text-[#E6E6E6]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
           </p>
         </div>
       </div>
