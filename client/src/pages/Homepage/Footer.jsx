@@ -1,6 +1,9 @@
 import React from 'react'
 import crown from '../../img/crown.png'
 import star5 from '../../img/Star5.png'
+import hima from '../../img/logo_hima.png'
+import insta from '../../img/insta.png'
+import twitter from '../../img/twitter.png'
 
 const Footer = () => {
   return (
@@ -47,8 +50,36 @@ const Footer = () => {
         </div>
 
         {/* Footer */}
-        <div className='h-[30%]'>
+        <div className='h-[30%] max-w-full flex justify-between relative font-poppins text-[#D9D9D9] mx-6 my-4'>
 
+          <div className='h-full max-w-[30%] flex flex-col justify-center relative '>
+              <div>
+                <img src={hima} alt="" />
+              </div>
+              <h1 className='font-bold text-[29px] '>HIMAKOM UGM</h1>
+              <div className='text-[15px] leading-tight'>
+                <p>Gedung Fakultas MIPA UGM Sekip Utara,</p>
+                <p>Bulaksumur, Sinduadi, Mlati, Sleman, DI Yogyakarta</p>
+              </div>
+
+              <div className='max-w-[78%] pt-6 text-[15px] '>
+                <p>© HIMAKOM UGM - All rights reserved. Built with ♡</p>
+              </div>
+            </div>
+
+
+          <div className='h-full max-w-[30%] flex justify-center relative bg-white'>
+            <div className='w-[100%] bg-red-200 flex flex-row justify-around'></div>    
+              <div>
+                {/* <img src={twitter} alt="" /> */}
+                halo
+              </div>         
+              <div>
+                {/* <img src={insta} alt="" /> */}
+                iyaw
+              </div>    
+
+          </div>
         </div>
 
     </div>
