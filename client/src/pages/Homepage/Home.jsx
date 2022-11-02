@@ -12,15 +12,18 @@ export default function Home() {
   return (
     <div className='mb-[-1px] w-screen'>
       {/* title */}
-      <header className="flex flex-row items-end px-48 h-screen shadow-inner 
-                         bg-fixed bg-center bg-cover bg-img-lg bg-img-sm">
-        <div className="h-fit title-sm title-lg prim-color inline-flex gap-12">
-          <img src={Bar}/>
-          <h1 className='tracking-wide flex items-end font-prata pb-48'>Pemilihan Raya Himakom 2022</h1>
+      <header className="flex flex-row items-center lg:items-end lg:px-48 h-screen shadow-inner 
+                         bg-fixed bg-center bg-cover bg-img-lg bg-img-sm justify-center lg:justify-start">
+        <div className="h-fit title-sm title-lg prim-color flex gap-24">
+          <img className='hidden lg:block' src={bar} alt='bar'/>
+          <h1 className='tracking-wide flex items-end text-center lg:text-left lg:pb-36 font-prata'>Pemilihan Raya Himakom 2022</h1>
         </div>
       </header>
       <About/>
-      <Timeline/>
+      <div className='lg:block hidden'>
+        <Timeline/>
+      </div>
+
       <Candidates/>
       <FAQ/>
       {/* <Candid1/> */}

@@ -6,14 +6,16 @@ import {GoTriangleLeft} from 'react-icons/go'
 import {ReactComponent as Star} from '../img/star.svg'
 
 const timeline_lg = () => {
+
+
+
     function isNow(startDate, endDate) {
          const Start = new Date(startDate).getTime();
          const End = new Date(endDate).getTime();
         return Date.now() < End && Date.now() > Start;
     }
 
-
-
+    console.log(isNow('2022-10-16T00:00:00', '2022-10-29T00:00:00'));
   return (
     <div className='process-wrapper'>
         <div className='progress-bar-container'>
@@ -37,7 +39,9 @@ const timeline_lg = () => {
 
                 <li className='step'>
                     <div className='step-inner'>
+
                         <div className={isNow('2022-10-31T00:00:00', '2022-11-06T23:59:59') ? 'circle today' : 'circle'}><Star/></div>
+
                         <h1 className='date'>31 Okt</h1>
                         <h1>Fit & Proper</h1>
                     </div>
