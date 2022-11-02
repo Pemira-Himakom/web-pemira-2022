@@ -18,11 +18,11 @@ const About = () => {
 
           <div className='flex justify-evenly py-8 px-24'>
             <div className='grid items-center'>
-              <Star1/>
+              <Star1 className='scale-[60%] lg:scale-100'/>
             </div>
-            <h1 className='text-center font-prata text-2xl lg:text-5xl prim-color grid items-center'>About Pemira</h1>
+            <h1 className='text-center font-prata text-lg md:text-xl lg:text-5xl prim-color grid items-center'>About Pemira</h1>
             <div className='grid items-center'>
-              <Star2/>
+              <Star2 className='scale-[60%] lg:scale-100'/>
             </div>
           </div>
 

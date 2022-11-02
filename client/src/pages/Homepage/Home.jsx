@@ -15,12 +15,12 @@ export default function Home() {
       <header className="flex flex-row items-center lg:items-end lg:px-48 h-screen shadow-inner 
                          bg-fixed bg-center bg-cover bg-img-lg bg-img-sm justify-center lg:justify-start">
         <div className="h-fit title-sm title-lg prim-color flex gap-24">
-          <img className='hidden lg:block' src={bar} alt='bar'/>
+          <img className='hidden lg:block' src={Bar} alt='bar'/>
           <h1 className='tracking-wide flex items-end text-center lg:text-left lg:pb-36 font-prata'>Pemilihan Raya Himakom 2022</h1>
         </div>
       </header>
       <About/>
-      <div className='lg:block hidden'>
+      <div className='block'>
         <Timeline/>
       </div>
 

@@ -76,7 +76,7 @@ img {
 }
 
 .eclipse {
-    @apply h-[120%] md:h-[135%] lg:h-[160%] xl:h-[200%] w-[75%] md:w-[80%] lg:w-[85%] xl:w-[90%];
+    @apply h-[120%] md:h-[135%] lg:h-[165%] xl:h-[200%] w-[75%] md:w-[80%] lg:w-[85%] xl:w-[90%];
     border-radius: 50%;
     border: 2px solid #D4A976;
     background-color: #21201D;
@@ -351,6 +351,14 @@ img {
 
 .content{
     content: "";
+}
+
+.ig {
+    transition: all .2s ease-in-out;
+}
+
+.ig:hover {
+    color: #D4A976;
 }
 
 
