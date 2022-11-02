@@ -1,4 +1,4 @@
-import Form from "./components/Form";
+import Form from "../../components/Form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -27,23 +27,15 @@ function Login() {
       });
   }
   return (
-    <div
-      style={{
-        margin: "auto",
-        textAlign: "center",
-        width: "60%",
-        border: "5px solid #FFFF00",
-        padding: "10px",
-        backgroundColor: "#F000FF",
-      }}
-    >
+    <>
       <Form
         title="SLAVE"
         identification="Codename"
         password="Secret Key"
+        submit="Hace"
         handleForm={handleForm}
       />
-    </div>
+    </>
   );
 }
 

@@ -6,12 +6,13 @@ export const AuthContext = createContext({
   login: () => {},
 });
 
-const AuthContextProvider = props => {
+const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const uiCtx = useContext(UIContext);
 
+  // admin and student authentication
   async function login(input) {
-    const response = await fetch("http://localhost:3001/api/validate_token", {
+    const response = await fetch("/api/validate_token", {
       headers: {
         "Content-Type": "application/json",
       },

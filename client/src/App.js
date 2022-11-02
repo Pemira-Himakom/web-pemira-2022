@@ -16,6 +16,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/vote" element={<Vote />} />
         <Route path="/admin">
           <Route index element={<AdminHome />} />
           <Route path="summary" element={<Summary />} />
