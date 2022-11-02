@@ -9,6 +9,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 import Summary from "./pages/Admin/Summary";
 import Login from "./pages/Admin/Login";
 import TokenAssignment from "./pages/Admin/TokenAssignment";
+import { Vote } from "./pages/Vote";
 
 function App() {
   return (

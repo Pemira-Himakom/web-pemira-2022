@@ -11,8 +11,15 @@ module.exports = {
         prata: ['Prata', 'serif']
         
       },
-      color: {
-        'primary' : '#a04e1f'
+      colors: {
+        'primary' : '#a04e1f',
+        'choco' : '#A04E1F',
+        'choco-border': '#D4A976',
+        'choco-weak' : 'rgba(160, 78, 31, .4)',
+        'whiteWeak' : '#E6E6E6'
+      },
+      backgroundImage: {
+        'vote' : "url('img/vote/BG.png')"
       }
     },
   },
