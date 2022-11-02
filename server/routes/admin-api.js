@@ -27,7 +27,11 @@ router.route("/authenticate").post((req, res) => {
             console.log(err);
             res.json({ status: false });
           } else {
-            res.json({ status: result, adminID: adminFound._id });
+            if (result) {
+              res.json({ status: result, adminID: adminFound._id });
+            } else {
+              res.json({ status: result });
+            }
           }
         });
       }
