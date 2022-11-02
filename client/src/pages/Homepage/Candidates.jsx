@@ -12,7 +12,7 @@ const candidates = [
 const Candidates = () => {
   return (
     <div className='bg-[#21201D] pt-12 px-8 w-screen h-max-screen flex justify-center p-auto m-auto '>
-        <div className='candid-bg candid grid place-items-center w-screen h-screen flex flex-col font-prata'>
+        <div className='candid-bg candid grid place-items-center w-screen h-screen flex-col font-prata'>
             <div className='eclipse grid place-items-center'>
                 <div className='space-y-24 text-center'>
                     <div className='flex justify-evenly px-80'>

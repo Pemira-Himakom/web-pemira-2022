@@ -6,12 +6,13 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 
 //import components 
 import Timeline_lg from '../../components/timeline_lg'
+import Timeline_sm from '../../components/timeline_sm'
 
 
 export default function Timeline() {
   return (
     <>
-        <div className='hidden md:block bg-[#21201D] h-[90vh] w-screen pt-24 prim-color font-prata timeline-bg'>
+        <div className='bg-[#21201D] min-h-[90vh] w-screen pt-24 prim-color font-prata timeline-bg'>
             <div className='flex w-screen justify-center mb-10'>
                 <div className='h-fit flex gap-x-10'>
                     <Star1/>
@@ -20,18 +21,17 @@ export default function Timeline() {
                 </div>
             </div>
             {/* Start Timeline Item */}
-            <div className='pt-2 w-screen'>
+            <div className='hidden md:block pt-2 w-screen'>
                 <Timeline_lg/>
+            </div>
+
+            <div className='md:hidden flex justify-center'>
+                <Timeline_sm/>
             </div>
 
             <div className='flex justify-center'>
             <div className='eclipse1'/>
 
-            </div>
-        </div>
-        <div className='block md:hidden'>
-            <div className='h-fit p-12'>
-                
             </div>
         </div>
     </>

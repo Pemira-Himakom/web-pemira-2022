@@ -9,23 +9,23 @@ const Footer = () => {
   return (
     <div className='h-fit w-screen bg-[#21201D] flex flex-col font-prata'>
         {/* Pre Footer */}
-        <div className='h-screen w-screen flex flex-row border-b-[4px] border-[#D4A976]'>
+        <div className='h-screen w-screen flex flex-row md:border-b-[4px] border-[#D4A976]'>
 
             <div className='w-[10%] lg:w-[22.5%]  flex flex-col'>
-              <div className='content  h-[60%]'></div>
-              <div className=' h-[40%] flex justify-center'>
+              <div className='content h-[60%]'></div>
+              <div className='h-[40%] flex justify-center'>
                 <img src={star5} alt=""  className='hidden md:block w-[35%] m-auto'/>
               </div>
             </div>
 
             <div className='w-[80%] lg:w-[55%] relative flex flex-col justify-center'>
 
-              <div className='content w-full h-[10%] '></div>
+              <div className='hidden md:block content w-full h-[10%]'/>
 
-              <div className='h-[90%] w-full overflow-hidden pt-8 px-7 rounded-t-[500px] border-[4px] border-b-0 border-[#D4A976] relative'>
+              <div className='h-[45%] md:h-full w-full overflow-hidden pt-4 md:pt-8 px-3 md:px-7 rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] relative'>
 
                 <div className='absolute top-[70%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[100%] flex flex-col justify-center'>
-                  <h1 className='text-[35px] lg:text-[90px] text-white text-center leading-none pb-5'>Pledge Your Allegiance</h1>
+                  <h1 className='text-[35px] lg:text-[90px] text-white text-center leading-none pb-5'>Pledge Your Allegiance!</h1>
 
                   <div className='w-[72%] m-auto text-[#D4A976]'>
                     <h2 className='text-[15px] lg:text-[38px] text-center'>Tentukan Pilihanmu pada</h2>
@@ -33,7 +33,7 @@ const Footer = () => {
                   </div>
 
                 </div>
-                <img src={crown} alt="crown" className='object-cover h-full lg:h-auto w-full rounded-t-[500px] border-[4px] border-b-0 border-[#D4A976] crown' />
+                <img src={crown} alt="crown" className='object-cover h-[97%] md:h-full lg:h-auto w-full rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] crown' />
 
               </div>
 
@@ -49,9 +49,14 @@ const Footer = () => {
         </div>
 
         {/* Footer */}
-        <div className='h-[30%] max-w-full flex justify-between relative font-poppins text-[#D9D9D9] mx-6 my-4'>
+        <div className='h-[30%] max-w-full items-center md:items-start
+                        flex justify-between flex-col md:flex-row
+                        relative font-poppins text-[#D9D9D9] 
+                        mx-6 my-4'>
 
-           <div className='h-full max-w-[50%] lg:max-w-[30%] flex flex-col justify-center relative'>
+           <div className='h-full max-w-[80%] lg:max-w-[30%] text-center md:text-left
+                           flex flex-col items-center md:items-start md:justify-center 
+                           relative'>
               <div className='lg:mb-0 mb-2'>
                 <Himakom className='scale-75 lg:scale-100'/>
               </div>
@@ -66,13 +71,13 @@ const Footer = () => {
               </div>
            </div>
 
-          <div className='h-full max-w-[30%] flex flex-col justify-center relative'>
+          <div className='h-full max-w-[75%] md:max-w-[50%] justify-center relative'>
 
-              <div className='lg:mr-12 mt-3 lg:mt-28 flex flex-col md:flex-row gap-3 lg:gap-8 w-fit ig'>
+              <div className='w-full md:w-fit lg:mr-12 mt-1 md:mt-12 lg:mt-28 inline-flex gap-1 md:gap-3 lg:gap-8 ig'>
                 {/* <a href=""><TfiTwitter size={50}/></a> */}
+                <a href="https://www.instagram.com/himakomugm/" target='_blank' className='scale-50 md:scale-100'><FaInstagram size={50}/></a>
                 <a href='https://www.instagram.com/himakomugm/' target='_blank' 
-                  className='grid items-center text-xs md:text-sm lg:text-base'>Instagram: @himakomugm</a>
-                <a href="https://www.instagram.com/himakomugm/" target='_blank'><FaInstagram size={50}/></a>
+                  className='grid items-center text-xs md:text-sm lg:text-base'>@himakomugm</a>
               </div>
 
           </div>

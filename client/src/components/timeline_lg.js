@@ -14,8 +14,6 @@ const timeline_lg = () => {
          const End = new Date(endDate).getTime();
         return Date.now() < End && Date.now() > Start;
     }
-
-    console.log(isNow('2022-10-16T00:00:00', '2022-10-29T00:00:00'));
   return (
     <div className='process-wrapper'>
         <div className='progress-bar-container'>
