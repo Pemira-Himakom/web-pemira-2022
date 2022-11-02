@@ -1,10 +1,10 @@
 import React from 'react'
-import bar from '../../img/bar.png'
+import Bar from '../../img/bar.svg'
 import Timeline from './Timeline';
 import Candidates from './Candidates';
 import FAQ from './FAQ';
 import About from './About';
-import Footer from './Footer';
+import Footer from './Footer'
 
 import Candid1 from '../CandidateProfile/Candidate1'
 
@@ -28,7 +28,6 @@ export default function Home() {
       <FAQ/>
       {/* <Candid1/> */}
       <Footer/>
-
 
     </div>
   )

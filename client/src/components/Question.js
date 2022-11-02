@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import {ReactComponent as Plus} from '../img/plus.svg'
 import {ReactComponent as Minus} from '../img/minus.svg'
 
@@ -16,6 +16,9 @@ const Question = (props) => {
       buttons.classList.remove('active');
     });
   });
+
+  const buttonRef = useRef(null)
+
 
   return (
     <div onClick={click}>

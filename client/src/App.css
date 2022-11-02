@@ -24,11 +24,10 @@ img {
 }
 
 .circle-no {
-    height: 1.5rem;
-    width: 1.5rem;
+    @apply h-[1.2rem] md:h-[1.4rem] lg:h-[1.5rem] w-[1.2rem] md:w-[1.4rem] lg:w-[1.5rem];
     background-color: #21201D;
     border-radius: 50%;
-    place-items: center;
+    /* place-items: center; */
 }
 
 @media only screen and (max-width: 640px) {
@@ -51,14 +50,6 @@ img {
         top: 0;
         left: 0;
     }
-    .eclipse-sm {
-        height: 150%;
-        width: 75%;
-        border-radius: 50%;
-        border: 1px solid #D4A976;
-        background-color: #21201D;
-    }
-
 }
 
 @media only screen and (min-width: 640px) {
@@ -69,7 +60,7 @@ img {
     .logo-lg {
         @apply flex;
     }
-    .bg-img-lg{
+    .bg-img-lg {
         background-image: url('./img/bg.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -82,13 +73,13 @@ img {
         /* top: 50%;
         left: 0; */
     }
-    .eclipse {
-        height: 190%;
-        width: 95%;
-        border-radius: 50%;
-        border: 2px solid #D4A976;
-        background-color: #21201D;
-    }
+}
+
+.eclipse {
+    @apply h-[120%] md:h-[135%] lg:h-[160%] xl:h-[200%] w-[75%] md:w-[80%] lg:w-[85%] xl:w-[90%];
+    border-radius: 50%;
+    border: 2px solid #D4A976;
+    background-color: #21201D;
 }
 
 /* Timeline */
@@ -249,7 +240,7 @@ img {
 
 /* frame */
 
-.title{
+.title {
     content: " ";
     width: 100%;
     margin: auto;
@@ -327,10 +318,21 @@ img {
     content: '';
     height: fit-content;
     display: block;
+    border-radius: 0.2rem;
     position: relative;
+    border: 2px dashed #D4A976;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3 ease;
+}
+
+@keyframes svg {
+    0% { transform: rotate(90deg); }
+    20% { transform: rotate(90deg); }
+    40% { transform: rotate(90deg); }
+    60% { transform: rotate(90deg); }
+    80% { transform: rotate(90deg); }
+    100% { transform: rotate(90deg); }
 }
 
 /* Candidates */

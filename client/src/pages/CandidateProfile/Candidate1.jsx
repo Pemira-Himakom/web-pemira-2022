@@ -12,9 +12,9 @@ const Candidate1 = () => {
     {/* Candidates Header */}
         <div className='h-fit flex flex-col lg:flex-row justify-center timeline-bg p-10 pb-28'>
 
-            <div className='relative  m-auto h-[100%] mr-2 justify-center flex lg:pl-28'>
+            <div className='relative h-[100%] mr-2 justify-center flex lg:pl-28'>
                 <img src={Frame}></img>
-                <h1 className='absolute m-auto z-10 text-[150px] lg:text-[300px] right-[0px] lg:right-[-30px] top-[54%] lg:top-[32%] text-white shadowm-xl '>1</h1>
+                <h1 className='absolute z-10 text-[150px] lg:text-[300px] right-[0px] lg:right-[-30px] top-[54%] lg:top-[32%] text-white shadowm-xl '>1</h1>
             </div>
 
             <div className='lg:w-[50%] mx-auto ml-2 relative flex justify-center lg:justify-start align-middle'>
@@ -29,7 +29,7 @@ const Candidate1 = () => {
     {/* cv */}
         <div className='h-fit w-screen flex flex-col justify-center pb-20'>
 
-            <div className='flex justify-evenly px-32 pt-16 pb-5 '>
+            <div className='flex justify-evenly px-80 pt-16 pb-5 '>
                 <div className='grid items-center'><Star1/></div>
                     <h1 className='text-2xl lg:text-5xl prim-color grid items-center text-center'>Curriculum Vitae</h1>
                 <div className='grid items-center'><Star2/></div>
@@ -45,7 +45,7 @@ const Candidate1 = () => {
     {/* Grand Design */}
         <div className='h-fit w-screen flex flex-col justify-center pb-20'>
 
-            <div className='flex justify-evenly px-32 pt-16 pb-5 '>
+            <div className='flex justify-evenly px-[22rem] pt-16 pb-5 '>
                 <div className='grid items-center'><Star1/></div>
                     <h1 className='text-2xl lg:text-5xl prim-color grid items-center text-center'>Grand Design</h1>
                 <div className='grid items-center'><Star2/></div>
