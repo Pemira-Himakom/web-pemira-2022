@@ -4,10 +4,11 @@ import { motion, transform } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 
 const Candid = (props) => {
-    // const nav = useNavigate();
+    const nav = useNavigate();
     return (
         <motion.button 
         className='container'
+        onClick={() => nav('/candid1')}
         whileHover={{scale:1.1,
         transition:{duration:0.2},
         }}>
