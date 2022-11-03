@@ -10,7 +10,7 @@ const Candid = (props) => {
     return (
         <motion.button 
         className='container'
-        onClick={() => nav('/candid')}
+        onClick={() => nav('/candid1')}
         whileHover={{scale:1.1,
         transition:{duration:0.2},
         }}>
