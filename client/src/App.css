@@ -83,8 +83,7 @@ img {
 }
 
 .eclipse {
-    @apply h-[120%] md:h-[135%] lg:h-[165%] xl:h-[200%] w-[75%] md:w-[80%] lg:w-[85%] xl:w-[90%];
-    border-radius: 50%;
+    @apply w-[100%] h-fit lg:h-[200%]  rounded-[100%];
     border: 2px solid #D4A976;
     background-color: #21201D;
 }
@@ -319,6 +318,25 @@ img {
 
 }
 
+#candid_mob .title_mb{
+    content: " ";
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-size: 300%;
+    background-position: left;
+}
+
+#candid_mob .title {
+    content: " ";
+    width: fit-content;
+    margin: auto;
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-size: 300%;
+    background-position: left;
+    transition: background-position .3s ease-in-out;
+    @apply flex  p-6 mt-3 justify-start;
+
+}
+
 .container:hover > .title {
     background-position: right;
 }
@@ -337,6 +355,13 @@ img {
     @apply px-5
 }
 
+#candid_mob .boxNo {
+    height: fit-content;
+    padding-top: 0.5rem;
+    background-color: #20201D;
+}
+
+
 .boxName{
     @apply flex flex-col;
 }
@@ -347,14 +372,28 @@ img {
     font-weight: 200;
     text-align: center;
 }
+
+.title_mb h1{
+    @apply text-4xl text-[#F1C88C];
+    margin:auto;
+    font-weight: 200;
+    text-align: center;
+}
 .title .boxName h2 {
     @apply text-xl
+}
+
+.title_mb h2 {
+    @apply text-[18px]
 }
 
 .title .boxName h3 {
     @apply text-base text-[#694A24]
 }
 
+.title_mb h3 {
+    @apply text-[15px] text-[#694A24]
+}
 .faq {
     height: 3rem;
     width: 100%;
@@ -445,6 +484,10 @@ img {
     color: #D4A976;
 }
 
+
+#a{
+
+}
 
 
 
