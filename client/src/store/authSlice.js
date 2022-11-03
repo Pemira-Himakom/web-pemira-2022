@@ -17,6 +17,13 @@ export const authSlice = createSlice({
     setUserLogout: (state) => {
       state.user = false;
     },
+    setUserLogin: (state) => {
+      state.user = true
+    },
+    setAdminLogin: (state) => {
+      state.admin = true
+    }
+
   },
 });
 
@@ -26,25 +33,33 @@ export const login = (input, command) => {
     dispatch(setLoading());
     const url = getURL(command);
 
-    const sendRequest = async () => {
+    const sendRequest = async (input) => {
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(input),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
 
       if (!response.ok) {
         throw new Error("Bad request. Check server");
       }
 
-      return response;
+      return response.json();
     };
 
     try {
-      const result = await sendRequest();
+      const result = await sendRequest(input);
+      
+      console.log(result)
+      if(result.status) {
+        dispatch(setSuccess())
+        setInterval(()=>{dispatch(setUserLogin())}, 800)
+      } else {
+        dispatch(setError(result.message))
+      }
 
-      console.log(result);
-
-      dispatch(setSuccess());
     } catch (error) {
       dispatch(setError());
     }
@@ -53,17 +68,17 @@ export const login = (input, command) => {
 
 function getURL(command, adminID) {
   if (command === "LOGIN_ADMIN") {
-    return "api/admin/authenticate";
+    return "/api/admin/authenticate";
   } else if (command === "LOGIN_USER") {
-    return "api/validate_token";
+    return "/api/validate_token/async";
   } else if (command === "ASSIGN_TOKEN") {
-    return `api/admin/${adminID}/assign`;
+    return `/api/admin/${adminID}/assign`;
   } else if (command === "RECAP") {
-    return `api/admin/${adminID}/assign`
+    return `/api/admin/${adminID}/assign`;
   }
 }
 
-export const { setAdminLogout, setUserLogout, setUserLogin } =
+export const { setAdminLogout, setUserLogout, setUserLogin, setAdminLogin } =
   authSlice.actions;
 
 export default authSlice.reducer;

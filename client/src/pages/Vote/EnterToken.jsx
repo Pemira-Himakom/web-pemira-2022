@@ -31,7 +31,9 @@ const EnterToken = () => {
     const inputNIM = nimRef.current.value;
     const inputToken = tokenRef.current.value;
     const input = { inputNIM, inputToken };
-    login(input, "LOGIN_USER");
+
+    dispatch(login(input, "LOGIN_USER"));
+
     e.preventDefault();
   };
 

@@ -1,15 +1,16 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../../context/authcontext";
+import {useSelector} from "react-redux"
 import EnterToken from "./EnterToken";
 import VotingPage from "./VotingPage";
 
+
 const Vote = () => {
-  const authCtx = useContext(AuthContext);
-  
+  const auth = useSelector(state => state.auth)  
+  console.log(auth)
   return (
     <>
-      {!authCtx.isLoggedIn && <EnterToken />}
-      {authCtx.isLoggedIn && <VotingPage />}
+      {!auth.user && <EnterToken />}
+      {auth.user && <VotingPage />}
     </>
   );
 };

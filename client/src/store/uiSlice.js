@@ -23,7 +23,7 @@ export const uiSlice = createSlice({
     resetUIState: (state) => {
       state.loading = false;
       state.success = false;
-      state.error = false;
+      state.error = {};
     },
   },
 });
