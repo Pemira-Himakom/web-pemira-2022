@@ -1,12 +1,29 @@
 import { useContext, useRef } from "react";
 import StarLeft from "../../img/vote/StarLeft.svg";
 import StarRight from "../../img/vote/StarRight.svg";
-import { AuthContext } from "../../context/authcontext";
-import { UIContext } from "../../context/uicontext";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setLoading,
+  setSuccess,
+  setError,
+  resetUIState,
+} from "../../store/uiSlice";
+import {
+  setAdminLogout,
+  setUserLogout,
+  setUserLogin,
+  login,
+} from "../../store/authSlice";
 
 const EnterToken = () => {
-  const authCtx = useContext(AuthContext);
-  const UICtx = useContext(UIContext);
+  const ui = useSelector((state) => {
+    return state.ui;
+  });
+
+  const dispatch = useDispatch();
+
   const nimRef = useRef();
   const tokenRef = useRef();
 
@@ -14,18 +31,17 @@ const EnterToken = () => {
     const inputNIM = nimRef.current.value;
     const inputToken = tokenRef.current.value;
     const input = { inputNIM, inputToken };
-
+    login(input, "LOGIN_USER");
     e.preventDefault();
-    authCtx.login(input);
   };
 
   const changeHandler = () => {
-    UICtx.resetAuthState();
+    dispatch(resetUIState());
   };
 
   const Fail = (
     <div className="bg-red-400 py-1 text-center absolute w-full">
-      {UICtx.authError}
+      {ui.error.message}
     </div>
   );
   const Success = (
@@ -36,14 +52,14 @@ const EnterToken = () => {
 
   return (
     <>
-      {UICtx.authError && Fail}
-      {UICtx.authSuccess && Success}
+      {ui.error.status && Fail}
+      {ui.success && Success}
       <div className="bg-vote w-screen h-screen bg-cover pt-10 flex justify-center items-center font-prata">
         <form
           className="border-[15px] bg-[#E6E6E6] flex flex-col border-choco-weak outline outline-4 outline-choco min-w-[40vw] w-fit min-h-[60vh] py-20 px-8 mx-auto"
           onSubmit={handleLogin}
         >
-          {UICtx.authSuccess && <></>}
+          {ui.success && <></>}
           <h3 className="flex justify-center items-center ">
             <img src={StarLeft} alt="star left" className="inline-block" />
             <span className="text-choco text-4xl">Login</span>
