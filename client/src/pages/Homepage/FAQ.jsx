@@ -1,6 +1,4 @@
 import React, {useRef, useState, useEffect } from 'react'
-import Question from '../../components/Question.js'
-import $ from 'jquery'
 import {ReactComponent as Star1} from '../../img/star1.svg'
 import {ReactComponent as Star2} from '../../img/star2.svg'
 import {ReactComponent as Plus} from '../../img/plus.svg'

@@ -3,6 +3,7 @@ import crown from '../../img/crown.png'
 import star5 from '../../img/Star5.png'
 import { FaInstagram } from 'react-icons/fa'
 import { ReactComponent as Himakom} from '../../img/himakom.svg'
+import { ReactComponent as Star4} from '../../img/star4.svg'
 
 
 const Footer = () => {
@@ -22,7 +23,7 @@ const Footer = () => {
 
               <div className='hidden md:block content w-full h-[10%]'/>
 
-              <div className='h-[45%] md:h-full w-full overflow-hidden pt-4 md:pt-8 px-3 md:px-7 rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] relative'>
+              <div className='h-[60%] md:h-full w-full overflow-hidden pt-4 md:pt-8 px-3 md:px-7 rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] relative'>
 
                 <div className='absolute top-[70%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[100%] flex flex-col justify-center'>
                   <h1 className='text-[35px] lg:text-[90px] text-white text-center leading-none pb-5'>Pledge Your Allegiance!</h1>
@@ -34,8 +35,12 @@ const Footer = () => {
 
                 </div>
                 <img src={crown} alt="crown" className='object-cover h-[97%] md:h-full lg:h-auto w-full rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] crown' />
-
               </div>
+                <div className='inline-flex block md:hidden'>
+                  <Star4 className='w-[35%] m-auto scale-75'/>
+                  <Star4 className='w-[35%] m-auto scale-75 mt-12'/>
+                  <Star4 className='w-[35%] m-auto scale-75'/>
+                </div>
 
             </div>
 
@@ -73,7 +78,7 @@ const Footer = () => {
 
           <div className='h-full max-w-[75%] md:max-w-[50%] justify-center relative'>
 
-              <div className='w-full md:w-fit lg:mr-12 mt-1 md:mt-12 lg:mt-28 inline-flex gap-1 md:gap-3 lg:gap-8 ig'>
+              <div className='w-full md:w-fit lg:mr-12 mt-1 md:mt-12 lg:mt-28 inline-flex gap-0 md:gap-3 lg:gap-8 ig'>
                 {/* <a href=""><TfiTwitter size={50}/></a> */}
                 <a href="https://www.instagram.com/himakomugm/" target='_blank' className='scale-50 md:scale-100'><FaInstagram size={50}/></a>
                 <a href='https://www.instagram.com/himakomugm/' target='_blank' 

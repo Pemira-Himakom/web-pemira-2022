@@ -4,14 +4,14 @@ import {ReactComponent as Star1} from '../../img/star1.svg'
 import {ReactComponent as Star2} from '../../img/star2.svg'
 
 const candidates = [
-    {id: 'a', calon: 1, name: 'Konang Tygazayn N', division: 'MIKAT'},
-    {id: 'b', calon: 2, name: 'Kadek Ninda NP', division: 'PSDMA'},
+    {id: 'a', calon: 1, name: 'Kadek Ninda NP', division: 'PSDMA'},
+    {id: 'b', calon: 2, name: 'Konang Tygazayn N', division: 'MIKAT'},
     {id: 'c', calon: 3, name: 'Billy Fahd Qodama', division: 'KPM'}
 ];
 
 const Candidates = () => {
   return (
-    <div className='bg-[#21201D] pt-12 px-8 w-screen h-max-screen flex justify-center p-auto m-auto '>
+    <div className='bg-[#21201D] py-12 px-[1.8rem] md:px-8 w-screen h-max-screen flex justify-center p-auto m-auto '>
         <div className='candid-bg candid grid place-items-center w-screen h-screen flex-col font-prata'>
             <div className='eclipse grid place-items-center'>
                 <div className='space-y-24 text-center'>
