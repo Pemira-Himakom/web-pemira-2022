@@ -18,12 +18,11 @@ export const authSlice = createSlice({
       state.user = false;
     },
     setUserLogin: (state) => {
-      state.user = true
+      state.user = true;
     },
     setAdminLogin: (state) => {
-      state.admin = true
-    }
-
+      state.admin = true;
+    },
   },
 });
 
@@ -51,15 +50,16 @@ export const login = (input, command) => {
 
     try {
       const result = await sendRequest(input);
-      
-      console.log(result)
-      if(result.status) {
-        dispatch(setSuccess())
-        setInterval(()=>{dispatch(setUserLogin())}, 800)
-      } else {
-        dispatch(setError(result.message))
-      }
 
+      console.log(result);
+      if (result.status) {
+        dispatch(setSuccess());
+        setInterval(() => {
+          dispatch(setUserLogin());
+        }, 800);
+      } else {
+        dispatch(setError(result.message));
+      }
     } catch (error) {
       dispatch(setError());
     }
@@ -70,7 +70,7 @@ function getURL(command, adminID) {
   if (command === "LOGIN_ADMIN") {
     return "/api/admin/authenticate";
   } else if (command === "LOGIN_USER") {
-    return "/api/validate_token/async";
+    return "/api/validate_token";
   } else if (command === "ASSIGN_TOKEN") {
     return `/api/admin/${adminID}/assign`;
   } else if (command === "RECAP") {
