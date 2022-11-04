@@ -39,6 +39,14 @@ router.route("/authenticate").post((req, res) => {
   });
 });
 
+router.route("/authenticateAsync").post( async (req, res) => {
+  try{
+
+  } catch (error){
+      res.json({status: false, message: error.message});
+  }
+});
+
 // assign token
 router.route("/:adminID/assign").post((req, res) => {
   // add token to corresponding user
