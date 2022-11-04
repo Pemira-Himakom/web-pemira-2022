@@ -1,19 +1,27 @@
 "use strict";
 
 import express from "express";
+import jwt from "jsonwebtoken";
 
 import Candidate from "../models/Candidate.js";
 import Student from "../models/Student.js";
 
 const router = express.Router();
 
-router.route("/").post(async (req, res) => {
+router.route("/jwt").post(authenticateToken, async (req, res) => {
   try {
-    const { votedCandidate, nim } = req.body;
+    const { votedCandidate } = req.body;
+    const { nim } = req.user;
     const date = new Date(); // get current date
     const currentDate = new Date(
-      `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+      `${date.getFullYear()}-${
+        date.getMonth() + 1
+      }-${`0${date.getDate()}`.slice(-2)}`
     );
+
+    const foundStudent = await Student.findOne({ NIM: nim });
+    if (!foundStudent) throw new Error("Student not found!");
+    if (foundStudent.voted) throw new Error("Student already voted!");
 
     // increment voteCounter of voted candidate  + current date
     const foundCandidate = await Candidate.findOneAndUpdate(
@@ -22,47 +30,58 @@ router.route("/").post(async (req, res) => {
     );
 
     if (!foundCandidate) {
-      throw new Error("Candidate not found!");
+      throw new Error("Candidate not found in current time span!");
     }
 
-    const foundStudent = await Student.findOneAndUpdate(
-      { NIM: nim },
-      { voted: true }
-    );
+    // set student vote = true
+    await Student.findByIdAndUpdate(foundStudent._id, { voted: true });
 
-    if (!foundStudent) {
-      throw new Error("Student not found! Please check your NIM input.");
-    }
-
-    res.json(foundStudent);
+    res.json({
+      status: true,
+      message: `Vote successful for candidate number ${votedCandidate}`,
+      foundCandidate,
+    });
   } catch (error) {
     res.json({ status: false, message: error.message });
   }
 });
 
-export default router;
+// middleware
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401);
 
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}
+
+export default router;
 
 // delete later (add new candidate)
 
 // router.route("/").get((req, res) => {
-  // const date = new Date();
-  // const tanggal = `${date.getFullYear()}-${
-  //   date.getMonth() + 1
-  // }-${date.getDate()}`;
-  // const newCandidate = new Candidate({
-  //   name: "name1",
-  //   candidateNumber: 1,
-  //   voteCounter: 0,
-  //   date: new Date(tanggal),
-  // });
-  // newCandidate.save();
-  // res.json(newCandidate);
-  // Candidate.find((err, candidateList) => {
-  //   if (err) {
-  //     console.log(err);
-  //   } else {
-  //     res.json(candidateList);
-  //   }
-  // });
-// })
+//   const date = new Date();
+//   const tanggal = `${date.getFullYear()}-${
+//     date.getMonth() + 1
+//   }-${`0${date.getDate()}`.slice(-2)}`;
+//   console.log(tanggal);
+//   const newCandidate = new Candidate({
+//     name: "name1",
+//     candidateNumber: 1,
+//     voteCounter: 0,
+//     date: new Date(tanggal),
+//   });
+//   newCandidate.save();
+//   res.json(newCandidate);
+//   Candidate.find((err, candidateList) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       res.json(candidateList);
+//     }
+//   });
+// });

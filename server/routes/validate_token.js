@@ -37,16 +37,10 @@ router.route("/").post(async (req, res) => {
       process.env.ACCESS_TOKEN_SECRET
     );
 
-    const verifiedToken = jwt.verify(
-      accessToken,
-      process.env.ACCESS_TOKEN_SECRET
-    );
-
     res.json({
       status: true,
       message: "Successful authenticaton! Proceed to vote.",
       accessToken: accessToken, // add expire time
-      test: verifiedToken,
     });
   } catch (error) {
     res.json({ status: false, message: error.message });
