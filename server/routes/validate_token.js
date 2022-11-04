@@ -31,17 +31,30 @@ router.route("/").post(async (req, res) => {
       throw new Error("Incorrect Token");
     }
 
+    // Create jwt token
+    const accessToken = jwt.sign(
+      { nim: inputNIM },
+      process.env.ACCESS_TOKEN_SECRET
+    );
+
+    const verifiedToken = jwt.verify(
+      accessToken,
+      process.env.ACCESS_TOKEN_SECRET
+    );
+
     res.json({
       status: true,
       message: "Successful authenticaton! Proceed to vote.",
+      accessToken: accessToken, // add expire time
+      test: verifiedToken,
     });
   } catch (error) {
     res.json({ status: false, message: error.message });
   }
 });
 
-//jwt
-router.route("/jwt").post((req, res) => {
+//jwt delete later
+router.route("/jwt/login").post((req, res) => {
   // Authenticate User
   const { username } = req.body;
   const user = { name: username };
@@ -50,9 +63,20 @@ router.route("/jwt").post((req, res) => {
   res.json({ accesstoken: accessToken });
 });
 
+router.route("/jwt/posts").get(authenticateToken, (req, res) => {
+  res.json("hhee");
+});
 // middleware
-// function authenticateToken((req,res,nex) =>{
+function authenticateToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (token == null) return res.sendStatus(401);
 
-// });
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403);
+    req.user = user;
+    next();
+  });
+}
 
 export default router;
