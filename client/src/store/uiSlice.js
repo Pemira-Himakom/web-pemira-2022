@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   success: false,
   error: {},
+  confirmation: false,
 };
 
 export const uiSlice = createSlice({
@@ -25,6 +26,12 @@ export const uiSlice = createSlice({
       state.success = false;
       state.error = {};
     },
+    setConfirmation: (state) => {
+      state.confirmation = true;
+    },
+    resetConfirmation: (state) => {
+      state.confirmation = false;
+    }
   },
 });
 

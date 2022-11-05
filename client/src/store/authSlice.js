@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setLoading, setSuccess, setError, resetUIState } from "./uiSlice";
+import { setLoading, setSuccess, setError } from "./uiSlice";
 
 const initialState = {
   admin: false,
@@ -54,7 +54,10 @@ export const login = (input, command) => {
       console.log(result);
       if (result.status) {
         dispatch(setSuccess());
-        setInterval(() => {
+
+        localStorage.setItem("token", result.accessToken);
+
+        setTimeout(() => {
           dispatch(setUserLogin());
         }, 800);
       } else {

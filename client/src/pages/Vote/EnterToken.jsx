@@ -1,21 +1,11 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import StarLeft from "../../img/vote/StarLeft.svg";
 import StarRight from "../../img/vote/StarRight.svg";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import {
-  setLoading,
-  setSuccess,
-  setError,
-  resetUIState,
-} from "../../store/uiSlice";
-import {
-  setAdminLogout,
-  setUserLogout,
-  setUserLogin,
-  login,
-} from "../../store/authSlice";
+import { resetUIState } from "../../store/uiSlice";
+import { login } from "../../store/authSlice";
 
 const EnterToken = () => {
   const ui = useSelector((state) => {

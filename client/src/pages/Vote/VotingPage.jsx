@@ -1,6 +1,12 @@
+import { useRef, useState } from "react";
 import leftFlower from "../../img/vote/leftFlower.svg";
 import rightFlower from "../../img/vote/rightFlower.svg";
 import candidate from "../../img/candidates/removal.png";
+
+// redux
+import { useDispatch } from "react-redux";
+import { setUserLogout } from "../../store/authSlice";
+import { resetUIState } from "../../store/uiSlice";
 
 const candidates = [
   { no: "1", name: "Achmad Hadzami Setiawan" },
@@ -11,6 +17,22 @@ const candidates = [
 const VotingPage = () => {
   return (
     <>
+      <div className="flex justify-center items-center bg-gray-overlay w-screen h-screen absolute z-10">
+        <div className="bg-white font-prata pt-12 pb-8 px-10">
+          <h2 className="text-center text-3xl text-choco">Confirmation</h2>
+          <p className="w-60 text-center text-sm p-4 font-inter text-choco my-4">
+            Are you sure you want to vote for X Ini nama calon makomji
+          </p>
+          <div className="flex justify-center gap-8 text-sm mt-4">
+            <button className="border-2 py-[2px] px-4 w-24 border-choco text-choco">
+              Cancel
+            </button>
+            <button className="border-2 py-[2px] px-4 w-24 bg-choco text-white border-choco">
+              Vote
+            </button>
+          </div>
+        </div>
+      </div>
       <div className="bg-[#B4B4B4]">
         <img
           src={leftFlower}
@@ -34,6 +56,31 @@ const VotingPage = () => {
 };
 
 const Candid = (props) => {
+  const dispatch = useDispatch();
+  const optionRef = useRef();
+  const [isUserConfirmed, setIsUserConfirmed] = useState(false);
+
+  const handleVote = async () => {
+    const token = localStorage.getItem("token");
+    localStorage.removeItem("token");
+
+    const response = await fetch("/api/vote", {
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      method: "POST",
+      body: JSON.stringify({
+        votedCandidate: optionRef.current.value,
+      }),
+    });
+
+    response.json().then(async (data) => {
+      dispatch(setUserLogout());
+      dispatch(resetUIState());
+    });
+  };
+
   return (
     <div className="w-64 h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col">
       <div className="bg-choco border-4 border-choco-border h-[272px]">
@@ -50,7 +97,12 @@ const Candid = (props) => {
         </div>
       </div>
       <div className="justify-self-end">
-        <button className="bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5">
+        <button
+          className="bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5"
+          value={props.no}
+          ref={optionRef}
+          onClick={handleVote}
+        >
           Vote
         </button>
       </div>

@@ -16,7 +16,8 @@ module.exports = {
         'choco' : '#A04E1F',
         'choco-border': '#D4A976',
         'choco-weak' : 'rgba(160, 78, 31, .4)',
-        'whiteWeak' : '#E6E6E6'
+        'whiteWeak' : '#E6E6E6',
+        'gray-overlay' : 'rgba(103, 103, 103, .7)'
       },
       backgroundImage: {
         'vote' : "url('img/vote/BG.png')"

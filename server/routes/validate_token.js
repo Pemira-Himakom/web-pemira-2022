@@ -34,13 +34,14 @@ router.route("/").post(async (req, res) => {
     // Create jwt token
     const accessToken = jwt.sign(
       { nim: inputNIM },
-      process.env.ACCESS_TOKEN_SECRET
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "15000" } // change to 3 menit later
     );
 
     res.json({
       status: true,
       message: "Successful authenticaton! Proceed to vote.",
-      accessToken: accessToken, // add expire time
+      accessToken: accessToken,
     });
   } catch (error) {
     res.json({ status: false, message: error.message });

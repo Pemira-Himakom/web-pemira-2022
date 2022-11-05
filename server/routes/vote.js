@@ -8,7 +8,7 @@ import Student from "../models/Student.js";
 
 const router = express.Router();
 
-router.route("/jwt").post(authenticateToken, async (req, res) => {
+router.route("/").post(authenticateToken, async (req, res) => {
   try {
     const { votedCandidate } = req.body;
     const { nim } = req.user;
@@ -28,7 +28,7 @@ router.route("/jwt").post(authenticateToken, async (req, res) => {
       { date: currentDate, candidateNumber: votedCandidate },
       { $inc: { voteCounter: 1 } }
     );
-
+    console.log(foundCandidate);
     if (!foundCandidate) {
       throw new Error("Candidate not found in current time span!");
     }
@@ -53,7 +53,7 @@ function authenticateToken(req, res, next) {
   if (token == null) return res.sendStatus(401);
 
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403);
+    if (err) return res.json({ status: false, message: err.message });
     req.user = user;
     next();
   });

@@ -39,11 +39,16 @@ router.route("/authenticate").post((req, res) => {
   });
 });
 
-router.route("/authenticateAsync").post( async (req, res) => {
-  try{
+router.route("/authenticate/async").post(async (req, res) => {
+  try {
+    const { inputUsername, inputPassword } = req.body;
 
-  } catch (error){
-      res.json({status: false, message: error.message});
+    const foundAdmin = await Admin.findOne({ username: inputUsername });
+    if (!foundAdmin) throw new Error("Admin not found!");
+
+    res.json(foundAdmin);
+  } catch (error) {
+    res.json({ status: false, message: error.message });
   }
 });
 
