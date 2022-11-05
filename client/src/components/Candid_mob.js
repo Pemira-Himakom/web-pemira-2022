@@ -7,18 +7,19 @@ const Candid = (props) => {
     const nav = useNavigate();
     return (
         <motion.button 
-        className='container'
+        className='grid place-items-center '
+        id='candid_mob'
         onClick={() => nav(`/candid${props.calon}`)}
         whileHover={{scale:1.1,
         transition:{duration:0.2},
         }}>
-            <img src={Frame} className='overflow-visible'></img>
-            <div className='title gap-x-5'>
-                <div className='boxAll'>
-                    <div className='boxNo'>
+            <img src={Frame} className='overflow-visible w-[100%]'></img>
+            <div className='title_mb mx-auto w-[80%] relative p-3'>
+                <div className='justify-start'>
+                    <div className='boxNo min-w-[100%]'>
                         <h1>{props.calon}</h1>
                     </div>
-                    <div className='boxName flex flex-col justify-between text-left'>
+                    <div className='flex flex-col justify-start text-center mt-3'>
                         <h2>{props.name}</h2>
                         <h3>{props.division}</h3>
                     </div>

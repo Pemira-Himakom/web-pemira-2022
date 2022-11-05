@@ -8,7 +8,8 @@ module.exports = {
         archivo: ["archivo", "sans-serif"],
         garamond: ["garamond", "sans-serif"],
         inter: ['Inter', 'sans-serif'],
-        prata: ['Prata', 'serif']
+        prata: ['Prata', 'serif'],
+        poppins: ['Poppins', 'serif']
         
       },
       colors: {
