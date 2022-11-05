@@ -8,7 +8,7 @@ import { ReactComponent as Star4} from '../../img/star4.svg'
 
 const Footer = () => {
   return (
-    <div className='h-fit w-screen bg-[#21201D] flex flex-col font-prata'>
+    <div className='h-fit w-screen bg-[#21201D] flex flex-col font-prata timeline-bg-sm-l'>
         {/* Pre Footer */}
         <div className='h-screen w-screen flex flex-row md:border-b-[4px] border-[#D4A976]'>
 
