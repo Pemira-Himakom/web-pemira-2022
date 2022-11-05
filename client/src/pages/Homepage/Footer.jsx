@@ -34,7 +34,7 @@ const Footer = () => {
                   </div>
 
                 </div>
-                <img src={crown} alt="crown" className='object-cover h-[97%] md:h-full lg:h-auto w-full rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] crown' />
+                <img src={crown} alt="crown" className='object-cover h-[97%] md:h-full w-full rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] crown' />
               </div>
                 <div className='inline-flex block md:hidden'>
                   <Star4 className='w-[35%] m-auto scale-75'/>
