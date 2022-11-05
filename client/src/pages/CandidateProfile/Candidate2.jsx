@@ -40,7 +40,7 @@ const misi = [
             <div className='lg:w-[50%] mx-auto ml-6 relative flex justify-center lg:justify-start align-middle'>
                 <div className='m-auto pt-[10%] lg:pt-[25%] w-[100%]'>
                     <h1 className='text-[50px] text-center lg:text-left lg:text-[100px]
-                                   lg:w-[90%] leading-[0.9] text-white uppercase'>konang tygazayn n</h1>
+                                   lg:w-[90%] leading-[0.9] text-white uppercase'>konang tyagazain n</h1>
                     <h2 className ='text-[30px] text-center lg:pl-1 lg:text-left lg:text-[55px] text-[#D4A976] leading-none lg:leading-[0.9] py-1'>MIKAT</h2>
                     <h3 className ='text-[28px] text-center lg:pl-2 lg:text-left lg:text-[55px] text-[#D4A976] leading-none'>2021</h3>
                 </div>

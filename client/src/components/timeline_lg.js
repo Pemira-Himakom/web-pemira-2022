@@ -53,13 +53,11 @@ const timeline_lg = () => {
                     </div>
                 </li>
 
-                <li className='step a
-                ctive'><div className='step-inner active'>
-                        <div className={isNow('2022-11-09T00:00:00', '2022-11-16T23:59:59') ? 'circle today' : 'circle'}><Star/></div>
-                        <h1 className='date'>9 - 16 Nov</h1>
-                        <h1>Voting</h1>
-            
-                
+                <li className='step active'>
+                <div className='step-inner active'>
+                    <div className={isNow('2022-11-09T00:00:00', '2022-11-16T23:59:59') ? 'circle today' : 'circle'}><Star/></div>
+                    <h1 className='date'>9 - 16 Nov</h1>
+                    <h1>Voting</h1>
                 </div></li>
                 <li className='step'>
                     <div className='step-inner'>

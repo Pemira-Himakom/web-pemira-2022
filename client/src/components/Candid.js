@@ -7,12 +7,12 @@ const Candid = (props) => {
     const nav = useNavigate();
     return (
         <motion.button 
-        className='container'
+        className='container space-y-5'
         onClick={() => nav(`/candid${props.calon}`)}
-        whileHover={{scale:1.1,
+        whileHover={{scale:1.08,
         transition:{duration:0.2},
         }}>
-            <img src={Frame} className='overflow-visible'></img>
+            <img src={Frame} className='overflow-visible xl:scale-105'></img>
             <div className='title gap-x-5'>
                 <div className='boxAll'>
                     <div className='boxNo'>
