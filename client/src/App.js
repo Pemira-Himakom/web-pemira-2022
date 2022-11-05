@@ -1,6 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Homepage/Home";
+
+// Admin page
 import AdminHome from "./pages/Admin/AdminHome";
 import Summary from "./pages/Admin/Summary";
 import Login from "./pages/Admin/Login";
@@ -8,6 +10,7 @@ import TokenAssignment from "./pages/Admin/TokenAssignment";
 import Candidate1 from "./pages/CandidateProfile/Candidate1";
 import Candidate2 from "./pages/CandidateProfile/Candidate2";
 import Candidate3 from "./pages/CandidateProfile/Candidate3";
+import { Vote } from "./pages/Vote";
 
 
 function App() {
@@ -29,6 +32,7 @@ function App() {
       </Router>
       {/* <Home/> */}
     </div>
+
   );
 }
 
