@@ -2,97 +2,78 @@
 
 import express from "express";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+
+// db
 import Admin from "../models/Admin.js";
 import Student from "../models/Student.js";
 import Candidate from "../models/Candidate.js";
 
+// middleware
+import authenticateToken from "../middleware/authenticateToken.js";
+
 const router = express.Router();
 
 // authenticate
-router.route("/authenticate").post((req, res) => {
-  const { inputUsername, inputPassword } = req.body;
-
-  Admin.findOne({ username: inputUsername }, (err, adminFound) => {
-    if (err) {
-      console.log(err);
-      res.json({ status: false });
-    } else {
-      if (adminFound === null) {
-        {
-          res.json({ status: false });
-        }
-      } else {
-        bcrypt.compare(inputPassword, adminFound.password, (err, result) => {
-          if (err) {
-            console.log(err);
-            res.json({ status: false });
-          } else {
-            if (result) {
-              res.json({ status: result, adminID: adminFound._id });
-            } else {
-              res.json({ status: result });
-            }
-          }
-        });
-      }
-    }
-  });
-});
-
-router.route("/authenticate/async").post(async (req, res) => {
+router.route("/authenticate").post(async (req, res) => {
   try {
     const { inputUsername, inputPassword } = req.body;
+
+    if (!(inputUsername && inputPassword))
+      throw new Error(
+        "Incomplete request input! Requires both username and password!"
+      );
 
     const foundAdmin = await Admin.findOne({ username: inputUsername });
     if (!foundAdmin) throw new Error("Admin not found!");
 
-    res.json(foundAdmin);
+    const result = await bcrypt.compare(inputPassword, foundAdmin.password);
+    if (!result) throw new Error("Incorrect password!");
+
+    // create jwt token
+    const accessToken = jwt.sign(
+      { _id: foundAdmin._id },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    res.json({
+      status: result,
+      accessToken, // send through httponly cookies
+      message: "Successfuly logged in!",
+    });
   } catch (error) {
     res.json({ status: false, message: error.message });
   }
 });
 
 // assign token
-router.route("/:adminID/assign").post((req, res) => {
-  // add token to corresponding user
-  const { nim, token } = req.body;
-  const { adminID } = req.params;
+router.route("/assign").post(authenticateToken, async (req, res) => {
+  try {
+    const { _id } = req.user;
+    const { nim, token } = req.body;
 
-  Admin.exists({ _id: adminID }, (err) => {
-    if (err) {
-      console.log(err);
-      res.json({ status: false, message: "Admin not found" });
-    } else {
-      // hash token
-      bcrypt.hash(token, Number(process.env.SALT), (err, hash) => {
-        if (err) {
-          console.log(err);
-          res.json({ status: false });
-        } else {
-          // find student by nim then update token
-          Student.findOneAndUpdate(
-            { NIM: nim },
-            { token: hash },
-            (err, studentFound) => {
-              if (err) {
-                console.log(err);
-                res.json({ status: false });
-              } else {
-                if (studentFound === null) {
-                  res.json({
-                    status: false,
-                    message: "Student not found in the database!",
-                  });
-                } else {
-                  res.json({ status: true });
-                }
-              }
-            }
-          );
-        }
-      });
-    }
-  });
+    // admin verification
+    const admin = await Admin.exists({ _id });
+    if (!admin) throw new Error("Invalid admin!");
+
+    // hash
+    const hashedToken = await bcrypt.hash(token, Number(process.env.SALT));
+
+    // update student attribute
+    const student = await Student.findOneAndUpdate(
+      { NIM: nim },
+      { token: hashedToken }
+    );
+    if (!student) throw new Error("Incorrect NIM!");
+
+    res.json({
+      status: true,
+      message: `Successfully assigned token to student ${nim}`,
+    });
+  } catch (error) {
+    res.json({ status: false, message: error.message });
+  }
 });
 
 // student list
