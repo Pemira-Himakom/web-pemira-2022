@@ -377,7 +377,6 @@ body {
 }
 
 .container:hover > .title {
-    background-color: #D9D9D9;
     background-position: right;
 }
 
@@ -450,7 +449,6 @@ body {
 }
 
 .active, .faq:hover {
-    background-color: #D9D9D9;
     background-position: 100%;
 }
 
