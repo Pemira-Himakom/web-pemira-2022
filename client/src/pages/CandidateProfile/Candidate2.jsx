@@ -5,6 +5,7 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 import GD_Konang from '../../grandDesign/GD_Konang.pdf'
 import CV_Konang from '../../CV/CV_Konang.pdf'
 import Konang from '../../img/konang.png'
+import Nav from '../../components/Navbar'
 
 const Candidate1 = () => {
     useEffect(() => {
@@ -25,6 +26,11 @@ const misi = [
 ];
 
   return (
+
+    <>
+    
+    <Nav/>
+
     <div className='h-fit w-max-screen bg-[#21201D] font-prata candidates'>
 
 
@@ -146,6 +152,8 @@ const misi = [
         </div>
 
     </div>
+    
+    </>
   )
 }
 
