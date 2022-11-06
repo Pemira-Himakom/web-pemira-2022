@@ -68,14 +68,14 @@ const FAQ = () => {
 
   return (
     <div className='h-max-screen justify-center p-8 sm:p-10 md:p-12 lg:p-16 pb-64 md:pb-0 font-prata bg-[#21201D] timeline-bg-sm-l'>
-      <div className='flex justify-evenly px-4 md:px-28 xl:px-32 py-8 md:py-12 lg:py-16'>
+      <div data-aos='fade-in' className='flex justify-evenly px-4 md:px-28 xl:px-32 py-8 md:py-12 lg:py-16'>
         <div className='grid items-center'><Star1 className='hidden md:block scale-[60%] md:scale-[70%] lg:scale-100'/></div>
         <h1 className='text-xl md:text-2xl lg:text-4xl xl:text-5xl prim-color grid items-center text-center'>Frequently Asked Questions</h1>
         <div className='grid items-center'><Star2 className='hidden md:block scale-[60%] md:scale-[70%] lg:scale-100'/></div>
       </div>
       <div className='space-y-4'>
         {faq.map((items, i) => (
-          <div key={i}>
+          <div data-aos='fade-in' key={i}>
             <button className='faq button faq-button px-4' onClick={(e) => {
               buttonHandler(e, items.id, i);
             }}>
