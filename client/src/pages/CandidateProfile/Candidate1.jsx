@@ -5,6 +5,7 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 import Ninda from '../../img/ninda.png'
 import CV_Ninda from '../../CV/CV_Ninda.pdf'
 import GD_Ninda from '../../grandDesign/GD_Ninda.pdf'
+import Nav from '../../components/Navbar'
 
 const Candidate1 = () => {
     useEffect(() => {
@@ -35,6 +36,10 @@ const misi = [
 ];
 
   return (
+    <>
+
+    <Nav/>
+
     <div className='h-fit w-max-screen bg-[#21201D] font-prata candidates'>
 
 
@@ -157,6 +162,8 @@ const misi = [
         </div>
 
     </div>
+    </>
+
   )
 }
 
