@@ -4,7 +4,7 @@ import { motion, transform } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 // import Ninda from '../../public'
 
-const Candid = (props, {src}) => {
+const Candid = (props) => {
     const nav = useNavigate();
     return (
         <motion.button 
@@ -13,10 +13,10 @@ const Candid = (props, {src}) => {
         whileHover={{scale:1.08,
         transition:{duration:0.2},
         }}>
-            {/* <div className='frame'>
+            <div className='frame pb-6'>
                 <img src={props.src} alt='images' className=''></img>
-            </div> */}
-            <img src={Frame} className='overflow-visible xl:scale-105'></img>
+            </div>
+            {/* <img src={Frame} className='overflow-visible xl:scale-105'></img> */}
             <div className='title gap-x-5'>
                 <div className='boxAll'>
                     <div className='boxNo'>

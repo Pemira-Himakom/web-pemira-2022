@@ -308,6 +308,15 @@ body {
     @apply flex flex-col align-middle justify-center mb-10 rounded-xl text-center;
 }
 
+#timeline_container_sm div .active {
+    width: 40%;
+    height: 100px;
+    padding: 15px 20px;
+    /* background-color: wheat; */
+    position: relative;
+    @apply flex flex-col align-middle justify-center mb-10 rounded-xl text-center;
+}
+
 #timeline_container_sm ul .active{
     box-shadow: 1px 1px 10px;
 }

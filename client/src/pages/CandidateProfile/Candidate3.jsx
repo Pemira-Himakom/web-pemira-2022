@@ -3,6 +3,7 @@ import Frame from '../../img/candidates/img.png'
 import {ReactComponent as Star1} from '../../img/star1.svg'
 import {ReactComponent as Star2} from '../../img/star2.svg'
 import GD_Billy from '../../grandDesign/GD_Billy.pdf'
+import CV_Billy from '../../CV/CV_Billy.pdf'
 import Billi from '../../img/billi.png'
 
 import Navbar from '../../components/Navbar'
@@ -59,7 +60,7 @@ const misi = [
                 </div>
 
                 <div className='h-fit m-auto flex justify-center'>
-                    <iframe className='w-[80vw] h-[75vh]' src={"https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"} frameBorder="0"></iframe>
+                    <iframe className='w-[80vw] h-[75vh]' src={CV_Billy} frameBorder="0"></iframe>
                 </div>
 
 
@@ -119,8 +120,8 @@ const misi = [
                     <div className='md:hidden w-max-full h-fit flex flex-col justify-center mt-12 bg-[#21201da4] py-5 text-[#21201D]'>
                         <h1 className=' text-center text-[20px] mb-3 text-white'>Unduh Disini</h1>
                         <div className='h-fit m-auto flex flex-col justify-center text-[25px] gap-7'>
-                            <a href="" className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6 rounded-md bg-[#D4A976]'>CV</span></a>
-                            <a href="" className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6  m-auto rounded-md bg-[#D4A976]'>Grand Design</span></a>
+                            <a href="CV_Billy.pdf" download className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6 rounded-md bg-[#D4A976]'>CV</span></a>
+                            <a href="GD_Billy.pdf" download className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6  m-auto rounded-md bg-[#D4A976]'>Grand Design</span></a>
                         </div>
                     </div>
                 </div>

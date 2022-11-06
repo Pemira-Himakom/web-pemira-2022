@@ -54,15 +54,15 @@ const Candidates = () => {
 
                             <div className='flex flex-row overflow-x-scroll w-[45%] m-auto gap-x-5'>
                                 <label htmlFor="s1" id='slide1' className='min-w-[100%]'>
-                                    <Candidm key="a" calon={1} name="Kadek Ninda NP" division="PSDMA"/>
+                                    <Candidm key="a" calon={1} name="Kadek Ninda NP" division="PSDMA" src='/imgs/ninda.png'/>
                                 </label>
 
                                 <label htmlFor="s2" id='slide2' className='min-w-[100%]'>
-                                    <Candidm key="b" calon={2} name="Konang Tyagazain" division="MIKAT"/>
+                                    <Candidm key="b" calon={2} name="Konang Tyagazain" division="MIKAT" src='/imgs/konang.png'/>
                                 </label>
 
                                 <label htmlFor="s3" id='slide3' className='min-w-[100%]'>
-                                    <Candidm key="c" calon={3} name="Billy Fahd Qodama" division="KPM"/>
+                                    <Candidm key="c" calon={3} name="Billy Fahd Qodama" division="KPM" src='/imgs/billi.png'/>
                                 </label>
                             </div>
 
