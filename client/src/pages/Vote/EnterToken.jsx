@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import StarLeft from "../../img/vote/StarLeft.svg";
 import StarRight from "../../img/vote/StarRight.svg";
 
@@ -6,16 +6,20 @@ import StarRight from "../../img/vote/StarRight.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { resetUIState } from "../../store/uiSlice";
 import { login } from "../../store/authSlice";
+import { selectedUI } from "../../store/uiSlice";
+import Status from "./components/Status";
 
 const EnterToken = () => {
-  const ui = useSelector((state) => {
-    return state.ui;
-  });
+  const ui = useSelector(selectedUI);
 
   const dispatch = useDispatch();
 
   const nimRef = useRef();
   const tokenRef = useRef();
+
+  useEffect(() => {
+    nimRef.current.focus();
+  }, []);
 
   const handleLogin = (e) => {
     const inputNIM = nimRef.current.value;
@@ -44,8 +48,6 @@ const EnterToken = () => {
 
   return (
     <>
-      {ui.error.status && Fail}
-      {ui.success && Success}
       <div className="bg-vote w-screen h-screen bg-cover pt-10 flex justify-center items-center font-prata">
         <form
           className="border-[15px] bg-[#E6E6E6] flex flex-col border-choco-weak outline outline-4 outline-choco min-w-[40vw] w-fit min-h-[60vh] py-20 px-8 mx-auto"

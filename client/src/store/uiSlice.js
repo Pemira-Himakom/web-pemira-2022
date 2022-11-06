@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   loading: false,
-  success: false,
+  success: {},
   error: {},
   confirmation: false,
 };
@@ -14,8 +14,9 @@ export const uiSlice = createSlice({
     setLoading: (state) => {
       state.loading = true;
     },
-    setSuccess: (state) => {
-      state.success = true;
+    setSuccess: (state, action) => {
+      state.success.status = true;
+      state.success.message = action.payload;
     },
     setError: (state, action) => {
       state.error.status = true;
@@ -23,7 +24,7 @@ export const uiSlice = createSlice({
     },
     resetUIState: (state) => {
       state.loading = false;
-      state.success = false;
+      state.success = {};
       state.error = {};
     },
     setConfirmation: (state) => {
@@ -31,7 +32,7 @@ export const uiSlice = createSlice({
     },
     resetConfirmation: (state) => {
       state.confirmation = false;
-    }
+    },
   },
 });
 
@@ -39,3 +40,4 @@ export const { setLoading, setSuccess, setError, resetUIState } =
   uiSlice.actions;
 
 export default uiSlice.reducer;
+export const selectedUI = (state) => state.ui;

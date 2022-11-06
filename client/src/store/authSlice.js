@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setLoading, setSuccess, setError } from "./uiSlice";
+import { setLoading, setSuccess, setError, resetUIState } from "./uiSlice";
 
 const initialState = {
   admin: false,
@@ -51,15 +51,16 @@ export const login = (input, command) => {
     try {
       const result = await sendRequest(input);
 
-      console.log(result);
       if (result.status) {
-        dispatch(setSuccess());
+        dispatch(setSuccess(result.message));
 
         localStorage.setItem("token", result.accessToken);
 
         setTimeout(() => {
           dispatch(setUserLogin());
-        }, 800);
+          dispatch(resetUIState());
+        }, 1000);
+        
       } else {
         dispatch(setError(result.message));
       }
