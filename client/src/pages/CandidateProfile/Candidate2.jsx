@@ -5,6 +5,7 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 import GD_Konang from '../../grandDesign/GD_Konang.pdf'
 import CV_Konang from '../../CV/CV_Konang.pdf'
 import Konang from '../../img/konang.png'
+import Nav from '../../components/Navbar'
 
 import Nav from '../../components/Navbar'
 
@@ -147,6 +148,7 @@ const misi = [
             </div>
 
         </div>
+
     </>
   )
 }
