@@ -2,6 +2,9 @@ import React, { useEffect} from 'react'
 import Frame from '../../img/candidates/img.png'
 import {ReactComponent as Star1} from '../../img/star1.svg'
 import {ReactComponent as Star2} from '../../img/star2.svg'
+import Ninda from '../../img/ninda.png'
+import CV_Ninda from '../../CV/CV_Ninda.pdf'
+import GD_Ninda from '../../grandDesign/GD_Ninda.pdf'
 
 const Candidate1 = () => {
     useEffect(() => {
@@ -9,19 +12,26 @@ const Candidate1 = () => {
     }, [])
 
 const inovasi = [
-    {id: 0, data: "i invented gravity without apple, Gatauy isi apa tp lorem ipsum is so boring jd kyk gini aja gapapa kan"},
-    {id: 1, data: "i invented gravity without apple, Gatauy isi apa tp lorem ipsum is so boring jd kyk gini aja gapapa kan"},
-    {id: 2, data: "i invented gravity without apple, Gatauy isi apa tp lorem ipsum is so boring jd kyk gini aja gapapa kan"},
-    {id: 3, data: "i invented gravity without apple, Gatauy isi apa tp lorem ipsum is so boring jd kyk gini aja gapapa kan"},
-    {id: 4, data: "i invented gravity without apple, Gatauy isi apa tp lorem ipsum is so boring jd kyk gini aja gapapa kan"},
+    {
+        id: 0, 
+        title: "Nama Inovasi : Suarakan Pendapatmu",
+        data: "Penjelasan : Menampung segala opini, saran, maupun kritik mengenai seluruh kinerja pengurus HIMAKOM agar menjadi lebih baik kedepannya"},
+    {
+        id: 1, 
+        title: "Nama Inovasi : Write Your Agenda",
+        data: "Penjelasan : Mencatat seluruh agenda yang akan dilaksanakan dalam divisi HIMAKOM maupun OMAH TI melalui platform “Google Calendar” lalu setiap anggota HIMAKOM dan OMAHTI akan diundang dalam kalender untuk meminimalisir terjadinya bentrok dalam pelaksanaan program kerja."},
+    {
+        id: 2, 
+        title: "Nama Inovasi : HIMAKOM Salut",
+        data: "Penjelasan : Bentuk apresiasi terhadap seluruh masyarakat ilmu komputer yang berhasil meraih penghargaan baik itu berupa prestasi maupun mengemban jabatan sebagai ketua dalam event-event yang diselenggarakan HIMAKOM / OTI ataupun dalam lingkup FMIPA UGM."},
 ];
 
 const misi = [
-    {id: 5, no: 1, misi: 'Klo saya jd makomji, traktir makan auce pake dandept'},
-    {id: 6, no: 2, misi: 'Klo saya jd makomji, traktir makan auce pake dandept'},
-    {id: 7, no: 3, misi: 'Klo saya jd makomji, traktir makan auce pake dandept'},
-    {id: 8, no: 4, misi: 'Klo saya jd makomji, traktir makan auce pake dandept'},
-    {id: 9, no: 5, misi: 'Klo saya jd makomji, traktir makan auce pake dandept'}
+    {id: 5, no: 1, misi: 'Menciptakan lingkungan dengan suasana yang nyaman melalui 3S (Santai, Serius, Selesai)  '},
+    {id: 6, no: 2, misi: 'Meningkatkan rasa kebersamaan, kepedulian, dan saling memiliki antar mahasiswa ilmu komputer'},
+    {id: 7, no: 3, misi: 'Menjalin kerjasama dan membangun relasi dengan berbagai pihak, baik internal maupun eksternal '},
+    {id: 8, no: 4, misi: 'Membangun koordinasi yang aktif dan berkesinambungan secara transparan dengan seluruh masyarakat HIMAKOM'},
+    {id: 9, no: 5, misi: 'Mengoptimalkan minat, bakat, serta potensi yang dimiliki anggota HIMAKOM'}
 ];
 
   return (
@@ -33,11 +43,12 @@ const misi = [
         <div className='h-fit flex flex-col lg:flex-row justify-center timeline-bg p-10 pb-28'>
 
             <div className='relative h-[100%] mr-2 mx-auto justify-center flex'>
+                <img src={Ninda} className='absolute scale-90 bottom-[5%]'></img>
                 <img src={Frame}></img>
                 <h1 className='absolute z-10 text-[150px] lg:text-[300px] right-[0px] lg:right-[-30px] top-[54%] lg:top-[32%] text-white shadowm-xl '>1</h1>
             </div>
 
-            <div className='lg:w-[50%] mx-auto ml-6 relative flex justify-center lg:justify-start align-middle'>
+            <div className='lg:w-[50%] mx-auto md:ml-6 relative flex justify-center lg:justify-start align-middle'>
                 <div className='m-auto pt-[10%] lg:pt-[25%] w-[100%]'>
                     <h1 className='text-[50px] text-center lg:text-left lg:text-[100px]
                                    lg:w-[90%] leading-[0.9] text-white uppercase'>kadek ninda np</h1>
@@ -57,7 +68,7 @@ const misi = [
             </div>
 
             <div className='h-fit m-auto flex justify-center'>
-                <iframe className='w-[80vw] h-[75vh]' src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameBorder="0"></iframe>
+                <iframe className='w-[80vw] h-[75vh]' src={CV_Ninda} frameBorder="0"></iframe>
             </div>
 
 
@@ -73,7 +84,7 @@ const misi = [
             </div>
 
             <div className='h-fit m-auto flex justify-center'>
-                <iframe className='w-[80vw] h-[75vh]' src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" frameBorder="0"></iframe>
+                <iframe className='w-[80vw] h-[75vh]' src={GD_Ninda} frameBorder="0"></iframe>
             </div>
 
 
@@ -90,9 +101,9 @@ const misi = [
                         <h1 className='text-[60px]'>Visi</h1>
                     </div>
 
-                    <div className='text-justify md:text-[19px] '>
+                    <div className='text-center md:text-[19px] '>
                         <h1>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <br/> <br/> Dengan terpilihnya saya menjadi MAKOMJI, saya akan melakukan rebranding pada website dan logo himakom. Setelah itu saya serahkan semua ke diki karena saya hanyalah boneka
+                        Terwujudnya HIMAKOM sebagai ruang untuk berekspresi, berinovasi agar tercipta lingkungan yang solid, dinamis, serta inklusif
                         </h1>
                     </div>
                 </div>
@@ -103,11 +114,11 @@ const misi = [
                     </div>
 
                     <div className='text-left md:text-[19px]'>
-                        <ul className='space-y-3.5 w-[90%] l'>
+                        <ul className='space-y-3.5 w-[90%]'>
                             {misi.map((items, i) => (
-                                <li key={i} className='flex justify start w-full text-lg'>
+                                <li key={i} className='flex justify start w-full'>
                                     <h1 className='circle-no mr-4 grid place-items-center text-[#21201D]'>{items.no}</h1>
-                                    <h1 className='grid place-items-center text-white leading-[1.2]'>{items.misi}</h1>
+                                    <h1 className='h-[10vh] overflow-auto text-white leading-[1.2]'>{items.misi}</h1>
                                 </li>
                             ))}
                         </ul>
@@ -128,14 +139,15 @@ const misi = [
         <div className='h-fit p-12 w-screen flex flex-col relative bg-[#21201D]'>
             <div className='h-[15%]'></div>
             <div className='h-[85%] max-h-fit flex flex-col '>
-                <div className='h-fit flex gap-x-10  justify-center py-5'>
+                <div className='h-fit flex gap-x-10  justify-center py-8 md:py-16'>
                     <Star1/>
                     <h1 className='text-2xl lg:text-5xl grid items-center text-[#D4A976]'>INOVASI</h1>
                     <Star2/>
                 </div>
-                <div className='space-y-5 flex flex-col justify-center  mx-auto'>
+                <div className='space-y-5 flex flex-col justify-center mx-auto'>
                     {inovasi.map((items, i) => (
-                        <div key={i} className='inovasi px-10 py-5 text-center  text-[13px] lg:text-[18px] '>
+                        <div key={i} className='inovasi grid items-center text-center px-7 md:px-14 text-center text-[13px] lg:text-[18px] '>
+                            <h1 className='font-extrabold'>{items.title}</h1>
                             <h1>{items.data}</h1>
                         </div>
                     ))}

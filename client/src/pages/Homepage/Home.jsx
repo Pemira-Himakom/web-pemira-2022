@@ -5,6 +5,7 @@ import Candidates from './Candidates';
 import FAQ from './FAQ';
 import About from './About';
 import Footer from './Footer'
+import Nav from '../../components/Navbar'
 
 import Candid1 from '../CandidateProfile/Candidate1'
 
@@ -28,6 +29,7 @@ export default function Home() {
       <FAQ/>
       {/* <Candid1/> */}
       <Footer/>
+      {/* <Nav/> */}
 
     </div>
   )

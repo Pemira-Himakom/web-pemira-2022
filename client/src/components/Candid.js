@@ -2,8 +2,9 @@ import React from 'react'
 import Frame from '../img/candidates/img.png'
 import { motion, transform } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
+// import Ninda from '../../public'
 
-const Candid = (props) => {
+const Candid = (props, {src}) => {
     const nav = useNavigate();
     return (
         <motion.button 
@@ -12,6 +13,9 @@ const Candid = (props) => {
         whileHover={{scale:1.08,
         transition:{duration:0.2},
         }}>
+            {/* <div className='frame'>
+                <img src={props.src} alt='images' className=''></img>
+            </div> */}
             <img src={Frame} className='overflow-visible xl:scale-105'></img>
             <div className='title gap-x-5'>
                 <div className='boxAll'>

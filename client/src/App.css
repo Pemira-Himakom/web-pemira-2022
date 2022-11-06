@@ -45,7 +45,7 @@ body {
     .bg-img-sm{
         background-image: url('./img/bg.png');
         transform: background-image rotate(90deg);
-        background-size: 175vh 125vh;
+        background-size: 190vh 135vh;
         background-position: left;
         overflow-y: hidden;
         box-shadow: inset 0 0 150px #000;
@@ -65,23 +65,25 @@ body {
         background-image: url('./img/flower.png'), url('./img/flower2.png');
         overflow: hidden;
         background-repeat: no-repeat,no-repeat;
-        background-position: top 0 left, bottom 0 right;
+        background-position: top -9.14rem left, bottom -9.14rem right;
         background-size: 20vh, 20vh;
     }
     
     .timeline-bg-sm-r {
         background-image: url('./img/flower2.png'), url('./img/flower.png');
         overflow: hidden;
+        position: relative;
         background-repeat: no-repeat,no-repeat;
-        background-position: top 0 right, bottom 0 left;
+        background-position: top -9.14rem right, bottom -9.14rem left;
         background-size: 20vh, 20vh;
     }
 
     .timeline-bg-sm-b {
         background-image: url('./img/flower.png');
+        position: relative;
         overflow: hidden;
         background-repeat: no-repeat;
-        background-position: bottom 0 left;
+        background-position: bottom -9.14rem left;
         background-size: 20vh;
     }
 }
@@ -320,7 +322,7 @@ body {
 }
 
 #timeline_container_sm ul li:nth-child(even) .circle{
-    @apply absolute m-auto left-[-13vw] z-20 scale-125;
+    @apply absolute m-auto left-[-11vw] z-20 scale-125;
 }
 
 #timeline_container_sm li .today{
@@ -423,7 +425,7 @@ body {
     @apply text-[15px] text-[#694A24]
 }
 .faq {
-    height: 3rem;
+    height: 3.5rem;
     width: 100%;
     background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
     background-size: 300%;
@@ -458,7 +460,7 @@ body {
     display: block;
     border-radius: 0.2rem;
     position: relative;
-    border: 2px dashed #D4A976;
+    /* border: 2px solid #D4A976; */
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3 ease;
@@ -492,7 +494,10 @@ body {
 }
 
 .inovasi {
-    height: fit-content;
+    @apply border-y-[15px] border-[#D4A976];
+    content: '';
+    overflow: auto;
+    height: 8rem;
     width: 100%;
     border-radius: 0.5rem;
     background-color: #D4A976;
@@ -541,5 +546,12 @@ body {
 #s3:checked ~ #slide1, #s1:checked ~ #s3 {
     box-shadow: 0px 1px 4px rgba(0, 0, 0,.37);
     transform: translate3d(-30%, 0, -200px);
+}
+
+.frame {
+    background-image: url('.././src/img/candidates/img.png');
+    position: relative;
+    background-size: cover;
+    /* place-items: center */
 }
 

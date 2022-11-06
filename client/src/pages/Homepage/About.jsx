@@ -9,7 +9,7 @@ import {ReactComponent as Star2} from '../../img/star2.svg'
 const About = () => {
   return (
     <>
-      <div className='hidden md:block bg-[#D4A976] p-7 w-screen'>
+      <div id='about' className='hidden md:block bg-[#D4A976] p-7 w-screen'>
         <div className="bg-[#21201D] flex content justify-center rounded-tl-[60px] rounded-br-[60px]">
           <div className='logo-sm logo-lg  w-[20%] h-[60vh] m-auto flex items-center justify-center'>
             <img className='scale-75' src={Hima} alt="himakom" />
@@ -29,21 +29,23 @@ const About = () => {
               </div>
             </div>
 
-            <p className='font-inter font-extralight text-xs lg:text-lg text-[#E6E6E6]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
+            <p className='font-inter font-extralight text-xs lg:text-lg text-[#E6E6E6]'>Pemilihan Raya Himakom atau PEMIRA HIMAKOM adalah program kerja yang dilaksanakan dalam rangka pemilihan ketua Himpunan Mahasiswa Ilmu Komputer (Himakom) Fakultas MIPA UGM. Program ini dilaksanakan setiap tahunnya pada semester ganjil tahun ajaran baru sebagai akhir dari masa jabatan kabinet yang sedang menjabat sebelumnya. Tujuannya adalah untuk menyediakan fasilitas untuk sosialisasi visi dan misi dari calon-calon ketua Himpunan Mahasiswa Ilmu Komputer masa jabatan 2022/2023 dan sarana untuk pemilihan ketua Himpunan Mahasiswa Ilmu Komputer masa jabatan 2022/2023.
             </p>
           </div>
         </div>
       </div>
 
-      <div className='block md:hidden bg-[#21201D] p-7 w-screen h-fit timeline-bg-sm-b'>
-        <h1 className='text-center text-[#D4A976] font-prata text-xl p-7'>About Pemira</h1>
-        <div className='grid place-items-center pb-10'>
-          {/* <Hima/> */}
-          <img className='w-1/2' src={Hima} alt="himakom" />
+      <div className='block md:hidden bg-[#21201D] timeline-bg-sm-b w-screen h-fit'>
+        <div className='p-7'>
+          <h1 className='text-center text-[#D4A976] font-prata text-xl p-7'>About Pemira</h1>
+          <div className='grid place-items-center pb-10'>
+            {/* <Hima/> */}
+            <img className='w-[45%]' src={Hima} alt="himakom" />
 
+          </div>
+          <p className='font-inter font-extralight text-justify text-xs lg:text-lg text-[#E6E6E6] p-3'>Pemilihan Raya Himakom atau PEMIRA HIMAKOM adalah program kerja yang dilaksanakan dalam rangka pemilihan ketua Himpunan Mahasiswa Ilmu Komputer (Himakom) Fakultas MIPA UGM. Program ini dilaksanakan setiap tahunnya pada semester ganjil tahun ajaran baru sebagai akhir dari masa jabatan kabinet yang sedang menjabat sebelumnya. Tujuannya adalah untuk menyediakan fasilitas untuk sosialisasi visi dan misi dari calon-calon ketua Himpunan Mahasiswa Ilmu Komputer masa jabatan 2022/2023 dan sarana untuk pemilihan ketua Himpunan Mahasiswa Ilmu Komputer masa jabatan 2022/2023.
+          </p>
         </div>
-        <p className='font-inter font-extralight text-justify text-xs lg:text-lg text-[#E6E6E6] p-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.
-        </p>
       </div>
     </>
   )
