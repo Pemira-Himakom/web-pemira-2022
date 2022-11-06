@@ -133,8 +133,8 @@ const misi = [
                 <div className='md:hidden w-max-full h-fit flex flex-col justify-center mt-12 bg-[#21201da4] py-5 text-[#21201D]'>
                     <h1 className=' text-center text-[20px] mb-3 text-white'>Unduh Disini</h1>
                     <div className='h-fit m-auto flex flex-col justify-center text-[25px] gap-7'>
-                        <a href="" className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6 rounded-md bg-[#D4A976]'>CV</span></a>
-                        <a href="" className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6  m-auto rounded-md bg-[#D4A976]'>Grand Design</span></a>
+                        <a href='CV_Ninda.pdf' download className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6 rounded-md bg-[#D4A976]'>CV</span></a>
+                        <a href="GD_Ninda.pdf" download className='m-auto active:scale-125 transition-all duration-200 ease-in' ><span className='py-2 px-6  m-auto rounded-md bg-[#D4A976]'>Grand Design</span></a>
                     </div>
                 </div>
             </div>

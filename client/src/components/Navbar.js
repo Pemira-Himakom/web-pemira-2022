@@ -14,7 +14,7 @@ const Header = () => {
             {name:"About", link:"/about"},
         ];
         let [open,setOpen]=useState(false);
-        let [close, setClose]=useState(false);
+        let [close, setClose]=useState(true);
 
         const activeLink = 'underline underline-offset-8 decoration-slate-400 cursor-default';
         const normalLink = '';
