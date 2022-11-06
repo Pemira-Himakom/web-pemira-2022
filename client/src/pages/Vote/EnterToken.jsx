@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { resetUIState } from "../../store/uiSlice";
 import { login } from "../../store/authSlice";
 import { selectedUI } from "../../store/uiSlice";
-import Status from "./components/Status";
 
 const EnterToken = () => {
   const ui = useSelector(selectedUI);
@@ -34,18 +33,6 @@ const EnterToken = () => {
   const changeHandler = () => {
     dispatch(resetUIState());
   };
-
-  const Fail = (
-    <div className="bg-red-400 py-1 text-center absolute w-full">
-      {ui.error.message}
-    </div>
-  );
-  const Success = (
-    <div className="bg-green-400 py-1 text-center absolute w-full">
-      Success, Let Vote!
-    </div>
-  );
-
   return (
     <>
       <div className="bg-vote w-screen h-screen bg-cover pt-10 flex justify-center items-center font-prata">

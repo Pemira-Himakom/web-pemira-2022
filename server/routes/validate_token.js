@@ -34,8 +34,7 @@ router.route("/").post(async (req, res) => {
     // Create jwt token
     const accessToken = jwt.sign(
       { nim: inputNIM },
-      process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "15000" } // change to 3 menit later
+      process.env.ACCESS_TOKEN_SECRET
     );
 
     res.json({

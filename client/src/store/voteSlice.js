@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setLoading, setError, setSuccess, resetUIState } from "./uiSlice";
+import { setUserLogout } from "./authSlice";
+import { setLoading, setError, setSuccess } from "./uiSlice";
 
 const VOTE_URL = "/api/vote";
 
@@ -40,6 +41,7 @@ export const postVote = (input) => {
     localStorage.removeItem("token");
 
     const sendRequest = async (input) => {
+      console.log(input);
       return fetch(VOTE_URL, {
         headers: {
           "Content-Type": "application/json",
@@ -60,12 +62,15 @@ export const postVote = (input) => {
       if (result.status) {
         dispatch(setSuccess(result.message));
         // show meme?
+        dispatch(setUserLogout());
         dispatch(resetVote());
       } else {
         dispatch(setError(result.message));
+        dispatch(setUserLogout());
       }
     } catch (error) {
-      dispatch(setError());
+      dispatch(setError(error.message));
+      dispatch(setUserLogout());
     }
   };
 };
