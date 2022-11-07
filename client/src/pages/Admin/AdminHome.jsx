@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function AdminHome() {
   const admin = useSelector((state) => state.auth.admin);
@@ -11,8 +11,7 @@ function AdminHome() {
           <Link to="/admin/assign">assign token</Link>
         </>
       ) : (
-        //navigate to login later
-        <Link to="/admin/login">login</Link>
+        <Navigate to="/admin/login" />
       )}
     </>
   );

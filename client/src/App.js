@@ -9,6 +9,7 @@ import AdminHome from "./pages/Admin/AdminHome";
 import Summary from "./pages/Admin/Summary";
 import Login from "./pages/Admin/Login";
 import TokenAssignment from "./pages/Admin/TokenAssignment";
+import { Navigate } from "react-router-dom";
 import { Vote } from "./pages/Vote";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="assign" element={<TokenAssignment />} />
         </Route>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

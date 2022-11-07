@@ -72,7 +72,7 @@ const Login = () => {
           </div>
           <div className="mt-12 xl:mt-16">
             <input
-              type="text"
+              type="password"
               placeholder="Secret Key"
               className="w-full text-xl placeholder-choco placeholder-opacity-100 placeholder:text-xl outline-none bg-transparent border-b-4 border-choco"
               ref={passwordRef}
