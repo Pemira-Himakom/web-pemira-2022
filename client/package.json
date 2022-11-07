@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "aos": "^2.3.4",
     "autoprefixer": "^10.4.12",
     "gh-pages": "^4.0.0",
     "postcss": "^8.4.18",

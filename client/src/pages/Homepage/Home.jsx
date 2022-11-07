@@ -7,14 +7,14 @@ import About from './About';
 import Footer from './Footer'
 import Nav from '../../components/Navbar'
 
-import Aos from 'aos'
+import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 import Candid1 from '../CandidateProfile/Candidate1'
 
 export default function Home() {
   useEffect(() => {
-    Aos.init({duration: 700})
+    AOS.init({duration: 700})
   }, [])
   return (
     <div className='mb-[-1px] w-screen'>

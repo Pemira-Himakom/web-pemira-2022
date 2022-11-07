@@ -348,6 +348,7 @@ body {
     margin: auto;
     /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
     background-color: #D4A976;
+
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
@@ -357,7 +358,7 @@ body {
 
 #candid_mob .title_mb{
     content: " ";
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
     background-size: 300%;
     background-position: left;
 }
@@ -366,7 +367,7 @@ body {
     content: " ";
     width: fit-content;
     margin: auto;
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
@@ -439,13 +440,12 @@ body {
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
-    /* background-color: #D4A976; */
     border-radius: 0.2rem;
     position: relative;
 }
 
 .download {
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
 }
 
 .active, .faq:hover {
