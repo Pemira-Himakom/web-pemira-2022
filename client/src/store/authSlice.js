@@ -60,7 +60,6 @@ export const login = (input, command) => {
           dispatch(setUserLogin());
           dispatch(resetUIState());
         }, 1000);
-        
       } else {
         dispatch(setError(result.message));
       }
@@ -81,6 +80,48 @@ function getURL(command, adminID) {
     return `/api/admin/${adminID}/assign`;
   }
 }
+
+export const adminLogin = (form) => {
+  return async (dispatch) => {
+    dispatch(setLoading());
+
+    const sendRequest = async (form) => {
+      const response = await fetch("/api/admin/authenticate", {
+        method: "POST",
+        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Bad request. Check server");
+      }
+
+      return response.json();
+    };
+
+    try {
+      const result = await sendRequest(form);
+      console.log(result);
+
+      if (result.status) {
+        dispatch(setSuccess(result.message));
+
+        localStorage.setItem("token", result.accessToken);
+
+        setTimeout(() => {
+          dispatch(setAdminLogin());
+          dispatch(resetUIState());
+        }, 1000);
+      } else {
+        dispatch(setError(result.message));
+      }
+    } catch (error) {
+      dispatch(setError());
+    }
+  };
+};
 
 export const { setAdminLogout, setUserLogout, setUserLogin, setAdminLogin } =
   authSlice.actions;

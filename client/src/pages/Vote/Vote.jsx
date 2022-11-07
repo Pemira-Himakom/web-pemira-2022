@@ -13,8 +13,9 @@ const Vote = () => {
   const user = useSelector((state) => state.auth.user);
   const token = localStorage?.getItem("token");
 
-  dispatch(resetVote())
   useEffect(() => {
+    dispatch(resetVote());
+    
     if (token) {
       dispatch(setUserLogin());
     }
