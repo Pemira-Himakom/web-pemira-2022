@@ -27,8 +27,8 @@ function App() {
           <Route exact path='/candid1' element={<Candidate1/>} />
           <Route exact path='/candid2' element={<Candidate2/>} />
           <Route exact path='/candid3' element={<Candidate3/>} />
-          {/* <Route exact path='/vote' element={<Vote/>} />
-          <Route exact path='/voting' element={<Voting/>} /> */}          
+          <Route exact path='/vote' element={<Vote/>} />
+          <Route exact path='/voting' element={<Voting/>} />         
           <Route path="/admin">
             <Route index element={<AdminHome />} />
             <Route path="summary" element={<Summary />} />

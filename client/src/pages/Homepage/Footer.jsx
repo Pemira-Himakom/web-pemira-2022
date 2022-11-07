@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         {/* Footer */}
-        <div className='h-[30%] max-w-full items-center md:items-start
+        <div className='h-[30%] max-w-full items-center md:items-end
                         flex justify-between flex-col md:flex-row
                         relative font-poppins text-[#D9D9D9] 
                         mx-6 my-4'>
@@ -71,18 +71,20 @@ const Footer = () => {
                 <p>Bulaksumur, Sinduadi, Mlati, Sleman, DI Yogyakarta</p>
               </div>
 
-              <div className='max-w-[78%] pt-6 text-[10px] lg:text-[15px]'>
+              <div className='max-w-[78%] py-6 md:py-0 pt-6 text-[10px] lg:text-[15px]'>
                 <h1>© HIMAKOM UGM - All rights reserved. Built with ♡</h1>
               </div>
            </div>
 
-          <div className='h-full max-w-[75%] md:max-w-[50%] justify-center relative'>
+          <div className='h-full max-w-[75%] md:max-w-[70%] flex justify-between relative'>
 
-              <div className='w-full md:w-fit lg:mr-12 mt-1 md:mt-12 lg:mt-28 inline-flex gap-0 md:gap-3 lg:gap-8 ig'>
+              <div className='w-full md:w-fit space-x-6 md:space-x-5 flex justify-between'>
                 {/* <a href=""><TfiTwitter size={50}/></a> */}
-                <a href="https://www.instagram.com/himakomugm/" target='_blank' className='scale-50 md:scale-100'><FaInstagram size={50}/></a>
+                {/* <a href="https://www.instagram.com/himakomugm/" target='_blank' className='scale-50 md:scale-100'><FaInstagram size={50}/></a> */}
                 <a href='https://www.instagram.com/himakomugm/' target='_blank' 
-                  className='grid items-center text-xs md:text-sm lg:text-base'>@himakomugm</a>
+                  className='grid items-center text-xs md:text-sm lg:text-base hover:text-[#D4A976] duration-300'>@himakomugm</a>
+                <a href='https://www.instagram.com/pemirahimakom/' target='_blank' 
+                  className='grid items-center text-xs md:text-sm lg:text-base hover:text-[#D4A976] duration-300'>@pemirahimakom</a>
               </div>
 
           </div>

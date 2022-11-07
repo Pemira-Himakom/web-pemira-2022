@@ -517,11 +517,11 @@ body {
 
 }
 
-.ig {
+.ig svg {
     transition: all .2s ease-in-out;
 }
 
-.ig:hover {
+.ig:hover svg {
     color: #D4A976;
 }
 
