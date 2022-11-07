@@ -15,6 +15,10 @@ img {
     pointer-events: none;
 }
 
+body {
+    user-select: none;
+}
+
 .prim-color{
     color: #D4A976;
 }
@@ -41,7 +45,7 @@ img {
     .bg-img-sm{
         background-image: url('./img/bg.png');
         transform: background-image rotate(90deg);
-        background-size: 175vh 125vh;
+        background-size: 190vh 135vh;
         background-position: left;
         overflow-y: hidden;
         box-shadow: inset 0 0 150px #000;
@@ -56,6 +60,31 @@ img {
         position: absolute;
         top: 0;
         left: 0;
+    }   
+    .timeline-bg-sm-l {
+        background-image: url('./img/flower.png'), url('./img/flower2.png');
+        overflow: hidden;
+        background-repeat: no-repeat,no-repeat;
+        background-position: top -9.14rem left, bottom -9.14rem right;
+        background-size: 20vh, 20vh;
+    }
+    
+    .timeline-bg-sm-r {
+        background-image: url('./img/flower2.png'), url('./img/flower.png');
+        overflow: hidden;
+        position: relative;
+        background-repeat: no-repeat,no-repeat;
+        background-position: top -9.14rem right, bottom -9.14rem left;
+        background-size: 20vh, 20vh;
+    }
+
+    .timeline-bg-sm-b {
+        background-image: url('./img/flower.png');
+        position: relative;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-position: bottom -9.14rem left;
+        background-size: 20vh;
     }
 }
 
@@ -80,21 +109,21 @@ img {
         /* top: 50%;
         left: 0; */
     }
+    .timeline-bg {
+        background-image: url('./img/flower.png'), url('./img/flower2.png');
+        background-repeat: no-repeat,no-repeat;
+        background-position: bottom 50% left, bottom 50% right;
+        background-size: 25vh, 25vh;
+    }
 }
 
 .eclipse {
-    @apply w-[100%] h-fit lg:h-[200%]  rounded-[100%];
+    @apply w-[170%] md:w-[120%] lg:w-[85%] h-[105%] md:h-[140%] lg:h-[170%] xl:h-[180%] rounded-[100%];
     border: 2px solid #D4A976;
     background-color: #21201D;
 }
 
 /* Timeline */
-.timeline-bg {
-    background-image: url('./img/flower.png'), url('./img/flower2.png');
-    background-repeat: no-repeat,no-repeat;
-    background-position: bottom 50% left, bottom 50% right;
-    background-size: 25vh, 25vh;
-}
 
 .process-wrapper {
     margin: auto;
@@ -238,8 +267,9 @@ img {
 }
 
 .candid {
+    @apply border-[1.5px] md:border-[2.5px] border-[#D4A976];
     width: 100%;
-    border: 2.5px solid #D4A976;
+    /* border: 1px solid #D4A976; */
     place-content: center;
     overflow: hidden;
 }
@@ -278,6 +308,15 @@ img {
     @apply flex flex-col align-middle justify-center mb-10 rounded-xl text-center;
 }
 
+#timeline_container_sm div .active {
+    width: 40%;
+    height: 100px;
+    padding: 15px 20px;
+    /* background-color: wheat; */
+    position: relative;
+    @apply flex flex-col align-middle justify-center mb-10 rounded-xl text-center;
+}
+
 #timeline_container_sm ul .active{
     box-shadow: 1px 1px 10px;
 }
@@ -292,7 +331,7 @@ img {
 }
 
 #timeline_container_sm ul li:nth-child(even) .circle{
-    @apply absolute m-auto left-[-13vw] z-20 scale-125;
+    @apply absolute m-auto left-[-11vw] z-20 scale-125;
 }
 
 #timeline_container_sm li .today{
@@ -301,16 +340,15 @@ img {
 }
 
 
-
-
-
 /* frame */
 
 .title {
     content: " ";
     width: 100%;
     margin: auto;
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
+    background-color: #D4A976;
+
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
@@ -320,7 +358,7 @@ img {
 
 #candid_mob .title_mb{
     content: " ";
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
     background-size: 300%;
     background-position: left;
 }
@@ -329,7 +367,7 @@ img {
     content: " ";
     width: fit-content;
     margin: auto;
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
@@ -337,12 +375,12 @@ img {
 
 }
 
-.container:hover > .title {
+.container:hover div > .title {
     background-position: right;
 }
 
 .boxAll{
-    @apply flex flex-row justify-start w-full gap-3
+    @apply flex flex-row justify-start w-full gap-x-3
 }
 
 .boxNo {
@@ -395,19 +433,19 @@ img {
     @apply text-[15px] text-[#694A24]
 }
 .faq {
-    height: 3rem;
+    height: 3.5rem;
     width: 100%;
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
+    background-color: #D4A976;
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
-    /* background-color: #D4A976; */
     border-radius: 0.2rem;
     position: relative;
 }
 
 .download {
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
 }
 
 .active, .faq:hover {
@@ -430,7 +468,7 @@ img {
     display: block;
     border-radius: 0.2rem;
     position: relative;
-    border: 2px dashed #D4A976;
+    /* border: 2px solid #D4A976; */
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3 ease;
@@ -464,7 +502,10 @@ img {
 }
 
 .inovasi {
-    height: fit-content;
+    @apply border-y-[15px] border-[#D4A976];
+    content: '';
+    overflow: auto;
+    height: 8rem;
     width: 100%;
     border-radius: 0.5rem;
     background-color: #D4A976;
@@ -484,10 +525,41 @@ img {
     color: #D4A976;
 }
 
-
-#a{
+[type=radio] {
+    /* display: none; */
 
 }
 
+#slider {
+    height: 35vw;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
 
+#slider label {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    transition: transform .4 ease;
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #s3,
+#s3:checked ~ #slide2, #s2:checked ~ #s1,
+#s3:checked ~ #slide1, #s1:checked ~ #s3 {
+    box-shadow: 0px 1px 4px rgba(0, 0, 0,.37);
+    transform: translate3d(-30%, 0, -200px);
+}
+
+.frame {
+    background-image: url('.././src/img/candidates/img.png');
+    position: relative;
+    background-size: cover;
+    /* place-items: center */
+}
 

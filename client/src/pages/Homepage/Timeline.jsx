@@ -12,12 +12,12 @@ import Timeline_sm from '../../components/timeline_sm'
 export default function Timeline() {
   return (
     <>
-        <div className='bg-[#21201D] min-h-[90vh] w-screen pt-24 prim-color font-prata timeline-bg'>
-            <div className='flex w-screen justify-center mb-10'>
-                <div className='h-fit flex gap-x-10'>
-                    <Star1/>
+        <div className='bg-[#21201D] min-h-[90vh] w-screen prim-color font-prata timeline-bg-sm-l timeline-bg'>
+            <div className='flex w-screen justify-center pt-24 mb-10'>
+                <div data-aos='fade-in' className='h-fit flex gap-x-10'>
+                    <Star1 className='hidden md:block'/>
                     <h1 className='text-2xl lg:text-5xl grid items-center'>Timeline</h1>
-                    <Star2/>
+                    <Star2 className='hidden md:block'/>
                 </div>
             </div>
             {/* Start Timeline Item */}
@@ -30,7 +30,7 @@ export default function Timeline() {
             </div>
 
             <div className='flex justify-center'>
-            <div className='eclipse1'/>
+            {/* <div className='eclipse1'/> */}
 
             </div>
         </div>
