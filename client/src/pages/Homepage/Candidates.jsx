@@ -26,7 +26,7 @@ const Candidates = () => {
 
                 <div className='space-y-4 md:space-y-9 text-center'>
 
-                    <div className=''>{/*mx-48 md:mx-60 lg:mx-72 */}
+                    <div data-aos='fade-in'>{/*mx-48 md:mx-60 lg:mx-72 */}
                         <div className='inline-flex md:space-x-8'>
                             <Star1 className='hidden md:block scale-[60%] md:scale-[70%] lg:scale-100'/>
                             <h1 className='text-2xl lg:text-5xl prim-color flex items-start'>Candidates</h1>
@@ -34,7 +34,7 @@ const Candidates = () => {
                         </div>
                     </div>
 
-                    <div className='hidden md:flex flex-row w-[88%] m-auto gap-8 xl:gap-18'>
+                    <div className='hidden md:flex flex-row w-[80%] m-auto gap-8 xl:gap-18'>
                         {/* {imgs.map(({src}) => (
                             <img src={src} className='w-1/4 frame'/>
                         ))} */}

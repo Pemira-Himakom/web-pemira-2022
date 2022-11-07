@@ -7,7 +7,7 @@ import CV_Konang from '../../CV/CV_Konang.pdf'
 import Konang from '../../img/konang.png'
 import Nav from '../../components/Navbar'
 
-// import Nav from '../../components/Navbar'
+import Nav from '../../components/Navbar'
 
 const Candidate1 = () => {
     useEffect(() => {

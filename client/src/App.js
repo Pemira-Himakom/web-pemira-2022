@@ -14,6 +14,11 @@ import { Vote } from "./pages/Vote";
 import Voting from './pages/Vote/VotingPage'
 
 function App() {
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div>
       <Router>

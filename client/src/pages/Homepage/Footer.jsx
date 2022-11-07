@@ -14,7 +14,7 @@ const Footer = () => {
 
             <div className='w-[10%] lg:w-[22.5%]  flex flex-col'>
               <div className='content h-[60%]'></div>
-              <div className='h-[40%] flex justify-center'>
+              <div data-aos='fade-in' className='h-[40%] flex justify-center'>
                 <img src={star5} alt=""  className='hidden md:block w-[35%] m-auto'/>
               </div>
             </div>
@@ -26,11 +26,11 @@ const Footer = () => {
               <div className='h-[60%] md:h-full w-full overflow-hidden pt-4 md:pt-8 px-3 md:px-7 rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] relative'>
 
                 <div className='absolute top-[70%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[100%] flex flex-col justify-center'>
-                  <h1 className='text-[35px] lg:text-[90px] text-white text-center leading-none pb-5'>Pledge Your Allegiance!</h1>
+                  <h1 data-aos='fade-in' className='text-[35px] lg:text-[90px] text-white text-center leading-none pb-5'>Pledge Your Allegiance!</h1>
 
                   <div className='w-[72%] m-auto text-[#D4A976]'>
-                    <h2 className='text-[15px] lg:text-[38px] text-center'>Tentukan Pilihanmu pada</h2>
-                    <h2 className='text-[15px] lg:text-[38px] text-center'>9-16 November</h2>
+                    <h2 data-aos='fade-in' className='text-[15px] lg:text-[38px] text-center'>Tentukan Pilihanmu pada</h2>
+                    <h2 data-aos='fade-in' className='text-[15px] lg:text-[38px] text-center'>9-16 November</h2>
                   </div>
 
                 </div>
@@ -47,7 +47,7 @@ const Footer = () => {
             <div className='w-[10%] lg:w-[22.5%] flex flex-col'>
               <div className='content h-[60%]'></div>
               <div className='h-[40%] flex justify-center'>
-                <img src={star5} alt=""  className='hidden md:block w-[35%] m-auto'/>
+                <img data-aos='fade-in' src={star5} alt=""  className='hidden md:block w-[35%] m-auto'/>
               </div>
             </div>
 
