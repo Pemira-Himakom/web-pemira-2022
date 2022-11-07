@@ -37,9 +37,9 @@ router.route("/authenticate").post(async (req, res) => {
       { expiresIn: "1d" }
     );
 
+    res.cookie("accessToken", accessToken); // add expire time
     res.json({
       status: result,
-      accessToken, // send through httponly cookies
       message: "Successfuly logged in!",
     });
   } catch (error) {

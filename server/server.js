@@ -5,6 +5,7 @@ dotenv.config();
 
 import express from "express";
 import mongoose from "mongoose";
+import cookieParser from "cookie-parser";
 
 import validate_token from "./routes/validate_token.js";
 import vote from "./routes/vote.js";
@@ -13,6 +14,7 @@ import user from "./routes/user.js";
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/validate_token", validate_token);
 app.use("/api/vote", vote);

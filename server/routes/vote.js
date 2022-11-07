@@ -32,7 +32,7 @@ router.route("/").post(authenticateToken, async (req, res) => {
       { date: currentDate, candidateNumber: votedCandidate },
       { $inc: { voteCounter: 1 } }
     );
-    console.log(foundCandidate);
+
     if (!foundCandidate) {
       throw new Error("Candidate not found in current time span!");
     }
