@@ -1,12 +1,15 @@
 import React from 'react'
 import crown from '../../img/crown.png'
 import star5 from '../../img/Star5.png'
+import { HiOutlineMailOpen } from 'react-icons/hi'
 import { FaInstagram } from 'react-icons/fa'
 import { ReactComponent as Himakom} from '../../img/himakom.svg'
 import { ReactComponent as Star4} from '../../img/star4.svg'
+import { useNavigate } from 'react-router-dom'
 
 
 const Footer = () => {
+  const navi = useNavigate()
   return (
     <div className='h-fit w-screen bg-[#21201D] flex flex-col font-prata timeline-bg-sm-r'>
         {/* Pre Footer */}
@@ -32,6 +35,12 @@ const Footer = () => {
                     <h2 data-aos='fade-in' className='text-[15px] lg:text-[38px] text-center'>Tentukan Pilihanmu pada</h2>
                     <h2 data-aos='fade-in' className='text-[15px] lg:text-[38px] text-center'>9-16 November</h2>
                   </div>
+
+                  <div className='grid place-items-center mt-4'>
+                    <button onClick={() => navi('/vote')} className='votebtn'>
+                      <h1>Vote now!</h1>
+                    </button>
+                  </div>                  
 
                 </div>
                 <img src={crown} alt="crown" className='object-cover h-[97%] md:h-full w-full rounded-t-[200px] md:rounded-t-[500px] border-[3px] md:border-[4px] border-b-[3px] md:border-b-0 border-[#D4A976] crown' />
@@ -71,23 +80,26 @@ const Footer = () => {
                 <p>Bulaksumur, Sinduadi, Mlati, Sleman, DI Yogyakarta</p>
               </div>
 
-              <div className='max-w-[78%] py-6 md:py-0 pt-6 text-[10px] lg:text-[15px]'>
+              <div className='muttax-w-[78%] py-6 md:py-0 pt-6 text-[10px] lg:text-[15px]'>
                 <h1>© HIMAKOM UGM - All rights reserved. Built with ♡</h1>
               </div>
            </div>
 
-          <div className='h-full max-w-[75%] md:max-w-[70%] flex justify-between relative'>
 
-              <div className='w-full md:w-fit space-x-6 md:space-x-5 flex justify-between'>
-                {/* <a href=""><TfiTwitter size={50}/></a> */}
-                {/* <a href="https://www.instagram.com/himakomugm/" target='_blank' className='scale-50 md:scale-100'><FaInstagram size={50}/></a> */}
-                <a href='https://www.instagram.com/himakomugm/' target='_blank' 
-                  className='grid items-center text-xs md:text-sm lg:text-base hover:text-[#D4A976] duration-300'>@himakomugm</a>
-                <a href='https://www.instagram.com/pemirahimakom/' target='_blank' 
-                  className='grid items-center text-xs md:text-sm lg:text-base hover:text-[#D4A976] duration-300'>@pemirahimakom</a>
+            <div className='max-h-full max-w-[30%] flex flex-col justify-center relative self-center'>
+
+              <div className='flex flex-row justify-between items-center lg:px-12 md:space-x-4 pt-0 lg:pt-5'>
+                {/* <a href=""><img src={twitter} alt="" className='scale-75 lg:scale-100 h-[45px] min-w-[55px]' /></a>
+                <a href=""><img src={insta} alt="" className='scale-75 pl-1 lg:pl-0 lg:scale-100 h-[45px] min-w-[45px]'/></a> */}
+                <a href='instagram.com/pemirahimakom' target='_blank'>
+                  <FaInstagram className='grid items-center hover:text-[#D4A976] duration-300 scale-75 md:scale-100' size={50}/>
+                </a>
+                <a href='mailto:pemirahimakom@gmail.com'>
+                  <HiOutlineMailOpen className='grid items-center hover:text-[#D4A976] duration-300 scale-75 md:scale-100' size={50}/>
+                </a>
               </div>
 
-          </div>
+            </div>
 
         </div>
 

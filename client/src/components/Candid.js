@@ -21,7 +21,7 @@ const Candid = (props) => {
                 <div className='title gap-x-5'>
                     <div className='boxAll'>
                         <div className='boxNo'>
-                            <h1>{props.calon}</h1>
+                            <h1 className=''>{props.calon}</h1>
                         </div>
                         <div className='boxName flex flex-col justify-between text-left'>
                             <h2>{props.name}</h2>

@@ -34,7 +34,7 @@ const Candidates = () => {
                         </div>
                     </div>
 
-                    <div className='hidden md:flex flex-row w-[85%] m-auto gap-8 xl:gap-18'>
+                    <div className='hidden md:flex flex-row w-[70%] lg:w-[80%] m-auto gap-8 xl:gap-18'>
                         {/* {imgs.map(({src}) => (
                             <img src={src} className='w-1/4 frame'/>
                         ))} */}
