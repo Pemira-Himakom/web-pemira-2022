@@ -88,7 +88,7 @@ export const adminLogin = form => {
     dispatch(setLoading());
 
     const sendRequest = async form => {
-      const response = await fetch(`/api/admin/authenticate`, {
+      const response = await fetch(`${BASE_URL}/api/admin/authenticate`, {
         method: "POST",
         body: JSON.stringify(form),
         headers: {
