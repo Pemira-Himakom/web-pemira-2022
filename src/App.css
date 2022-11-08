@@ -360,19 +360,19 @@ body {
     content: " ";
     width: 100%;
     margin: auto;
-    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
-    background-color: #D4A976;
-
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));    
+    /* background-color: #D4A976; */
     background-size: 300%;
     background-position: left;
-    transition: background-position .3s ease-in-out;
+    transition: background-position .25s ease-in-out;
     @apply flex p-4 mt-3 justify-start;
 
 }
 
 #candid_mob .title_mb{
     content: " ";
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
+    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
+    background-color: #D4A976;
     background-size: 300%;
     background-position: left;
 }
@@ -381,7 +381,8 @@ body {
     content: " ";
     width: fit-content;
     margin: auto;
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
+    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
+    background-color: #D4A976;
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
@@ -391,6 +392,16 @@ body {
 
 .container:hover div > .title {
     background-position: right;
+    /* background-color: #d9d9d9; */
+    /* box-shadow: inset 0 0 5px; */
+}
+
+.container:hover div > h1 {
+    color: #d9d9d9;
+}
+
+.faq:hover div > h1 {
+    color: #d9d9d9;
 }
 
 .boxAll{
@@ -413,13 +424,13 @@ body {
     background-color: #20201D;
 }
 
-
 .boxName{
     @apply flex flex-col;
 }
 
 .title h1{
     @apply text-4xl text-[#F1C88C];
+    content: '';
     margin:auto;
     font-weight: 200;
     text-align: center;
@@ -449,21 +460,44 @@ body {
 .faq {
     height: 3.5rem;
     width: 100%;
-    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
-    background-color: #D4A976;
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
+    /* background-color: #D4A976; */
     background-size: 300%;
     background-position: left;
     transition: background-position .3s ease-in-out;
+    /* background-color: #D4A976; */
+    /* transition: all .2s ease-in-out; */
     border-radius: 0.2rem;
     position: relative;
 }
 
 .download {
-    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39));
 }
 
-.active, .faq:hover {
-    background-position: 100%;
+ .active {
+    background-color: #d9d9d9;
+    box-shadow: 0 0 5px inset;
+}
+
+.faq:hover {
+    background-position: right;
+}
+
+.step .active, li .active {
+    background-color: transparent;
+}
+
+.votebtn {
+    @apply h-[4rem] w-[8rem];
+    border-radius: 1rem;
+    /* border: solid 1px white; */
+    background-color: #d9d9d9;
+    transition: all .3s ease-in-out;
+}
+
+.votebtn:hover {
+    box-shadow: 0 0 10px #fff;
 }
 
 .faq:hover svg {
@@ -519,7 +553,7 @@ body {
     @apply border-y-[15px] border-[#D4A976];
     content: '';
     overflow: auto;
-    min-height: 8rem;
+    height: 8rem;
     width: 100%;
     border-radius: 0.5rem;
     background-color: #D4A976;
@@ -531,11 +565,11 @@ body {
 
 }
 
-.ig {
+.ig svg {
     transition: all .2s ease-in-out;
 }
 
-.ig:hover {
+.ig:hover svg {
     color: #D4A976;
 }
 

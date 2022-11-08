@@ -6,17 +6,15 @@ import FAQ from "./FAQ";
 import About from "./About";
 import Footer from "./Footer";
 
-import AOS from "aos";
+import Aos from "aos";
 import "aos/dist/aos.css";
-
 
 export default function Home() {
   useEffect(() => {
-    AOS.init({ duration: 700 });
+    Aos.init({ duration: 700 });
   }, []);
   return (
     <div className='mb-[-1px] w-screen'>
-      {/* title */}
       <header
         className='flex flex-row items-center lg:items-end lg:px-48 h-screen shadow-inner 
                          bg-fixed bg-center bg-cover bg-img-lg bg-img-sm justify-center lg:justify-start'
@@ -38,9 +36,7 @@ export default function Home() {
 
       <Candidates />
       <FAQ />
-      {/* <Candid1/> */}
       <Footer />
-      {/* <Nav/> */}
     </div>
   );
 }
