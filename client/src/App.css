@@ -346,8 +346,8 @@ body {
     content: " ";
     width: 100%;
     margin: auto;
-    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
-    background-color: #D4A976;
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
+    /* background-color: #D4A976; */
 
     background-size: 300%;
     background-position: left;
@@ -435,7 +435,7 @@ body {
 .faq {
     height: 3.5rem;
     width: 100%;
-    /* background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(213, 175, 39)); */
+    background-image: linear-gradient(-45deg, #fff, #8b8383, #D4A976, rgb(175, 137, 88));
     background-color: #D4A976;
     background-size: 300%;
     background-position: left;
