@@ -112,7 +112,7 @@ const FAQ = () => {
               </div>
             </button>
             {selected === items.id && (
-              <div className='font-inter text-justify text-sm text-[#E6E6E6]'>
+              <div className='font-inter text-justify text-[16px] text-[#E6E6E6]'>
                 <li className='ans px-10 md:px-13 lg:px-14 py-3 md:py-4 lg:py-5'>
                   {items.ans}
                 </li>

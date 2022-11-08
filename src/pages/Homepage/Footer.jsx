@@ -5,11 +5,10 @@ import { HiOutlineMailOpen } from 'react-icons/hi'
 import { FaInstagram } from 'react-icons/fa'
 import { ReactComponent as Himakom} from '../../img/himakom.svg'
 import { ReactComponent as Star4} from '../../img/star4.svg'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Footer = () => {
-  const navi = useNavigate()
   return (
     <div className='h-fit w-screen bg-[#21201D] flex flex-col font-prata timeline-bg-sm-r'>
         {/* Pre Footer */}
@@ -37,9 +36,11 @@ const Footer = () => {
                   </div>
 
                   <div className='grid place-items-center mt-4'>
-                    <button onClick={() => navi('/vote')} className='votebtn'>
+                    <Link to='/vote'>
+                      <button className='votebtn'>
                       <h1>Vote now!</h1>
-                    </button>
+                      </button>
+                    </Link>
                   </div>                  
 
                 </div>
@@ -66,7 +67,7 @@ const Footer = () => {
         <div className='h-[30%] max-w-full items-center md:items-end
                         flex justify-between flex-col md:flex-row
                         relative font-poppins text-[#D9D9D9] 
-                        mx-6 my-4'>
+                        mx-8 my-4'>
 
            <div className='h-full max-w-[80%] lg:max-w-[30%] text-center md:text-left
                            flex flex-col items-center md:items-start md:justify-center 
@@ -80,18 +81,19 @@ const Footer = () => {
                 <p>Bulaksumur, Sinduadi, Mlati, Sleman, DI Yogyakarta</p>
               </div>
 
-              <div className='muttax-w-[78%] py-6 md:py-0 pt-6 text-[10px] lg:text-[15px]'>
-                <h1>© HIMAKOM UGM - All rights reserved. Built with ♡</h1>
+              <div className='muttax-w-[78%] mt-4 py-6 md:py-0 pt-6 text-[10px] lg:text-[15px]'>
+                <h1>© HIMAKOM UGM - All rights reserved.</h1>
+                <h1>Built with ♡</h1>
               </div>
            </div>
 
 
             <div className='max-h-full max-w-[30%] flex flex-col justify-center relative self-center'>
 
-              <div className='flex flex-row justify-between items-center lg:px-12 md:space-x-4 pt-0 lg:pt-5'>
+              <div className='flex flex-row justify-between items-center lg:px-4 md:space-x-4 pt-0 lg:pt-5'>
                 {/* <a href=""><img src={twitter} alt="" className='scale-75 lg:scale-100 h-[45px] min-w-[55px]' /></a>
                 <a href=""><img src={insta} alt="" className='scale-75 pl-1 lg:pl-0 lg:scale-100 h-[45px] min-w-[45px]'/></a> */}
-                <a href='instagram.com/pemirahimakom' target='_blank'>
+                <a href='httpsinstagram.com/pemirahimakom' target='_blank'>
                   <FaInstagram className='grid items-center hover:text-[#D4A976] duration-300 scale-75 md:scale-100' size={50}/>
                 </a>
                 <a href='mailto:pemirahimakom@gmail.com'>

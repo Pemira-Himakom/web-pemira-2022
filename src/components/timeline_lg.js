@@ -23,7 +23,7 @@ const timeline_lg = () => {
                     <div className='step-inner'>
                         <div className={isNow('2022-10-16T00:00:00', '2022-10-28T29:59:59') ? 'circle today' : 'circle'}><Star/></div>
                         <div data-aos='fade-in'>
-                            <h1 className='date'>17-28 Okt</h1>
+                            <h1 className='date'>17 - 28 Okt</h1>
                             <h1>Open Registration</h1>                            
                         </div>
                     </div>
@@ -72,7 +72,7 @@ const timeline_lg = () => {
                     <div className='step-inner'>
                         <div className={isNow('2022-11-17T00:00:00', '2022-11-19T00:00:00') ? 'circle today' : 'circle'}><Star/></div>
                         <div data-aos='fade-in'>
-                            <h1>Pengunguman</h1>
+                            <h1>Pengumuman</h1>
                             <h1 className='date'>18 Nov</h1>                            
                         </div>
                     </div>
