@@ -11,6 +11,7 @@ import Candidate from "../models/Candidate.js";
 
 // middleware
 import authenticateToken from "../middleware/authenticateToken.js";
+import parseCookie from "../middleware/parseCookie.js";
 
 const router = express.Router();
 
@@ -32,12 +33,12 @@ router.route("/authenticate").post(async (req, res) => {
 
     // create jwt token
     const accessToken = jwt.sign(
-      { _id: foundAdmin._id },
+      { _id: foundAdmin._id, admin: true },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "1d" }
+      { expiresIn: "15m" }
     );
 
-    res.cookie("accessToken", accessToken); // add expire time
+    res.cookie("accessToken", accessToken, { httpOnly: true, maxAge: 900000 });
     res.json({
       status: result,
       message: "Successfuly logged in!",
@@ -47,34 +48,58 @@ router.route("/authenticate").post(async (req, res) => {
   }
 });
 
+router
+  .route("/refresh")
+  .post(parseCookie, authenticateToken, async (req, res) => {
+    try {
+      const { _id, admin } = req.user;
+      const newToken = jwt.sign(
+        { _id, admin },
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+          expiresIn: "10m",
+        }
+      );
+      res.cookie("accessToken", newToken, { httpOnly: true, maxAge: 600000 });
+      res.json({
+        status: true,
+        message: "Successfully refreshed session",
+      });
+    } catch (err) {
+      res.json({ status: false, message: err.message });
+    }
+  });
+
 // assign token
-router.route("/assign").post(authenticateToken, async (req, res) => {
-  try {
-    const { _id } = req.user;
-    const { nim, token } = req.body;
+router
+  .route("/assign")
+  .post(parseCookie, authenticateToken, async (req, res) => {
+    try {
+      const { _id } = req.user;
+      const { nim, token } = req.body;
 
-    // admin verification
-    const admin = await Admin.exists({ _id });
-    if (!admin) throw new Error("Invalid admin!");
+      // admin verification
+      const admin = await Admin.exists({ _id });
+      if (!admin) throw new Error("Invalid admin!");
 
-    // hash
-    const hashedToken = await bcrypt.hash(token, Number(process.env.SALT));
+      // hash
+      const hashedToken = await bcrypt.hash(token, Number(process.env.SALT));
 
-    // update student attribute
-    const student = await Student.findOneAndUpdate(
-      { NIM: nim },
-      { token: hashedToken }
-    );
-    if (!student) throw new Error("Incorrect NIM!");
+      // update student attribute
+      const student = await Student.findOneAndUpdate(
+        { NIM: nim },
+        { token: hashedToken }
+      );
+      if (!student) throw new Error("Incorrect NIM!");
 
-    res.json({
-      status: true,
-      message: `Successfully assigned token to student ${nim}`,
-    });
-  } catch (error) {
-    res.json({ status: false, message: error.message });
-  }
-});
+      res.json({
+        status: true,
+        message: `Successfully assigned token to student ${nim}`,
+      });
+    } catch (error) {
+      res.json({ status: false, message: error.message });
+    }
+  });
 
 // student list
 router.route("/:adminID/student_list").get((req, res) => {
@@ -106,6 +131,7 @@ router.route("/:adminID/student_list").get((req, res) => {
     }
   });
 });
+
 
 // recap vote
 router.route("/:adminID/recap").get((req, res) => {
