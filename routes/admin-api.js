@@ -3,6 +3,7 @@
 import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import mongoSanitize from "express-mongo-sanitize";
 
 // db
 import Admin from "../models/Admin.js";
@@ -11,6 +12,7 @@ import Candidate from "../models/Candidate.js";
 
 // middleware
 import authenticateToken from "../middleware/authenticateToken.js";
+import parseCookie from "../middleware/parseCookie.js";
 
 const router = express.Router();
 
@@ -52,6 +54,9 @@ router
   .post(parseCookie, authenticateToken, async (req, res) => {
     try {
       const { _id, admin } = req.user;
+      
+      if (!admin) throw new Error("Forbidden!");
+
       const newToken = jwt.sign(
         { _id, admin },
         process.env.ACCESS_TOKEN_SECRET,
@@ -101,9 +106,10 @@ router
   });
 
 // student list
-router.route("/:adminID/student_list").get((req, res) => {
-  const { adminID } = req.params;
-  const query = req.query;
+router.route("/recap/studentList").get((parseCookie, authenticateToken,req, res) => {
+  const { _id } = req.user;
+  const query = {$voted: false};
+
   Admin.exists({ _id: adminID }, (err) => {
     if (err) {
       console.log(err);
@@ -132,7 +138,7 @@ router.route("/:adminID/student_list").get((req, res) => {
 });
 
 // recap vote
-router.route("/:adminID/recap").get((req, res) => {
+router.route("/recap/votingRecap").get((req, res) => {
   const { adminID } = req.params.adminID;
   const { start, end } = req.query;
   Admin.exists({ _id: adminID }, (err) => {
@@ -169,5 +175,7 @@ router.route("/:adminID/recap").get((req, res) => {
     }
   });
 });
+
+
 
 export default router;
