@@ -7,6 +7,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import mongoSanitize from "express-mongo-sanitize";
 
 import validate_token from "./routes/validate_token.js";
 import vote from "./routes/vote.js";
@@ -26,6 +27,7 @@ app.use("/api/vote", vote);
 app.use("/api/admin", admin);
 app.use("/api/user", user);
 app.use("/api/revalidate_auth", revalidate);
+app.use(mongoSanitize());
 
 main().catch((err) => console.log(err));
 async function main() {
