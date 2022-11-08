@@ -15,7 +15,7 @@ const Candidate1 = () => {
 
 const inovasi = [
     {id: 0, data: "Membentuk program kerja MAKOMTI bermain bersama. Program kerja akan berisi tentang anggota MAKOMTI bermain bersama dengan tujuan mengenal satu dengan yang lainnya."},
-    {id: 1, data: "Membentuk program kerja pelatihan anggota HIMAKOM mengenai public speaking dengantujuan mengasah soft skill anggota himakom agar lebih berani dan percaya diri dalam bidang public speaking."},
+    {id: 1, data: "Membentuk program kerja pelatihan anggota HIMAKOM mengenai public speaking dengan tujuan mengasah soft skill anggota himakom agar lebih berani dan percaya diri dalam bidang public speaking."},
 ]; 
 
 const misi = [
@@ -93,7 +93,7 @@ const misi = [
                             <h1 className='text-[60px]'>Visi</h1>
                         </div>
 
-                        <div className='text-center md:text-[19px] '>
+                        <div className='text-center md:text-justify md:text-[19px] '>
                             <h1>
                             Mewujudkan HIMAKOM sebagai Sarana mahasiswa Ilmu Komputer UGM untuk mengembangkan keterampilan, bakat, inovasi, dan kemampuan dalam berdinamika di Ilmu Komputer UGM.
                             </h1>
@@ -110,7 +110,7 @@ const misi = [
                                 {misi.map((items, i) => (
                                     <li key={i} className='flex justify start w-full '>
                                         <h1 className='circle-no mr-4 grid place-items-center text-[#21201D]'>{items.no}</h1>
-                                        <h1 className='grid place-items-center h-[10vh] overflow-auto text-white leading-[1.2]'>{items.misi}</h1>
+                                        <h1 className='grid place-items-center h-[10vh] md:text-justify overflow-auto text-white leading-[1.2]'>{items.misi}</h1>
                                     </li>
                                 ))}
                             </ul>

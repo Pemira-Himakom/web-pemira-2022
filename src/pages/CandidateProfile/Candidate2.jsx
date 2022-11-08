@@ -139,10 +139,10 @@ const Candidate1 = () => {
                 <h1 className='text-[60px]'>Visi</h1>
               </div>
 
-              <div className='text-center md:text-[19px] '>
+              <div className='text-center md:text-justify md:text-[19px] '>
                 <h1>
                   Menciptakan dan merealisasikan lembaga kekeluargaan yang
-                  berstruktur. jeBas.rapi, memiliki dampak positif kepada
+                  berstruktur, bebas, rapih, memiliki dampak positif kepada
                   masyarakat, serta memiliki peran penting dalamkehidupan semua
                   unsur mahasiswa lImu Komputer Universitas Gadjah Mada.
                 </h1>
@@ -154,14 +154,14 @@ const Candidate1 = () => {
                 <h1 className='text-[60px]'>Misi</h1>
               </div>
 
-              <div className='text-left md:text-[19px]'>
+              <div className='text-left md:text-justify md:text-[19px]'>
                 <ul className='space-y-3.5 w-[90%] l'>
                   {misi.map((items, i) => (
                     <li key={i} className='flex justify start w-full'>
                       <h1 className='circle-no mr-4 grid place-items-center text-[#21201D]'>
                         {items.no}
                       </h1>
-                      <h1 className='h-[10vh] overflow-auto text-white leading-[1.2]'>
+                      <h1 className='h-fit overflow-auto text-white leading-[1.2] overflow-y-clip'>
                         {items.misi}
                       </h1>
                     </li>
@@ -210,7 +210,7 @@ const Candidate1 = () => {
               {inovasi.map((items, i) => (
                 <div
                   key={i}
-                  className='inovasi grid items-center text-center px-7 md:px-14 text-center  text-[13px] lg:text-[18px] '
+                  className='inovasi grid items-center text-center px-7 md:px-14 text-[13px] lg:text-[18px] '
                 >
                   <h1>{items.data}</h1>
                 </div>

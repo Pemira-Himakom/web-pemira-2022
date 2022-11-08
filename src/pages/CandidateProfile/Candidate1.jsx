@@ -15,18 +15,18 @@ const Candidate1 = () => {
   const inovasi = [
     {
       id: 0,
-      title: "Nama Inovasi : Suarakan Pendapatmu",
-      data: "Penjelasan : Menampung segala opini, saran, maupun kritik mengenai seluruh kinerja pengurus HIMAKOM agar menjadi lebih baik kedepannya",
+      title: "Suarakan Pendapatmu",
+      data: "Menampung segala opini, saran, maupun kritik mengenai seluruh kinerja pengurus HIMAKOM agar menjadi lebih baik kedepannya",
     },
     {
       id: 1,
-      title: "Nama Inovasi : Write Your Agenda",
-      data: "Penjelasan : Mencatat seluruh agenda yang akan dilaksanakan dalam divisi HIMAKOM maupun OMAH TI melalui platform “Google Calendar” lalu setiap anggota HIMAKOM dan OMAHTI akan diundang dalam kalender untuk meminimalisir terjadinya bentrok dalam pelaksanaan program kerja.",
+      title: "Write Your Agenda",
+      data: "Mencatat seluruh agenda yang akan dilaksanakan dalam divisi HIMAKOM maupun OMAH TI melalui platform “Google Calendar” lalu setiap anggota HIMAKOM dan OMAHTI akan diundang dalam kalender untuk meminimalisir terjadinya bentrok dalam pelaksanaan program kerja.",
     },
     {
       id: 2,
-      title: "Nama Inovasi : HIMAKOM Salut",
-      data: "Penjelasan : Bentuk apresiasi terhadap seluruh masyarakat ilmu komputer yang berhasil meraih penghargaan baik itu berupa prestasi maupun mengemban jabatan sebagai ketua dalam event-event yang diselenggarakan HIMAKOM / OTI ataupun dalam lingkup FMIPA UGM.",
+      title: "HIMAKOM Salut",
+      data: "Bentuk apresiasi terhadap seluruh masyarakat ilmu komputer yang berhasil meraih penghargaan baik itu berupa prestasi maupun mengemban jabatan sebagai ketua dalam event-event yang diselenggarakan HIMAKOM / OTI ataupun dalam lingkup FMIPA UGM.",
     },
   ];
 
@@ -145,7 +145,7 @@ const Candidate1 = () => {
                 <h1 className='text-[60px]'>Visi</h1>
               </div>
 
-              <div className='text-center md:text-[19px] '>
+              <div className='text-center md:text-justify md:text-[19px] '>
                 <h1>
                   Terwujudnya HIMAKOM sebagai ruang untuk berekspresi,
                   berinovasi agar tercipta lingkungan yang solid, dinamis, serta
@@ -166,7 +166,7 @@ const Candidate1 = () => {
                       <h1 className='circle-no mr-4 grid place-items-center text-[#21201D]'>
                         {items.no}
                       </h1>
-                      <h1 className='h-[10vh] overflow-auto text-white leading-[1.2]'>
+                      <h1 className='md:text-justify h-fit overflow-auto text-white leading-[1.2] overflow-y-clip'>
                         {items.misi}
                       </h1>
                     </li>
