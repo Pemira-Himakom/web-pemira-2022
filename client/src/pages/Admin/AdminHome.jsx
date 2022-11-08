@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
-
+  
 function AdminHome() {
   const admin = useSelector((state) => state.auth.admin);
   return (

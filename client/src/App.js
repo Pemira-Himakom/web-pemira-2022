@@ -1,5 +1,9 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 // Home page
 import Home from "./pages/Homepage/Home";
@@ -11,21 +15,29 @@ import Login from "./pages/Admin/Login";
 import TokenAssignment from "./pages/Admin/TokenAssignment";
 import { Navigate } from "react-router-dom";
 import { Vote } from "./pages/Vote";
+import Layout from "./components/Layout";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+
+  }, [])
+  
   return (
     <Router>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/vote" element={<Vote />} />
-        <Route path="/admin">
-          <Route index element={<AdminHome />} />
-          <Route path="summary" element={<Summary />} />
-          <Route path="login" element={<Login />} />
-          <Route path="assign" element={<TokenAssignment />} />
-        </Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route path='/vote' element={<Vote />} />
+          <Route path='/admin'>
+            <Route index element={<AdminHome />} />
+            <Route path='summary' element={<Summary />} />
+            <Route path='login' element={<Login />} />
+            <Route path='assign' element={<TokenAssignment />} />
+          </Route>
+          <Route path='*' element={<Navigate to='/' />} />
+        </Routes>
+      </Layout>
     </Router>
   );
 }

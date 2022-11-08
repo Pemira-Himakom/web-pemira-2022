@@ -11,16 +11,16 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setAdminLogout: (state) => {
+    setAdminLogout: state => {
       state.admin = false;
     },
-    setUserLogout: (state) => {
+    setUserLogout: state => {
       state.user = false;
     },
-    setUserLogin: (state) => {
+    setUserLogin: state => {
       state.user = true;
     },
-    setAdminLogin: (state) => {
+    setAdminLogin: state => {
       state.admin = true;
     },
   },
@@ -28,11 +28,11 @@ export const authSlice = createSlice({
 
 // login
 export const login = (input, command) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch(setLoading());
     const url = getURL(command);
 
-    const sendRequest = async (input) => {
+    const sendRequest = async input => {
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(input),
@@ -81,11 +81,11 @@ function getURL(command, adminID) {
   }
 }
 
-export const adminLogin = (form) => {
-  return async (dispatch) => {
+export const adminLogin = form => {
+  return async dispatch => {
     dispatch(setLoading());
 
-    const sendRequest = async (form) => {
+    const sendRequest = async form => {
       const response = await fetch("/api/admin/authenticate", {
         method: "POST",
         body: JSON.stringify(form),
@@ -108,7 +108,7 @@ export const adminLogin = (form) => {
       if (result.status) {
         dispatch(setSuccess(result.message));
 
-        localStorage.setItem("token", result.accessToken);
+        localStorage.setItem("refreshToken", result.accessToken);
 
         setTimeout(() => {
           dispatch(setAdminLogin());
@@ -127,3 +127,4 @@ export const { setAdminLogout, setUserLogout, setUserLogin, setAdminLogin } =
   authSlice.actions;
 
 export default authSlice.reducer;
+export const selectAdmin = state => state.auth.admin;
