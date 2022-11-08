@@ -48,7 +48,7 @@ const Header = () => {
                                 </div>
                                 
                                 <div className=' md:absolute md:right-0 top-2 cursor-pointer '>
-                                    <ion-icon name={close ? 'chevron-up' : 'chevron-down '}></ion-icon>
+                                    <ion-icon name={close ? 'chevron-up' : 'chevron-down'}></ion-icon>
                                 </div>
                             </div>
 
