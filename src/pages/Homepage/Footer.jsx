@@ -93,7 +93,7 @@ const Footer = () => {
               <div className='flex flex-row justify-between items-center lg:px-4 md:space-x-4 pt-0 lg:pt-5'>
                 {/* <a href=""><img src={twitter} alt="" className='scale-75 lg:scale-100 h-[45px] min-w-[55px]' /></a>
                 <a href=""><img src={insta} alt="" className='scale-75 pl-1 lg:pl-0 lg:scale-100 h-[45px] min-w-[45px]'/></a> */}
-                <a href='httpsinstagram.com/pemirahimakom' target='_blank'>
+                <a href='https://instagram.com/pemirahimakom' target='_blank'>
                   <FaInstagram className='grid items-center hover:text-[#D4A976] duration-300 scale-75 md:scale-100' size={50}/>
                 </a>
                 <a href='mailto:pemirahimakom@gmail.com'>
