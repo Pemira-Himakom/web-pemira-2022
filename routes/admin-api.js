@@ -105,41 +105,39 @@ router.route("/:adminID/student_list").get((req, res) => {
 
 // recap vote
 router.route("/:adminID/recap").get((req, res) => {
-  const { adminID } = req.params.adminID;
-  const { start, end } = req.query;
-  Admin.exists({ _id: adminID }, (err) => {
-    if (err) {
-      console.log(err);
-      res.json({ status: false, message: "Admin not found" });
-    } else {
-      Candidate.aggregate([
-        {
-          $match: { date: { $gte: new Date(start), $lte: new Date(end) } },
+  try {
+    const { adminID } = req.params.adminID;
+    const { start, end } = req.query;
+    const isAdminExist = Admin.exists({ _id: adminID });
+
+    if(!isAdminExist) { throw new Error({status: false, message: "Error! Admin not found"}) }
+
+    const aggregatedData = Candidate.aggregate([
+      {
+        $match: { date: { $gte: new Date(start), $lte: new Date(end) } },
+      },
+      {
+        $group: {
+          _id: "$candidateNumber",
+          totalVote: { $sum: "$voteCounter" },
         },
-        {
-          $group: {
-            _id: "$candidateNumber",
-            totalVote: { $sum: "$voteCounter" },
-          },
+      },
+      {
+        $project: {
+          candidateNumber: "$_id",
+          totalVote: 1,
+          _id: 0,
         },
-        {
-          $project: {
-            candidateNumber: "$_id",
-            totalVote: 1,
-            _id: 0,
-          },
-        },
-        {
-          $sort: { candidateNumber: 1 },
-        },
-      ]).exec((err, candidates) => {
-        if (err) {
-          console.log(err);
-          res.json({ status: false });
-        } else [res.json({ status: true, candidates: candidates })];
-      });
-    }
+      },
+      {
+        $sort: { candidateNumber: 1 },
+      },
+    ]).exec((candidates) => {
+      [res.json({ status: true, candidates: candidates })];
+    });
+  } catch (error) {
+    res.json({status: false, message: error.message});
+  }
   });
-});
 
 export default router;
