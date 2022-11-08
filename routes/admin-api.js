@@ -138,6 +138,7 @@ router.route("/:adminID/recap").get((req, res) => {
   } catch (error) {
     res.json({status: false, message: error.message});
   }
-  });
+}
+);
 
 export default router;
