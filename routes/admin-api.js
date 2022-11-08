@@ -78,34 +78,30 @@ router.route("/assign").post(authenticateToken, async (req, res) => {
 
 // student list
 router.route("/:adminID/student_list").get((req, res) => {
-  const { adminID } = req.params;
-  const query = req.query;
-  Admin.exists({ _id: adminID }, (err) => {
-    if (err) {
-      console.log(err);
-      res.json({ status: false, message: "Admin not found" });
-    } else {
-      Student.find(query, (err, list) => {
-        if (err) {
-          console.log(err);
-          res.json({ status: false });
-        } else {
-          // filter list to only display {NIM, name, voted}
-          if (list === null) {
-            res.json({ status: false });
-          } else {
-            const filteredList = list.reduce((result, student) => {
-              const { nim, name, voted } = student;
-              result.push({ nim, name, voted });
-              return result;
-            }, []);
-            res.json({ status: true, studentList: filteredList });
-          }
-        }
-      });
-    }
-  });
-});
+
+  try {
+    const { adminID } = req.params;
+    const query = req.query;
+    const adminResult = Admin.exists({ _id: adminID });
+
+    if (!adminResult){
+      throw new Error({status: false, message: "Admin not found"})
+    } 
+
+    const foundStudentData = Student.find(query)
+    if (foundStudentData === null) {throw new Error ({status: false, message: "Student data not found"})}
+    const filteredList = list.reduce((result, student) => {
+    const { nim, name, voted } = student;
+        result.push({ nim, name, voted });
+        return result;
+      }, []);
+      res.json({ status: true, studentList: filteredList });
+  }
+  catch (error){
+    res.json
+  }
+}
+);
 
 // recap vote
 router.route("/:adminID/recap").get((req, res) => {
