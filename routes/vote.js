@@ -50,28 +50,3 @@ router.route("/").post(authenticateToken, async (req, res) => {
 });
 
 export default router;
-
-// delete later (add new candidate)
-
-// router.route("/").get((req, res) => {
-//   const date = new Date();
-//   const tanggal = `${date.getFullYear()}-${
-//     date.getMonth() + 1
-//   }-${`0${date.getDate()}`.slice(-2)}`;
-//   console.log(tanggal);
-//   const newCandidate = new Candidate({
-//     name: "name1",
-//     candidateNumber: 1,
-//     voteCounter: 0,
-//     date: new Date(tanggal),
-//   });
-//   newCandidate.save();
-//   res.json(newCandidate);
-//   Candidate.find((err, candidateList) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       res.json(candidateList);
-//     }
-//   });
-// });
