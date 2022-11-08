@@ -24,6 +24,7 @@ module.exports = {
       backgroundImage: {
         'vote' : "url('img/vote/BG.png')",
         'voteDark' : "url('img/bg.png')",
+        'unavail' : "url('img/unavailable/unavail.png')"
       }
     },
   },

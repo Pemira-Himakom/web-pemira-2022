@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUserLogin } from "../../store/authSlice";
 import Status from "./components/Status";
 import { resetVote } from "../../store/voteSlice";
-import NotAvailable from "../Error/NotAvailable";
+import { Navigate} from "react-router-dom";
 
 const Vote = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Vote = () => {
   const voteDate = new Date("2022-11-09");
 
   if (now < voteDate.getTime()) {
-    return <NotAvailable />;
+    return <Navigate to="/unavailable"/>;
   }
   
   return (

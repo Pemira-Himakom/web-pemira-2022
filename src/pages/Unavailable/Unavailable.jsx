@@ -2,7 +2,7 @@ import React from 'react'
 
 const Unavailable = () => {
   return (
-    <div className='h-screen w-screen bg-[#21201D] relative flex flex-col text-[#D4A976] font-garamond'>
+    <div className='h-screen w-screen bg-unavail relative flex flex-col text-[#D4A976] font-garamond'>
         <div className='w-screen h-[40%]'></div>
         <div className='w-screen h-[50%] flex flex-col align-middle text-center text-3xl md:text-5xl px-3'>
             <h1>Page Unavailable Yet!</h1>

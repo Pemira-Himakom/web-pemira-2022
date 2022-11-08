@@ -37,7 +37,7 @@ const Header = () => {
                         </li>
 
                         <li key="1" className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]">
-                            <NavLink to="/" className={({isActive}) => isActive ? normalLink : normalLink} ><p title>{"Voting"}</p></NavLink>
+                            <NavLink to="/vote" className={({isActive}) => isActive ? normalLink : normalLink} ><p title>{"Voting"}</p></NavLink>
                         </li>
 
                         <li key="1" className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 relative transition-all duration-200 ease-in justify-center "  onClick={()=>setClose(!close)} >

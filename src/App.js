@@ -38,7 +38,7 @@ function App() {
             <Route path='/admin/detect' element={<Detect />} />
             <Route path='/admin/summary' element={<Summary />} />
           </Route>
-          <Route path='*' element={<Navigate to='/' />} />
+          <Route path='*' element={<Navigate to='/unavailable' />} />
         </Routes>
       </Router>
     </div>
