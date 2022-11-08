@@ -1,15 +1,30 @@
-import { useState, useContext } from "react";
-import { AuthContext } from "../../context/authcontext";
+import { useEffect } from "react";
+
 import EnterToken from "./EnterToken";
 import VotingPage from "./VotingPage";
 
+import { useSelector, useDispatch } from "react-redux";
+import { setUserLogin } from "../../store/authSlice";
+import Status from "./components/Status";
+import { resetVote } from "../../store/voteSlice";
+
 const Vote = () => {
-  const authCtx = useContext(AuthContext);
-  
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
+  const token = localStorage?.getItem("token");
+
+  useEffect(() => {
+    dispatch(resetVote());
+    
+    if (token) {
+      dispatch(setUserLogin());
+    }
+  }, [token, dispatch]);
+
   return (
     <>
-      {!authCtx.isLoggedIn && <EnterToken />}
-      {authCtx.isLoggedIn && <VotingPage />}
+      <Status />
+      {user ? <VotingPage /> : <EnterToken />}
     </>
   );
 };
