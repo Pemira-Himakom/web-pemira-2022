@@ -1,7 +1,6 @@
 {
   "name": "web-pemira",
   "version": "0.1.0",
-  "proxy": "https://web-pemira.herokuapp.com",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
