@@ -11,16 +11,16 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setAdminLogout: state => {
+    setAdminLogout: (state) => {
       state.admin = false;
     },
-    setUserLogout: state => {
+    setUserLogout: (state) => {
       state.user = false;
     },
-    setUserLogin: state => {
+    setUserLogin: (state) => {
       state.user = true;
     },
-    setAdminLogin: state => {
+    setAdminLogin: (state) => {
       state.admin = true;
     },
   },
@@ -28,11 +28,11 @@ export const authSlice = createSlice({
 
 // login
 export const login = (input, command) => {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(setLoading());
     const url = getURL(command);
 
-    const sendRequest = async input => {
+    const sendRequest = async (input) => {
       const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(input),
@@ -81,18 +81,21 @@ function getURL(command, adminID) {
   }
 }
 
-export const adminLogin = form => {
-  return async dispatch => {
+export const adminLogin = (form) => {
+  return async (dispatch) => {
     dispatch(setLoading());
-
-    const sendRequest = async form => {
-      const response = await fetch("/api/admin/authenticate", {
-        method: "POST",
-        body: JSON.stringify(form),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+    console.log(process.env.REACT_APP_BASE_URL);
+    const sendRequest = async (form) => {
+      const response = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/api/admin/authenticate`,
+        {
+          method: "POST",
+          body: JSON.stringify(form),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Bad request. Check server");
@@ -127,4 +130,4 @@ export const { setAdminLogout, setUserLogout, setUserLogin, setAdminLogin } =
   authSlice.actions;
 
 export default authSlice.reducer;
-export const selectAdmin = state => state.auth.admin;
+export const selectAdmin = (state) => state.auth.admin;
