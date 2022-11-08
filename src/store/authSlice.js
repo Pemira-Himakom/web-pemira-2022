@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setLoading, setSuccess, setError, resetUIState } from "./uiSlice";
 
+const BASE_URL = process.env.REACT_APP_SERVER_BASE_URL;
+
 const initialState = {
   admin: false,
   user: false,
@@ -71,13 +73,13 @@ export const login = (input, command) => {
 
 function getURL(command, adminID) {
   if (command === "LOGIN_ADMIN") {
-    return "/api/admin/authenticate";
+    return `${BASE_URL}/api/admin/authenticate`;
   } else if (command === "LOGIN_USER") {
-    return "/api/validate_token";
+    return `${BASE_URL}/api/validate_token`;
   } else if (command === "ASSIGN_TOKEN") {
-    return `/api/admin/${adminID}/assign`;
+    return `${BASE_URL}/api/admin/${adminID}/assign`;
   } else if (command === "RECAP") {
-    return `/api/admin/${adminID}/assign`;
+    return `${BASE_URL}/api/admin/${adminID}/assign`;
   }
 }
 
@@ -86,7 +88,7 @@ export const adminLogin = form => {
     dispatch(setLoading());
 
     const sendRequest = async form => {
-      const response = await fetch("/api/admin/authenticate", {
+      const response = await fetch(`/api/admin/authenticate`, {
         method: "POST",
         body: JSON.stringify(form),
         headers: {

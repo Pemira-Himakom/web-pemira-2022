@@ -22,7 +22,8 @@ module.exports = {
         'whitegray': '#939393'
       },
       backgroundImage: {
-        'vote' : "url('img/vote/BG.png')"
+        'vote' : "url('img/vote/BG.png')",
+        'voteDark' : "url('img/bg.png')",
       }
     },
   },
