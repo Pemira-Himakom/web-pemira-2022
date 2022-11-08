@@ -108,7 +108,7 @@ export const adminLogin = form => {
       if (result.status) {
         dispatch(setSuccess(result.message));
 
-        localStorage.setItem("refreshToken", result.accessToken);
+        localStorage.setItem("accessToken", result.accessToken);
 
         setTimeout(() => {
           dispatch(setAdminLogin());
