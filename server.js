@@ -17,7 +17,9 @@ import revalidate from "./routes/validate_token.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({ origin: process.env.ALLOWED_ORIGIN || "http://localhost:3000" })
+);
 
 app.use("/api/validate_token", validate_token);
 app.use("/api/vote", vote);
