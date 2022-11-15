@@ -5,6 +5,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
 
 
+::-webkit-scrollbar{
+    width: 6px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #21201D;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #D4A976;
+    @apply rounded-xl
+}
+
+
 html {
     @apply scroll-smooth;
     max-width: 100%;
